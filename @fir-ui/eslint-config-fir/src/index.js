@@ -12,7 +12,7 @@ module.exports = {
 
   rules: {
     // 使用两个空格缩进
-    indent: [2, 2, { SwitchCase: 1, MemberExpression: false }],
+    indent: [2, 2, { SwitchCase: 1, MemberExpression: 'off' }],
 
     // 字符串使用单引号，允许使用反勾号
     quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
