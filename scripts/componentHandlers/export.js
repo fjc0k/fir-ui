@@ -5,20 +5,31 @@ const globby = require('globby')
 
 const componentsPath = resolve(__dirname, '../../src')
 const componentsFilePath = resolve(componentsPath, 'components.js')
+const stylesFilePath = resolve(componentsPath, 'styles.js')
 
 module.exports = () => {
-  const components = globby.sync(['*', '!{_*,style}'], {
+  const components = globby.sync(['*', '!_*'], {
     cwd: componentsPath,
     onlyDirectories: true
   })
 
-  const exportCodes = components.map(componentName => {
+  const exportComponents = components.map(componentName => {
     const ComponentName = _.upperFirst(_.camelCase(componentName))
-    return `export { default as ${ComponentName} } from './${componentName}/${componentName}'`
+    return `export { default as ${ComponentName} } from './${ComponentName}/${ComponentName}.vue'`
+  })
+
+  const exportStyles = components.map(componentName => {
+    const ComponentName = _.upperFirst(_.camelCase(componentName))
+    return `export { default as ${ComponentName}Styles } from './${ComponentName}/${ComponentName}.styl'`
   })
 
   fs.outputFileSync(
     componentsFilePath,
-    exportCodes.join('\n') + '\n'
+    exportComponents.join('\n') + '\n'
+  )
+
+  fs.outputFileSync(
+    stylesFilePath,
+    exportStyles.join('\n') + '\n'
   )
 }

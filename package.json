@@ -23,7 +23,7 @@
     "normalize.css": "^8.0.0",
     "popmotion": "^8.2.1",
     "vue-css-modules": "^1.1.0",
-    "vue-iconfont": "^2.5.0",
+    "vue-iconfont": "^2.5.1",
     "vue-merge-data": "^0.2.1",
     "vue-messenger": "^1.0.0"
   },

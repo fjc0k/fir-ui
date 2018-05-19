@@ -5,10 +5,10 @@ const fs = require('fs-extra')
 const componentsPath = resolve(__dirname, '../../src')
 
 module.exports = componentName => {
-  componentName = _.kebabCase(componentName)
+  const ComponentName = _.upperFirst(_.camelCase(componentName))
 
   fs.removeSync(
-    resolve(componentsPath, componentName)
+    resolve(componentsPath, ComponentName)
   )
 
   require('./export')()

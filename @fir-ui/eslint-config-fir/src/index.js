@@ -38,6 +38,9 @@ module.exports = {
     'capitalized-comments': 0,
 
     // 允许：CSSModules
-    'new-cap': [2, { capIsNewExceptions: ['CSSModules'] }]
+    'new-cap': [2, { capIsNewExceptions: ['CSSModules'] }],
+
+    // 允许使用较短的符号实现类型转换
+    'no-implicit-coercion': 0
   }
 }

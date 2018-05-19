@@ -1,0 +1,24 @@
+@require '../variables';
+
+form-field-reset() {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+
+  resize: none;
+  appearance: none;
+  box-shadow: none;
+
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+
+  background-color: transparent;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-text-placeholder;
+  }
+}

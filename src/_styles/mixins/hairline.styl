@@ -1,0 +1,125 @@
+@require '../variables';
+
+scale-hairline-common($color, $top, $right, $bottom, $left) {
+  content: '';
+  position: absolute;
+  background-color: $color;
+  display: block;
+  z-index: 1;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+h-hairline-base() {
+  width: 100%;
+  height: 1PX;
+  transform: scaleY(0.5);
+
+  @media (min-resolution: 3dppx) {
+    transform: scaleY(0.33);
+  }
+}
+
+v-hairline-base() {
+  width: 1PX;
+  height: 100%;
+  transform: scaleX(0.5);
+
+  @media (min-resolution: 3dppx) {
+    transform: scaleX(0.33);
+  }
+}
+
+hairline($directions = all, $color = $border-color-base, $radius = 0) {
+  if $directions == all {
+    // all
+    border: 1PX solid $color;
+    border-radius: $radius;
+
+    :global(html:not([data-scale])) & {
+      @media (min-resolution: 2dppx) {
+        position: relative unless @position;
+        border: none;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 200%;
+          height: 200%;
+          border: 1PX solid $color;
+          border-radius: $radius * 2;
+          transform-origin: 0 0;
+          transform: scale(0.5);
+          box-sizing: border-box;
+          pointer-events: none;
+        }
+      }
+    }
+  } else {
+    // a list: (top? right? bottom? left?)
+    for $direction in $directions {
+      border-{$direction}: 1PX solid $color;
+    }
+
+    :global(html:not([data-scale])) & {
+      @media (min-resolution: 2dppx) {
+        position: relative unless @position;
+        for $direction in $directions {
+          border-{$direction}: none;
+        }
+
+        if top in ($directions) {
+          &::before {
+            scale-hairline-common: $color 0 auto auto 0;
+            h-hairline-base: true;
+            transform-origin: 50% 50%;
+          }
+        }
+
+        if bottom in ($directions) {
+          &::after {
+            scale-hairline-common: $color auto auto 0 0;
+            h-hairline-base: true;
+            transform-origin: 50% 100%;
+          }
+        }
+
+        if right in ($directions) {
+          &::after {
+            scale-hairline-common: $color 0 0 auto auto;
+            v-hairline-base: true;
+            transform-origin: 100% 50%;
+          }
+        }
+
+        if left in ($directions) {
+          &::after {
+            scale-hairline-common: $color auto auto 0 0;
+            v-hairline-base: true;
+            transform-origin: 100% 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+hairline-remove($directions = (top right bottom left)) {
+  for $direction in $directions {
+    border-{$direction}: 0;
+  }
+
+  if top in $directions or left in $directions {
+    &::before {
+      display: none !important;
+    }
+  } else {
+    &::after {
+      display: none !important;
+    }
+  }
+}
