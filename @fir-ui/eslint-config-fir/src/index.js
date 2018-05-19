@@ -1,7 +1,7 @@
 module.exports = {
   extends: [
     'xo',
-    'plugin:vue/recommended'
+    'plugin:vue/essential'
   ],
 
   parserOptions: {
@@ -35,6 +35,9 @@ module.exports = {
     'no-unused-expressions': [2, { allowShortCircuit: true }],
 
     // 允许: 注释以小写字母打头
-    'capitalized-comments': 0
+    'capitalized-comments': 0,
+
+    // 允许：CSSModules
+    'new-cap': [2, { capIsNewExceptions: ['CSSModules'] }]
   }
 }
