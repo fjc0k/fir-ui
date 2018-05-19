@@ -600,9 +600,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@fir-ui/eslint-config-fir@^0.50.1":
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/@fir-ui/eslint-config-fir/-/eslint-config-fir-0.50.1.tgz#13d6b0aaea84a9920ec66edfd7bcfd687a1d918e"
+"@fir-ui/eslint-config-fir@^0.50.2":
+  version "0.50.2"
+  resolved "https://registry.yarnpkg.com/@fir-ui/eslint-config-fir/-/eslint-config-fir-0.50.2.tgz#f3c3ecb4ff0e1afc04091272a8b41410439326d5"
   dependencies:
     babel-eslint "^8.2.3"
     eslint-config-xo "^0.22.2"
@@ -8229,9 +8229,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-css-modules@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/vue-css-modules/-/vue-css-modules-1.0.5.tgz#b0ebeba3a527be619d862700d6b84aa88128b194"
+vue-css-modules@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-css-modules/-/vue-css-modules-1.1.0.tgz#26a688d88a78ced3d8443bfeca423cb099847f42"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.0"

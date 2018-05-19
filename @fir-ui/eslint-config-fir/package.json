@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "babel-eslint": "^8.2.3",
-    "eslint-config-xo": "^0.22.2"
+    "eslint-config-xo": "^0.22.2",
+    "eslint-plugin-vue": "^4.5.0"
   }
 }

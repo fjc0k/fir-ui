@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import Vam from '../src'
+import FirUI from '../src'
 import App from './app.vue'
 
-Vue.use(Vam)
+Vue.use(FirUI)
 
 // eslint-disable-next-line
 new Vue({
