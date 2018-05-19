@@ -1,6 +1,6 @@
 {
   "name": "@fir-ui/eslint-config-fir",
-  "version": "0.50.3",
+  "version": "0.50.4",
   "description": "ESLint config for fir-ui",
   "main": "src/index.js",
   "author": "fjc0k",
