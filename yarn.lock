@@ -600,9 +600,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@fir-ui/eslint-config-fir@^0.50.3":
-  version "0.50.3"
-  resolved "https://registry.yarnpkg.com/@fir-ui/eslint-config-fir/-/eslint-config-fir-0.50.3.tgz#de175200a0123291d1d46e735ab4b7c3b106dfe0"
+"@fir-ui/eslint-config-fir@^0.50.4":
+  version "0.50.4"
+  resolved "https://registry.yarnpkg.com/@fir-ui/eslint-config-fir/-/eslint-config-fir-0.50.4.tgz#54e479d6acea4067906861a4a9b15ef4bd937163"
   dependencies:
     babel-eslint "^8.2.3"
     eslint-config-xo "^0.22.2"
@@ -876,6 +876,10 @@ ansi-styles@^3.2.1:
 ansi-styles@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-1.0.0.tgz#cb102df1c56f5123eab8b67cd7b98027a0279178"
+
+ant-design-icons@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ant-design-icons/-/ant-design-icons-0.0.4.tgz#dad37d5ed99955d02911fc502efb895356e07020"
 
 any-observable@^0.2.0:
   version "0.2.0"

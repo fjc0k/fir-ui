@@ -31,6 +31,7 @@ export default {
       return this.icon ? <Icon
         name={this.icon}
         size={this.size === 'lg' ? 'md' : 'xxs'}
+        styleName="icon"
       /> : null
     }
   },

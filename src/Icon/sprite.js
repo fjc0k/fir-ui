@@ -1,17 +1,11 @@
 import {
-  volumeLow,
-  close,
-  closeCircle,
-  closeCircleOutline,
-  more
-} from 'ionicons'
+  sound,
+  ellipsis
+} from 'ant-design-icons'
 
 export default [
   '<svg><defs>',
-  volumeLow,
-  close,
-  closeCircle,
-  closeCircleOutline,
-  more,
+  sound,
+  ellipsis,
   '</defs></svg>'
 ].join('')

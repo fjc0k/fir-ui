@@ -72,12 +72,11 @@ module.exports = ({ isProd }) => {
               camel2DashComponentName: false
             }, 'lodash'],
             ['import', {
-              libraryName: 'ionicons',
+              libraryName: 'ant-design-icons',
               customName: name => {
-                name = /^(ios|md|logo)-/.test(name) ? name : `ios-${name}`
-                return `ionicons/dist/ionicons/svg/${name}.svg`
+                return `ant-design-icons/dist/svg/${name}.svg`
               }
-            }, 'ionicons']
+            }, 'ant-design-icons']
           ]
         })
 
