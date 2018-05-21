@@ -41,7 +41,7 @@ export default {
   },
 
   computed: {
-    Items() {
+    ItemsNode() {
       const {
         value: selectedValue,
         localData,
@@ -74,7 +74,7 @@ export default {
 
   render() {
     return <div styleName="@segmented-control :disabled">
-      {this.Items}
+      {this.ItemsNode}
     </div>
   }
 }
