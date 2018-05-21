@@ -15,6 +15,8 @@
       </f-button>
     </f-wing-blank>
 
+    <fSegmentedControl v-model="day" :data="days"></fSegmentedControl>
+
     <f-white-space></f-white-space>
 
     <f-textarea v-model="text" autoHeight />
@@ -27,6 +29,8 @@
 <script>
 export default {
   data: () => ({
+    days: ['1今天', '明天', '后天'],
+    day: '明天',
     text: `fffkg
 
     fff

@@ -4455,10 +4455,6 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ionicons@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-4.1.1.tgz#2880e8e4cbb4ac0a6234efe158c62a7b140f43bd"
-
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
@@ -8279,9 +8275,9 @@ vue-merge-data@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-merge-data/-/vue-merge-data-0.2.1.tgz#e655e190cd488ca946c05051192a4bf4ea440972"
 
-vue-messenger@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.0.0.tgz#a032acd25f984201547ce3a89d41fbd019e21fc3"
+vue-messenger@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.1.1.tgz#5265fb7bf57987c0f79b5825c91bcb2443e006a8"
 
 vue-style-loader@^4.1.0:
   version "4.1.0"
