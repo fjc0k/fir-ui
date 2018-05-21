@@ -1,5 +1,14 @@
 <template>
   <f-container>
+    <f-nav-bar mode="light">
+      <div slot="left">
+        <f-icon name="left" />
+      </div>
+      冬菜助手
+      <div slot="right">
+        <f-icon name="ellipsis" />
+      </div>
+    </f-nav-bar>
     <f-wing-blank>
       <f-button icon="ellipsis"  type="ghost">
         按钮
