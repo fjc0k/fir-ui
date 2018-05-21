@@ -1,3 +1,7 @@
 export { default as ButtonStyles } from './Button/Button.styl'
 export { default as ContainerStyles } from './Container/Container.styl'
 export { default as IconStyles } from './Icon/Icon.styl'
+export { default as InputStyles } from './Input/Input.styl'
+export { default as TextareaStyles } from './Textarea/Textarea.styl'
+export { default as WhiteSpaceStyles } from './WhiteSpace/WhiteSpace.styl'
+export { default as WingBlankStyles } from './WingBlank/WingBlank.styl'

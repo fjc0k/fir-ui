@@ -39,10 +39,6 @@ export default {
 }
 </script>
     ` : `
-<template>
-  <div styleName="@${component_name}"></div>
-</template>
-
 <script>
 import CSSModules from 'vue-css-modules'
 
@@ -53,7 +49,11 @@ export default {
 
   mixins: [
     CSSModules('${ComponentName}Styles')
-  ]
+  ],
+
+  render() {
+    return <div styleName="@${component_name}"></div>
+  }
 }
 </script>
     `).trim() + '\n'

@@ -1,12 +1,30 @@
 <template>
   <f-container>
-    <f-button icon="sound"  type="warning">
-      按钮
-    </f-button>
-    <div>
+    <f-wing-blank>
+      <f-button icon="ellipsis"  type="ghost">
+        按钮
+      </f-button>
+    </f-wing-blank>
 
-      <f-icon name="aliyun" />
+    <f-white-space></f-white-space>
 
-    </div>
+    <f-textarea v-model="text" autoHeight />
+
+    {{ text }}
+
   </f-container>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    text: `fffkg
+
+    fff
+
+
+
+    ff`
+  })
+}
+</script>
