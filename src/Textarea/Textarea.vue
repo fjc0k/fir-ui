@@ -47,26 +47,24 @@ export default {
     autoHeight: 'adjustHeight'
   },
 
-  render() {
+  render(h) {
     const {
       rows,
       localValue,
       sendValue
     } = this
 
-    return <Input
-      styleName="@textarea"
-      tag="textarea"
-      rows={rows}
-      {...{
-        model: {
-          value: localValue,
-          callback: sendValue
-        }
-      }}
-      modelValue={localValue}
-      modelCallback={sendValue}
-    />
+    return h(Input, {
+      styleName: '@textarea',
+      model: {
+        value: localValue,
+        callback: sendValue
+      },
+      attrs: {
+        tag: 'textarea',
+        rows: rows
+      }
+    })
   }
 }
 </script>
