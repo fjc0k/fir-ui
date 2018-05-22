@@ -1,6 +1,7 @@
 export { default as ButtonStyles } from './Button/Button.styl'
 export { default as ContainerStyles } from './Container/Container.styl'
 export { default as IconStyles } from './Icon/Icon.styl'
+export { default as ImagePickerStyles } from './ImagePicker/ImagePicker.styl'
 export { default as InputStyles } from './Input/Input.styl'
 export { default as NavBarStyles } from './NavBar/NavBar.styl'
 export { default as SegmentedControlStyles } from './SegmentedControl/SegmentedControl.styl'

@@ -1,0 +1,77 @@
+@require '../_styles/settings';
+
+.image-picker {
+  padding: $v-spacing-md $h-spacing-md 0;
+  margin-bottom: $h-spacing-lg;
+}
+
+.list {
+  display: flex;
+  margin-bottom: $v-spacing-sm;
+}
+
+.item {
+  flex: 1;
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 5 * $hd;
+
+  &:after {
+    display: block;
+    content: '';
+    padding-bottom: 100%;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex-center: true;
+}
+
+.image {
+  border-radius: $radius-sm;
+  background-size: cover;
+}
+
+.remove {
+  font-size: $icon-size-xxs;
+  position: absolute;
+  right: 6 * $hd;
+  top: 6 * $hd;
+  background: rgba(black, 50%);
+  color: white;
+  padding: 2 * $hd;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.select {
+  box-sizing: border-box;
+  border-radius: $radius-sm;
+  border: $border-width-md solid $border-color-base;
+  background-color: $fill-base;
+
+  &:active {
+    background-color: $fill-tap;
+  }
+
+  .add {
+    color: $color-icon-base;
+    font-size: 25 * $hd;
+  }
+
+  .input {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}

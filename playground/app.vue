@@ -23,12 +23,27 @@
 
     {{ text }}
 
+    <f-image-picker v-model="files" cols="5" />
+
   </f-container>
 </template>
 
 <script>
 export default {
   data: () => ({
+    files: [{
+      url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg'
+    }, {
+      url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg'
+    }, {
+      url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg'
+    }, {
+      url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg'
+    }, {
+      url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg'
+    }, {
+      url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg'
+    }],
     days: ['1今天', '明天', '后天'],
     day: '明天',
     text: `fffkg

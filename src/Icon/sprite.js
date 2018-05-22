@@ -1,7 +1,9 @@
 import {
   sound,
   ellipsis,
-  left
+  left,
+  plus,
+  close
 } from 'ant-design-icons'
 
 export default [
@@ -9,5 +11,7 @@ export default [
   sound,
   ellipsis,
   left,
+  plus,
+  close,
   '</defs></svg>'
 ].join('')

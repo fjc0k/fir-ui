@@ -8275,9 +8275,9 @@ vue-merge-data@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-merge-data/-/vue-merge-data-0.2.1.tgz#e655e190cd488ca946c05051192a4bf4ea440972"
 
-vue-messenger@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.1.1.tgz#5265fb7bf57987c0f79b5825c91bcb2443e006a8"
+vue-messenger@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.2.1.tgz#c3b6202b668ef73353c9f91124a39d357c57d996"
 
 vue-style-loader@^4.1.0:
   version "4.1.0"
