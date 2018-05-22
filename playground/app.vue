@@ -22,8 +22,13 @@
     <f-textarea v-model="text" autoHeight />
 
     {{ text }}
+    <br />
 
-    <f-switch v-model="xswitch" color="red" disabled />
+    <f-search-bar v-model="q" placeholder="哈哈哈" />
+
+    <br />
+
+    <f-switch v-model="xswitch" color="red" />
 
     <hr />
 
@@ -35,6 +40,7 @@
 <script>
 export default {
   data: () => ({
+    q: '',
     xswitch: true,
     files: [{
       url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg'

@@ -3,7 +3,8 @@ import {
   ellipsis,
   left,
   plus,
-  close
+  close,
+  search
 } from 'ant-design-icons'
 
 export default [
@@ -13,5 +14,6 @@ export default [
   left,
   plus,
   close,
+  search,
   '</defs></svg>'
 ].join('')

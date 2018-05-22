@@ -1,0 +1,54 @@
+@require '../_styles/settings';
+
+.search-bar {
+  position: relative;
+  flex-center: true;
+  height: $search-bar-height;
+  padding: 0 $h-spacing-md;
+  overflow: hidden;
+  background-color: $search-bar-fill;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  height: $search-bar-input-height;
+  overflow: hidden;
+  background-color: $fill-base;
+  background-clip: padding-box;
+  border-radius: $radius-sm;
+  flex: 1;
+  flex-center: true;
+}
+
+.icon {
+  margin: 0 $h-spacing-md;
+  font-size: $icon-size-xxs;
+  color: $color-text-placeholder;
+
+  &.clear {
+    box-sizing: border-box;
+    padding: 2 * $hd;
+    border-radius: 50%;
+    background-color: $color-text-placeholder;
+    color: white;
+  }
+}
+
+.input {
+  flex: 1;
+  form-field-reset: true;
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}
+
+.cancel {
+  padding-left: $h-spacing-md;
+  height: $search-bar-height;
+  line-height: $search-bar-height;
+  font-size: $link-button-font-size;
+  color: $brand-primary;
+  text-align: right;
+}
