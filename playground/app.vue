@@ -23,6 +23,10 @@
 
     {{ text }}
 
+    <f-switch v-model="xswitch" color="red" disabled />
+
+    <hr />
+
     <f-image-picker v-model="files" cols="5" />
 
   </f-container>
@@ -31,6 +35,7 @@
 <script>
 export default {
   data: () => ({
+    xswitch: true,
     files: [{
       url: 'https://zos.alipayobjects.com/rmsportal/hqQWgTXdrlmVVYi.jpeg'
     }, {

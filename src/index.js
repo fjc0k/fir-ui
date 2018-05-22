@@ -17,12 +17,14 @@ Object.keys(components).forEach(componentName => {
   }
 })
 
+const normalizeComponentName = name => name.replace(/^X/, '')
+
 // expose components and install method
 export default {
   components: normalizedComponents,
   install(Vue, { prefix = 'f' } = {}) {
     normalizedComponents.forEach(Component => {
-      Vue.component(`${prefix}${Component.name}`, Component)
+      Vue.component(`${prefix}${normalizeComponentName(Component.name)}`, Component)
     })
   }
 }
