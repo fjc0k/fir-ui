@@ -28,6 +28,10 @@
 
     <br />
 
+    <f-stepper v-model="num" :max="20" />
+
+    <br />
+
     <f-switch v-model="xswitch" color="red" />
 
     <hr />
@@ -40,6 +44,7 @@
 <script>
 export default {
   data: () => ({
+    num: 10,
     q: '',
     xswitch: true,
     files: [{

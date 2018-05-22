@@ -1,0 +1,43 @@
+@require '../_styles/settings';
+
+.stepper {
+  flex-center: inline;
+  vertical-align: middle;
+  height: 35 * $hd;
+  font-size: $font-size-base;
+
+  &.disabled {
+    disabled: true;
+  }
+}
+
+.input-box {
+  width: 63 * $hd;
+}
+
+.input {
+  form-field-reset: true;
+  text-align: center;
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.minus, .plus {
+  flex-center: inline;
+  width: 30 * $hd;
+  height: 30 * $hd;
+  color: $color-text-base;
+  hairline(all, , $radius-md);
+
+  &.disabled {
+    disabled: true;
+  }
+
+  &:active {
+    z-index: 2;
+    background-color: $fill-tap;
+  }
+}
