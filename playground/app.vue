@@ -21,7 +21,9 @@
       title="明天会更好"
       note="2015年"
       extraNote="1点30分">
-      This is Card.
+      <f-marquee speed="50">
+        {{ card }}
+      </f-marquee>
     </f-card>
 
     <br /><br />
@@ -66,6 +68,7 @@
 <script>
 export default {
   data: () => ({
+    card: '如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,则返回characterData,如果是目标节点的某个子节点发生了变化,则返回childList.',
     num: 10,
     q: '',
     xswitch: true,

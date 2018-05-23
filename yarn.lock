@@ -8279,6 +8279,10 @@ vue-messenger@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.2.1.tgz#c3b6202b668ef73353c9f91124a39d357c57d996"
 
+vue-observable@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vue-observable/-/vue-observable-0.1.1.tgz#170ff7052a88161430656615875de8286c73987c"
+
 vue-style-loader@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.0.tgz#7588bd778e2c9f8d87bfc3c5a4a039638da7a863"

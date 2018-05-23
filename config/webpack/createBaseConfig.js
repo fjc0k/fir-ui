@@ -76,7 +76,12 @@ module.exports = ({ isProd }) => {
               customName: name => {
                 return `ant-design-icons/dist/svg/${name}.svg`
               }
-            }, 'ant-design-icons']
+            }, 'ant-design-icons'],
+            ['import', {
+              libraryName: 'vue-observable',
+              libraryDirectory: 'src',
+              camel2DashComponentName: false
+            }, 'vue-observable']
           ]
         })
 
