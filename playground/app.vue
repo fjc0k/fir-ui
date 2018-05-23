@@ -15,7 +15,26 @@
       </f-button>
     </f-wing-blank>
 
-    <br /><br />
+    <br />
+
+    <f-notice-bar :icon="null" mode="closable">
+      明天会更好。
+    </f-notice-bar>
+    <br />
+
+    <f-notice-bar mode="link">
+      明天会更好。争做文明人！明天会更好。争做文明人！
+    </f-notice-bar>
+
+    <br />
+
+    <f-notice-bar>
+      明天会更好。争做文明人！明天会更好。争做文明人！
+      <div slot="action">
+        去瞅瞅
+      </div>
+    </f-notice-bar>
+    <br />
 
     <f-card
       title="明天会更好"
