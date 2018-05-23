@@ -28,6 +28,17 @@
 
     <br />
 
+    <f-badge text="hello" />  <f-badge text="热" hot />  <f-badge text="热" dot />
+
+    <f-badge :text="1" hot>
+      <f-button inline>按钮</f-button>
+    </f-badge>
+
+    <f-badge text="促" corner>
+      <f-button inline>按钮</f-button>
+    </f-badge>
+    <br />
+
     <f-stepper v-model="num" :max="20" />
 
     <br />

@@ -1,0 +1,54 @@
+@require '../_styles/settings';
+
+.badge {
+  position: relative;
+  display: inline-block;
+  line-height: $line-height-base;
+  vertical-align: middle;
+
+  &.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+.text {
+  background-color: $brand-important;
+  color: $color-text-base-inverse;
+  font-size: $font-size-caption-sm;
+  height: $icon-size-xs;
+  line-height: $icon-size-xs;
+  min-width: ($icon-size-xs - 2 * $h-spacing-sm);
+  padding: 0 $h-spacing-sm;
+  border-radius: ($icon-size-xs / 2);
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.hot {
+    background-color: #f96268;
+  }
+
+  &.dot {
+    height: ($link-button-font-size / 2);
+    width: ($link-button-font-size / 2);
+    border-radius: 100%;
+    padding: 0;
+  }
+
+  &.has-attachment {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+    z-index: 10;
+
+    &.corner {
+      right: -2 * $link-button-font-size;
+      top: ($link-button-font-size / 2);
+      width: 5 * $link-button-font-size;
+      font-size: $font-size-subhead;
+      transform: rotate(45deg);
+    }
+  }
+}
