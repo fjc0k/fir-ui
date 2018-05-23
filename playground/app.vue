@@ -21,7 +21,7 @@
       title="明天会更好"
       note="2015年"
       extraNote="1点30分">
-      <f-marquee speed="50">
+      <f-marquee speed="10">
         {{ card }}
       </f-marquee>
     </f-card>
