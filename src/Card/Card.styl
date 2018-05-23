@@ -1,0 +1,70 @@
+@require '../_styles/settings';
+
+.card {
+  min-height: 96 * $hd;
+  padding-bottom: $v-spacing-sm;
+  display: flex;
+  flex-direction: column;
+  background-color: $fill-base;
+
+  &.full {
+    position: relative;
+    hairline('top');
+    hairline('bottom');
+  }
+
+  &:not(.full) {
+    hairline('all', $border-color-base, $radius-md);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-heading;
+  padding: $v-spacing-md $h-spacing-lg;
+}
+
+.thumb {
+  margin-right: $h-spacing-sm;
+}
+
+.title {
+  color: $color-text-base;
+}
+
+.extra-title {
+  flex: 1;
+  text-align: right;
+  font-size: $font-size-heading;
+  color: $color-text-caption;
+}
+
+.body {
+  position: relative;
+  padding: $v-spacing-lg $h-spacing-lg $v-spacing-sm;
+  font-size: $font-size-subhead;
+  color: $color-text-paragraph;
+  min-height: 40 * $hd;
+  flex: 1;
+
+  .header + & {
+    hairline('top');
+  }
+}
+
+.footer {
+  font-size: $font-size-base;
+  color: $color-text-caption;
+  padding: 0 $h-spacing-lg;
+  display: flex;
+}
+
+.note {
+  flex: 1;
+}
+
+.extra-note {
+  flex: 1;
+  text-align: right;
+}

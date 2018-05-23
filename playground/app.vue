@@ -15,6 +15,17 @@
       </f-button>
     </f-wing-blank>
 
+    <br /><br />
+
+    <f-card
+      title="明天会更好"
+      note="2015年"
+      extraNote="1点30分">
+      This is Card.
+    </f-card>
+
+    <br /><br />
+
     <fSegmentedControl v-model="day" :data="days"></fSegmentedControl>
 
     <f-white-space></f-white-space>

@@ -1,5 +1,6 @@
 export { default as BadgeStyles } from './Badge/Badge.styl'
 export { default as ButtonStyles } from './Button/Button.styl'
+export { default as CardStyles } from './Card/Card.styl'
 export { default as ContainerStyles } from './Container/Container.styl'
 export { default as IconStyles } from './Icon/Icon.styl'
 export { default as ImagePickerStyles } from './ImagePicker/ImagePicker.styl'

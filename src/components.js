@@ -1,5 +1,6 @@
 export { default as Badge } from './Badge/Badge.vue'
 export { default as Button } from './Button/Button.vue'
+export { default as Card } from './Card/Card.vue'
 export { default as Container } from './Container/Container.vue'
 export { default as Icon } from './Icon/Icon.vue'
 export { default as ImagePicker } from './ImagePicker/ImagePicker.vue'
