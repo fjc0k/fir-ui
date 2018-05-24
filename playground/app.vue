@@ -49,6 +49,12 @@
 
     <f-progress percent="50" :unfilled="false" />
 
+    <!-- <f-popup position="bottom" :visible="true">
+      <div>dhhfk</div>
+    </f-popup> -->
+
+    <br />
+
     <f-steps :data="steps" v-model="step" />
 
     <br />
@@ -87,12 +93,24 @@
 
     <f-image-picker v-model="files" cols="5" />
 
+    <br />
+
+    <f-action-sheet :maskClosable="false" title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" />
+
   </f-container>
 </template>
 
 <script>
 export default {
   data: () => ({
+    actions: ['微信', 'QQ', ['微博', 'wb', {
+      danger: true,
+      onClick() {
+        return new Promise(resolve => {
+          setTimeout(resolve, 5000)
+        })
+      }
+    }]],
     step: '第一步',
     steps: ['第一步', '第二步', '第三步'],
     card: '如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,则返回characterData,如果是目标节点的某个子节点发生了变化,则返回childList.',

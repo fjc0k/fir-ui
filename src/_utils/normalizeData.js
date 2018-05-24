@@ -2,8 +2,7 @@ import { isArray, isPlainObject, defaultTo } from 'lodash'
 
 export default (data, {
   label: labelKey = 'label',
-  value: valueKey = 'value',
-  children: childrenKey = 'children'
+  value: valueKey = 'value'
 } = {}) => {
   // e.g. '10'
   if (!isArray(data)) {
@@ -19,11 +18,10 @@ export default (data, {
 
     // e.g. ['10', 10]
     if (isArray(item)) {
-      const [label, value, children, extra] = item
+      const [label, value, extra] = item
       return {
         [labelKey]: label,
         [valueKey]: defaultTo(value, label),
-        ...(children && { [childrenKey]: children }),
         ...extra
       }
     }

@@ -1,0 +1,67 @@
+@require '../_styles/settings';
+
+.action-sheet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: $fill-base;
+}
+
+.title, .message {
+  margin: $h-spacing-lg auto;
+  padding: 0 $h-spacing-lg;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-heading;
+}
+
+.message {
+  color: $color-text-caption;
+  font-size: $font-size-base;
+  .title + & {
+    margin-top: 0;
+  }
+}
+
+.list {
+  text-align: center;
+  width: 100%;
+  color: $color-text-base;
+}
+
+.item {
+  font-size: $actionsheet-item-font-size;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: $actionsheet-item-height;
+  line-height: $actionsheet-item-height;
+  box-sizing: border-box;
+  hairline(top);
+  &.danger {
+    color: $brand-error;
+  }
+  &:active {
+    background-color: $fill-tap;
+  }
+  .action-sheet .list:first-child &:first-child {
+    hairline-remove(top);
+  }
+}
+
+.cancel {
+  position: relative;
+  margin-top: $v-spacing-sm;
+  .mask {
+    position: absolute;
+    top: -($v-spacing-sm);
+    left: 0;
+    width: 100%;
+    height: $v-spacing-sm;
+    background-color: #e7e7ed;
+    hairline(top bottom);
+  }
+}
