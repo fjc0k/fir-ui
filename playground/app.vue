@@ -47,6 +47,8 @@
 
     <br />
 
+    <f-progress percent="50" :unfilled="false" />
+
     <f-steps :data="steps" v-model="step" />
 
     <br />
