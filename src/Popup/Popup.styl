@@ -8,6 +8,12 @@
   top: 0;
   right: 0;
   background: rgba(black, 40%);
+  &.through {
+    pointer-events: none;
+  }
+  > * {
+    pointer-events: auto;
+  }
 }
 
 .center {

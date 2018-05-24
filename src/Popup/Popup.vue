@@ -2,8 +2,8 @@
   <div v-transfer-to-body>
     <transition appear name="f--fade">
       <div
-        styleName="@popup $position"
-        :style="{ zIndex }"
+        styleName="@popup $position :through"
+        :style="{ zIndex, backgroundColor: maskColor }"
         @click.passive="handleMaskClick"
         v-show="localVisible">
         <transition appear :name="popupTransition">
@@ -45,6 +45,8 @@ export default {
       type: Boolean,
       default: true
     },
+    maskColor: String,
+    through: Boolean,
     zIndex: numericType(() => zIndex++)
   },
 

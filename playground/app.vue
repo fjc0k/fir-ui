@@ -95,7 +95,11 @@
 
     <br />
 
-    <f-action-sheet :maskClosable="false" title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" />
+    <f-toast type="loading" :visible="true" duration="0">
+      加载中...
+    </f-toast>
+
+    <!-- <f-action-sheet :maskClosable="false" title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->
 
   </f-container>
 </template>

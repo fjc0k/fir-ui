@@ -30,7 +30,7 @@ export default {
   render() {
     return <Icon
       name={this.name}
-      styleName="@icon $size"
+      styleName="@icon $size $name"
     />
   }
 }

@@ -1,0 +1,31 @@
+@require '../_styles/settings';
+
+.toast {
+  font-size: $font-size-base;
+  text-align: center;
+  min-width: 60 * $hd;
+  max-width: 50%;
+  border-radius: $radius-sm;
+  color: $color-text-base-inverse;
+  background-color: $toast-fill;
+  line-height: $line-height-paragraph;
+  padding: $v-spacing-md $h-spacing-lg;
+}
+
+.icon {
+  padding: $v-spacing-sm $h-spacing-sm;
+}
+
+.info {
+  .icon + & {
+    margin-top: $v-spacing-sm;
+  }
+}
+
+.top {
+  margin-top: $v-spacing-sm;
+}
+
+.bottom {
+  margin-bottom: $v-spacing-sm;
+}

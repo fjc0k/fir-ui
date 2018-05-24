@@ -1,3 +1,4 @@
+import loading from './loading.svg'
 import {
   sound,
   ellipsis,
@@ -7,11 +8,14 @@ import {
   minus,
   close,
   search,
-  checkCircleO
+  checkCircleO,
+  closeCircleO,
+  frownO
 } from 'ant-design-icons'
 
 export default [
   '<svg><defs>',
+  loading,
   sound,
   ellipsis,
   left,
@@ -21,5 +25,7 @@ export default [
   close,
   search,
   checkCircleO,
+  closeCircleO,
+  frownO,
   '</defs></svg>'
 ].join('')

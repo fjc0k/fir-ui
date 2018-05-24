@@ -19,3 +19,17 @@
 .lg {
   font-size: $icon-size-lg;
 }
+
+:global(.__svg_loading_path__) {
+  stroke: $brand-primary;
+}
+
+.loading {
+  animation: cirle-anim 1s linear infinite;
+}
+
+@keyframes cirle-anim {
+  100% {
+    transform: rotate(360deg);
+  }
+}
