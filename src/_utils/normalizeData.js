@@ -1,11 +1,15 @@
 import { isArray, isPlainObject, defaultTo } from 'lodash'
 
-export default data => {
+export default (data, {
+  label: labelKey = 'label',
+  value: valueKey = 'value',
+  children: childrenKey = 'children'
+} = {}) => {
   // e.g. '10'
   if (!isArray(data)) {
     return [{
-      label: data,
-      value: data
+      [labelKey]: data,
+      [valueKey]: data
     }]
   }
 
@@ -17,17 +21,17 @@ export default data => {
     if (isArray(item)) {
       const [label, value, children, extra] = item
       return {
-        label,
-        value: defaultTo(value, label),
-        ...(children && { children }),
+        [labelKey]: label,
+        [valueKey]: defaultTo(value, label),
+        ...(children && { [childrenKey]: children }),
         ...extra
       }
     }
 
     // e.g. '10'
     return {
-      label: item,
-      value: item
+      [labelKey]: item,
+      [valueKey]: item
     }
   })
 }

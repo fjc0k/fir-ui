@@ -45,7 +45,11 @@
       </f-marquee>
     </f-card>
 
-    <br /><br />
+    <br />
+
+    <f-steps :data="steps" v-model="step" />
+
+    <br />
 
     <fSegmentedControl v-model="day" :data="days"></fSegmentedControl>
 
@@ -87,6 +91,8 @@
 <script>
 export default {
   data: () => ({
+    step: '第一步',
+    steps: ['第一步', '第二步', '第三步'],
     card: '如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,则返回characterData,如果是目标节点的某个子节点发生了变化,则返回childList.',
     num: 10,
     q: '',

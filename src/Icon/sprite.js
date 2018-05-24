@@ -6,7 +6,8 @@ import {
   plus,
   minus,
   close,
-  search
+  search,
+  checkCircleO
 } from 'ant-design-icons'
 
 export default [
@@ -19,5 +20,6 @@ export default [
   minus,
   close,
   search,
+  checkCircleO,
   '</defs></svg>'
 ].join('')
