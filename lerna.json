@@ -4,5 +4,10 @@
     "@fir-ui/*",
     "."
   ],
-  "version": "0.51.0"
+  "version": "0.51.0",
+  "command": {
+    "publish": {
+      "message": "chore(release): publish %s"
+    }
+  }
 }
