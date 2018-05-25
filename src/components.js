@@ -1,4 +1,5 @@
 export { default as ActionSheet } from './ActionSheet/ActionSheet.vue'
+export { default as ActivityIndicator } from './ActivityIndicator/ActivityIndicator.vue'
 export { default as Badge } from './Badge/Badge.vue'
 export { default as Button } from './Button/Button.vue'
 export { default as Card } from './Card/Card.vue'

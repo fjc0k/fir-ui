@@ -99,6 +99,8 @@
       加载中...
     </f-toast> -->
 
+    <f-ActivityIndicator></f-ActivityIndicator>
+
     <f-divider>
       <f-icon name="sound" /> 我是有底线的
     </f-divider>

@@ -1,4 +1,5 @@
 export { default as ActionSheetStyles } from './ActionSheet/ActionSheet.styl'
+export { default as ActivityIndicatorStyles } from './ActivityIndicator/ActivityIndicator.styl'
 export { default as BadgeStyles } from './Badge/Badge.styl'
 export { default as ButtonStyles } from './Button/Button.styl'
 export { default as CardStyles } from './Card/Card.styl'
