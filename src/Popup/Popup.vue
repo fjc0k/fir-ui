@@ -2,8 +2,8 @@
   <div v-transfer-to-body>
     <transition appear name="f--fade">
       <div
-        styleName="@popup $position :through"
-        :style="{ zIndex, backgroundColor: maskColor }"
+        styleName="@popup $position through=maskThrough transparent=maskTransparent"
+        :style="{ zIndex }"
         @click.passive="handleMaskClick"
         v-show="localVisible">
         <transition appear :name="popupTransition">
@@ -19,6 +19,7 @@ import CSSModules from 'vue-css-modules'
 import { oneOf, numericType } from '../_utils'
 import { transferDOMToBody } from '../_directives'
 import { toggleVisibility } from '../_mixins'
+import maskProps from './maskProps'
 
 let zIndex = 5000
 
@@ -41,13 +42,12 @@ export default {
       type: String,
       ...oneOf(['center', 'top', 'right', 'bottom', 'left'])
     },
-    maskClosable: {
-      type: Boolean,
-      default: true
-    },
-    maskColor: String,
-    through: Boolean,
-    zIndex: numericType(() => zIndex++)
+    zIndex: numericType(() => zIndex++),
+    ...maskProps({
+      closable: true,
+      transparent: false,
+      through: false
+    })
   },
 
   computed: {

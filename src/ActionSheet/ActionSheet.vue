@@ -41,6 +41,7 @@ import CSSModules from 'vue-css-modules'
 import { normalizeData, isThenable } from '../_utils'
 import { toggleVisibility } from '../_mixins'
 import Popup from '../Popup/Popup.vue'
+import maskProps from '../Popup/maskProps'
 
 export default {
   name: 'ActionSheet',
@@ -68,10 +69,11 @@ export default {
       type: String,
       default: '取消'
     },
-    maskClosable: {
-      type: Boolean,
-      default: true
-    }
+    ...maskProps({
+      closable: true,
+      transparent: false,
+      through: false
+    })
   },
 
   methods: {

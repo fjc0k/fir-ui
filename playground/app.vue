@@ -95,9 +95,9 @@
 
     <br />
 
-    <!-- <f-toast type="loading" :visible="true" duration="0">
+    <f-toast type="loading" :visible="true" duration="0">
       加载中...
-    </f-toast> -->
+    </f-toast>
 
     <f-divider>
       <f-icon name="sound" /> 我是有底线的

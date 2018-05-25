@@ -2,8 +2,9 @@
   <Popup
     v-model="localVisible"
     :position="position"
-    :through="through"
-    maskColor="transparent">
+    :maskClosable="maskClosable"
+    :maskThrough="maskThrough"
+    :maskTransparent="maskTransparent">
     <div styleName="@toast $position" v-show="localVisible">
       <div styleName="icon" v-if="localIcon">
         <Icon :name="localIcon" size="lg" />
@@ -21,6 +22,7 @@ import { toggleVisibility } from '../_mixins'
 import { oneOf, numericType } from '../_utils'
 import Popup from '../Popup/Popup.vue'
 import Icon from '../Icon/Icon.vue'
+import maskProps from '../Popup/maskProps'
 
 export default {
   name: 'Toast',
@@ -42,11 +44,12 @@ export default {
       type: String,
       ...oneOf(['center', 'top', 'bottom'])
     },
-    through: {
-      type: Boolean,
-      default: true
-    },
-    duration: numericType(3) // 秒
+    duration: numericType(3), // 秒
+    ...maskProps({
+      closable: false,
+      through: false,
+      transparent: true
+    })
   },
 
   computed: {
