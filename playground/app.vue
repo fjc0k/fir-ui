@@ -100,7 +100,7 @@
     </f-toast> -->
 
     <f-divider>
-      我是有底线的
+      <f-icon name="sound" /> 我是有底线的
     </f-divider>
 
     <!-- <f-action-sheet :maskClosable="false" title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->

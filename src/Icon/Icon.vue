@@ -23,7 +23,7 @@ export default {
     },
     size: {
       type: String,
-      ...oneOf(['md', 'xxs', 'xs', 'sm', 'lg'])
+      ...oneOf(['default', 'md', 'xxs', 'xs', 'sm', 'lg'])
     }
   },
 
