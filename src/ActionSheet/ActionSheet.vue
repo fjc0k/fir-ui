@@ -1,5 +1,10 @@
 <template>
-  <Popup position="bottom" :maskClosable="maskClosable" v-model="localVisible">
+  <Popup
+    v-model="localVisible"
+    position="bottom"
+    :maskClosable="maskClosable"
+    :maskThrough="maskThrough"
+    :maskTransparent="maskTransparent">
     <div styleName="@action-sheet" v-show="localVisible">
       <div styleName="title" v-if="title || $slots.title">
         <slot name="title">
