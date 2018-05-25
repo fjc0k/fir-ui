@@ -4,7 +4,7 @@ import Messenger from 'vue-messenger'
 import { oneOf } from '../_utils'
 
 export default {
-  name: 'XSwitch',
+  name: 'FSwitch',
 
   model: {
     prop: 'checked',

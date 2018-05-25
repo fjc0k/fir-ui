@@ -6,6 +6,7 @@ program
   .command('add <componentName>')
   .option('-f, --functional', 'Is a functional component?')
   .option('-o, --override', 'Override the existent component?')
+  .option('-p, --parent [value]', 'Parent component name?')
   .action(handlers.add)
 
 program

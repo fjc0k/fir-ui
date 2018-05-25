@@ -9,7 +9,7 @@ import Icon from '../Icon/Icon.vue'
 const IMAGE_SELECTOR = 0
 
 export default {
-  name: 'ImagePicker',
+  name: 'FImagePicker',
 
   model: {
     prop: 'files',

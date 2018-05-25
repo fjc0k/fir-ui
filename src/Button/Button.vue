@@ -4,7 +4,7 @@ import { oneOf } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
-  name: 'Button',
+  name: 'FButton',
 
   inject: ['ButtonStyles'],
 

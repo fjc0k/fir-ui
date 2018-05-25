@@ -25,7 +25,7 @@ import Icon from '../Icon/Icon.vue'
 import maskProps from '../Popup/maskProps'
 
 export default {
-  name: 'Toast',
+  name: 'FToast',
 
   inject: ['ToastStyles'],
 

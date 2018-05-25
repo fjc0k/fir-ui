@@ -3,7 +3,7 @@ import CSSModules from 'vue-css-modules'
 import { numericType, oneOf } from '../_utils'
 
 export default {
-  name: 'Progress',
+  name: 'FProgress',
 
   inject: ['ProgressStyles'],
 

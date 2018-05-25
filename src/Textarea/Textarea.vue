@@ -6,7 +6,7 @@ import { numericType } from '../_utils'
 import Input from '../Input/Input.vue'
 
 export default {
-  name: 'Textarea',
+  name: 'FTextarea',
 
   inject: ['TextareaStyles'],
 

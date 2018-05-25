@@ -3,7 +3,7 @@ import CSSModules from 'vue-css-modules'
 import { oneOf } from '../_utils'
 
 export default {
-  name: 'WhiteSpace',
+  name: 'FWhiteSpace',
 
   inject: ['WhiteSpaceStyles'],
 

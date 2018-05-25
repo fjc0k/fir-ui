@@ -15,7 +15,7 @@ import { isNumber } from 'lodash'
 import { numericType } from '../_utils'
 
 export default {
-  name: 'Badge',
+  name: 'FBadge',
 
   inject: ['BadgeStyles'],
 

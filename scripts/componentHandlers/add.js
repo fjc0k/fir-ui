@@ -5,12 +5,13 @@ const fs = require('fs-extra')
 
 const componentsPath = resolve(__dirname, '../../src')
 
-module.exports = (componentName, { functional, override }) => {
+module.exports = (componentName, { functional, override, parent }) => {
   componentName = _.camelCase(componentName)
   const component_name = _.kebabCase(componentName)
   const ComponentName = _.upperFirst(componentName)
+  const ParentComponentName = parent && _.upperFirst(_.camelCase(parent))
 
-  const componentFilePath = resolve(componentsPath, `${ComponentName}/${ComponentName}.vue`)
+  const componentFilePath = resolve(componentsPath, `${ParentComponentName || ComponentName}/${ComponentName}.vue`)
 
   if (fs.pathExistsSync(componentFilePath) && !override) return
 
@@ -25,10 +26,10 @@ export default {
 
   functional: true,
 
-  inject: ['${ComponentName}Styles'],
+  inject: ['${ParentComponentName || ComponentName}Styles'],
 
   render(h, ctx) {
-    h = CSSModules(h, '${ComponentName}Styles', ctx)
+    h = CSSModules(h, '${ParentComponentName || ComponentName}Styles', ctx)
 
     const { data, props, children } = ctx
 
@@ -45,10 +46,10 @@ import CSSModules from 'vue-css-modules'
 export default {
   name: '${ComponentName}',
 
-  inject: ['${ComponentName}Styles'],
+  inject: ['${ParentComponentName || ComponentName}Styles'],
 
   mixins: [
-    CSSModules('${ComponentName}Styles')
+    CSSModules('${ParentComponentName || ComponentName}Styles')
   ],
 
   render() {
@@ -58,7 +59,7 @@ export default {
 </script>
     `).trim() + '\n'
   )
-  fs.outputFileSync(
+  ParentComponentName || fs.outputFileSync(
     resolve(componentsPath, `${ComponentName}/${ComponentName}.styl`),
     [
       `@require '../_styles/settings';`,

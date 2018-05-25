@@ -2,7 +2,7 @@
 import * as styles from '../styles'
 
 export default {
-  name: 'Container',
+  name: 'FContainer',
 
   props: {
     styles: Object

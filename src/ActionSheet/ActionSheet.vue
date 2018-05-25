@@ -49,7 +49,7 @@ import Popup from '../Popup/Popup.vue'
 import maskProps from '../Popup/maskProps'
 
 export default {
-  name: 'ActionSheet',
+  name: 'FActionSheet',
 
   inject: ['ActionSheetStyles'],
 

@@ -10,7 +10,7 @@ const Icon = getIcon({
 })
 
 export default {
-  name: 'Icon',
+  name: 'FIcon',
 
   inject: ['IconStyles'],
 

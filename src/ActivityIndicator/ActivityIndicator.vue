@@ -14,7 +14,7 @@ import { oneOf } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
-  name: 'ActivityIndicator',
+  name: 'FActivityIndicator',
 
   inject: ['ActivityIndicatorStyles'],
 

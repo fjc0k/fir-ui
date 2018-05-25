@@ -3,7 +3,7 @@ import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 
 export default {
-  name: 'Input',
+  name: 'FInput',
 
   inject: ['InputStyles'],
 

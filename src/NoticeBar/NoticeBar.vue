@@ -36,7 +36,7 @@ import Icon from '../Icon/Icon.vue'
 import Marquee from '../Marquee/Marquee.vue'
 
 export default {
-  name: 'NoticeBar',
+  name: 'FNoticeBar',
 
   inject: ['NoticeBarStyles'],
 

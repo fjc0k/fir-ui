@@ -4,7 +4,7 @@ import Messenger from 'vue-messenger'
 import { normalizeData } from '../_utils'
 
 export default {
-  name: 'SegmentedControl',
+  name: 'FSegmentedControl',
 
   inject: ['SegmentedControlStyles'],
 

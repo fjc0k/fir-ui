@@ -5,7 +5,7 @@ import { numericType } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
-  name: 'Stepper',
+  name: 'FStepper',
 
   inject: ['StepperStyles'],
 

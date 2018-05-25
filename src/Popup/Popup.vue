@@ -24,7 +24,7 @@ import maskProps from './maskProps'
 let zIndex = 5000
 
 export default {
-  name: 'Popup',
+  name: 'FPopup',
 
   inject: ['PopupStyles'],
 

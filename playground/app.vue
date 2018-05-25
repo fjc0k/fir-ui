@@ -9,97 +9,20 @@
         <f-icon name="ellipsis" />
       </div>
     </f-nav-bar>
-    <f-wing-blank>
-      <f-button icon="ellipsis"  type="ghost">
-        按钮
-      </f-button>
-    </f-wing-blank>
 
-    <br />
-
-    <f-notice-bar :icon="null" mode="closable">
-      明天会更好。
-    </f-notice-bar>
-    <br />
-
-    <f-notice-bar mode="link">
-      明天会更好。争做文明人！明天会更好。争做文明人！
-    </f-notice-bar>
-
-    <br />
-
-    <f-notice-bar>
-      明天会更好。争做文明人！明天会更好。争做文明人！
-      <div slot="action">
-        去瞅瞅
-      </div>
-    </f-notice-bar>
-    <br />
-
-    <f-card
-      title="明天会更好"
-      note="2015年"
-      extraNote="1点30分">
-      <f-marquee speed="10">
-        {{ card }}
-      </f-marquee>
-    </f-card>
-
-    <br />
-
-    <f-progress percent="50" :unfilled="false" />
-
-    <!-- <f-popup position="bottom" :visible="true">
-      <div>dhhfk</div>
-    </f-popup> -->
-
-    <br />
-
-    <f-steps :data="steps" v-model="step" />
-
-    <br />
-
-    <fSegmentedControl v-model="day" :data="days"></fSegmentedControl>
-
-    <f-white-space></f-white-space>
-
-    <f-textarea v-model="text" autoHeight />
-
-    {{ text }}
-    <br />
-
-    <f-search-bar v-model="q" placeholder="哈哈哈" />
-
-    <br />
-
-    <f-badge text="hello" />  <f-badge text="热" hot />  <f-badge text="热" dot />
-
-    <f-badge :text="1" hot>
-      <f-button inline>按钮</f-button>
-    </f-badge>
-
-    <f-badge text="促" corner>
-      <f-button inline>按钮</f-button>
-    </f-badge>
-    <br />
-
-    <f-stepper v-model="num" :max="20" />
-
-    <br />
-
-    <f-switch v-model="xswitch" color="red" />
-
-    <hr />
-
-    <f-image-picker v-model="files" cols="5" />
-
-    <br />
-
-    <!-- <f-toast type="loading" :visible="true" duration="0">
-      加载中...
-    </f-toast> -->
-
-    <f-ActivityIndicator></f-ActivityIndicator>
+    <f-list header="表单" footer="备注">
+      <f-list-item  arrow="horizontal">
+        <f-icon name="sound" slot="thumb" />
+        如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
+        <f-list-item-brief>
+          hello
+        </f-list-item-brief>
+      </f-list-item>
+      <f-list-item error disabled  arrow="horizontal" extra="200">
+        <f-icon name="sound" slot="thumb" />
+        如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
+      </f-list-item>
+    </f-list>
 
     <f-divider>
       <f-icon name="sound" /> 我是有底线的

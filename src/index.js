@@ -1,30 +1,20 @@
-// import reset and global styles
 import './_styles'
-
-// import all components
+import ComponentRegister from 'vue-component-register'
 import * as components from './components'
 
-// normalize components
-const normalizedComponents = []
-Object.keys(components).forEach(componentName => {
-  const component = components[componentName]
-  if (Array.isArray(component)) {
-    component.forEach(subComponent => {
-      normalizedComponents.push(subComponent)
-    })
-  } else {
-    normalizedComponents.push(component)
-  }
-})
-
-const normalizeComponentName = name => name.replace(/^X/, '')
-
-// expose components and install method
-export default {
-  components: normalizedComponents,
-  install(Vue, { prefix = 'f' } = {}) {
-    normalizedComponents.forEach(Component => {
-      Vue.component(`${prefix}${normalizeComponentName(Component.name)}`, Component)
+const FirUI = {
+  components,
+  install(Vue) {
+    Vue.use(ComponentRegister)
+    Object.keys(components).forEach(componentName => {
+      const component = components[componentName]
+      Vue.component(component.name, component)
     })
   }
 }
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(FirUI)
+}
+
+export default FirUI

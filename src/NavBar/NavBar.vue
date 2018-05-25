@@ -17,7 +17,7 @@ import CSSModules from 'vue-css-modules'
 import { oneOf } from '../_utils'
 
 export default {
-  name: 'NavBar',
+  name: 'FNavBar',
 
   inject: ['NavBarStyles'],
 

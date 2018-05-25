@@ -27,7 +27,7 @@ import Messenger from 'vue-messenger'
 import Icon from '../Icon/Icon.vue'
 
 export default {
-  name: 'SearchBar',
+  name: 'FSearchBar',
 
   inheritAttrs: false,
 

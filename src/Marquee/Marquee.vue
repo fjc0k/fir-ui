@@ -5,7 +5,7 @@ import { styler, chain, delay, tween, action, easing } from 'popmotion'
 import { numericType } from '../_utils'
 
 export default {
-  name: 'Marquee',
+  name: 'FMarquee',
 
   inject: ['MarqueeStyles'],
 

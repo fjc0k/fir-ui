@@ -30,7 +30,7 @@ import { numericType, oneOf, normalizeData } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
-  name: 'Steps',
+  name: 'FSteps',
 
   model: {
     prop: 'current',

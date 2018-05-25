@@ -37,7 +37,7 @@
 import CSSModules from 'vue-css-modules'
 
 export default {
-  name: 'Card',
+  name: 'FCard',
 
   inject: ['CardStyles'],
 

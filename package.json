@@ -27,7 +27,8 @@
     "vue-iconfont": "^2.5.1",
     "vue-merge-data": "^0.2.1",
     "vue-messenger": "^1.2.1",
-    "vue-observable": "^0.1.1"
+    "vue-observable": "^0.1.1",
+    "vue-component-register": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.47",
