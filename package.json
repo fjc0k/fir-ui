@@ -7,7 +7,7 @@
     "dev": "nodemon --watch config/webpack --exec \"webpack-dev-server --config config/webpack/devConfig.js\"",
     "build": "webpack --config config/webpack/prodConfig.js",
     "com": "node scripts/component.js",
-    "release": "lerna publish"
+    "release": "lerna publish --conventional-commits"
   },
   "eslintConfig": {
     "root": true,
