@@ -3,6 +3,7 @@ export { default as ActivityIndicator } from './ActivityIndicator/ActivityIndica
 export { default as Badge } from './Badge/Badge.vue'
 export { default as Button } from './Button/Button.vue'
 export { default as Card } from './Card/Card.vue'
+export { default as Carousel } from './Carousel/Carousel.vue'
 export { default as Container } from './Container/Container.vue'
 export { default as Divider } from './Divider/Divider.vue'
 export { default as Icon } from './Icon/Icon.vue'

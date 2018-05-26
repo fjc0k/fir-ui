@@ -3,6 +3,7 @@ export { default as ActivityIndicatorStyles } from './ActivityIndicator/Activity
 export { default as BadgeStyles } from './Badge/Badge.styl'
 export { default as ButtonStyles } from './Button/Button.styl'
 export { default as CardStyles } from './Card/Card.styl'
+export { default as CarouselStyles } from './Carousel/Carousel.styl'
 export { default as ContainerStyles } from './Container/Container.styl'
 export { default as DividerStyles } from './Divider/Divider.styl'
 export { default as IconStyles } from './Icon/Icon.styl'

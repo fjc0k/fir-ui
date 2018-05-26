@@ -10,6 +10,16 @@
       </div>
     </f-nav-bar>
 
+    <f-notice-bar mode="closable">
+      最近网站升级，可能出现卡顿，敬请理解。<f-icon name="frown-o" />
+    </f-notice-bar>
+
+    <!-- <f-Carousel class="my-carousel">
+      <div class="v-item" style="height: 300px;line-height:300px">carousel 1</div>
+      <div class="v-item" style="height: 300px;line-height:300px">carousel 2</div>
+      <div class="v-item" style="height: 300px;line-height:300px">carousel 3</div>
+    </f-Carousel> -->
+
     <f-list header="表单" footer="备注">
       <f-list-item  arrow="horizontal">
         <f-icon name="sound" slot="thumb" />
@@ -18,9 +28,15 @@
           hello
         </f-list-item-brief>
       </f-list-item>
-      <f-list-item error disabled  arrow="horizontal" extra="200">
+      <f-list-item error disabled  arrow="horizontal">
         <f-icon name="sound" slot="thumb" />
         如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
+        <div slot="extra">
+          亚拉锁
+          <f-list-item-brief>
+            hello
+          </f-list-item-brief>
+        </div>
       </f-list-item>
     </f-list>
 

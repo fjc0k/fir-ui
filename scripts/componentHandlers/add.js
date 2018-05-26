@@ -5,11 +5,11 @@ const fs = require('fs-extra')
 
 const componentsPath = resolve(__dirname, '../../src')
 
-module.exports = (componentName, { functional, override, parent }) => {
+module.exports = (componentName, { functional, override, parentComponent }) => {
   componentName = _.camelCase(componentName)
   const component_name = _.kebabCase(componentName)
   const ComponentName = _.upperFirst(componentName)
-  const ParentComponentName = parent && _.upperFirst(_.camelCase(parent))
+  const ParentComponentName = parentComponent && _.upperFirst(_.camelCase(parentComponent))
 
   const componentFilePath = resolve(componentsPath, `${ParentComponentName || ComponentName}/${ComponentName}.vue`)
 
@@ -22,7 +22,7 @@ module.exports = (componentName, { functional, override, parent }) => {
 import CSSModules from 'vue-css-modules/lib/create-element'
 
 export default {
-  name: '${ComponentName}',
+  name: 'F${ComponentName}',
 
   functional: true,
 
@@ -44,7 +44,7 @@ export default {
 import CSSModules from 'vue-css-modules'
 
 export default {
-  name: '${ComponentName}',
+  name: 'F${ComponentName}',
 
   inject: ['${ParentComponentName || ComponentName}Styles'],
 

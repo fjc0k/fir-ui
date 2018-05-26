@@ -20,6 +20,7 @@
   "dependencies": {
     "ant-design-icons": "^0.0.4",
     "autosize": "^4.0.2",
+    "better-scroll": "^1.11.1",
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
     "popmotion": "^8.2.1",
