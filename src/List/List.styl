@@ -136,11 +136,8 @@
   }
   &.error > {
     .line {
-      .extra {
+      .extra, .extra .brief {
         color: #f50;
-        .brief {
-          color: #f50;
-        }
       }
     }
   }
@@ -151,7 +148,7 @@
       }
     }
     .line {
-      .content, .extra {
+      .content, .extra, .extra .brief {
         color: $color-text-disabled;
       }
     }
