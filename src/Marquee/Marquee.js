@@ -35,6 +35,10 @@ export default class Marquee {
     const ease = easing.linear
     const delayMS = delayS * 1000
 
+    if (this.action) {
+      this.action.stop()
+    }
+
     this.action = chain(
       tween({ from, to, duration, ease }),
       delay(delayMS),
