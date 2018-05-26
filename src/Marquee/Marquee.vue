@@ -1,8 +1,8 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import { MutationObserver } from 'vue-observable'
-import { styler, chain, delay, tween, action, easing } from 'popmotion'
 import { numericType } from '../_utils'
+import Marquee from './Marquee'
 
 export default {
   name: 'FMarquee',
@@ -19,54 +19,28 @@ export default {
   },
 
   methods: {
-    runMarquee(marqueeWidth, wrapperWidth, marqueeStyler, from = 0) {
-      if (this._stop) return
-      const delayMS = this.delay * 1000
-      const to = marqueeWidth - wrapperWidth + 5 - from
-      const duration = (to / this.speed) * 1000
-      this._action = chain(
-        tween({
-          duration,
-          from,
-          to: 0 - to,
-          ease: easing.linear
-        }),
-        delay(delayMS),
-        action(({ update, complete }) => complete(update(0))),
-        delay(delayMS)
-      ).start({
-        update: marqueeStyler.set('x'),
-        complete: () => {
-          this.runMarquee(marqueeWidth, wrapperWidth, marqueeStyler)
-        }
-      })
+    start() {
+      this.marquee && this.marquee.start()
     },
-    marquee() {
-      this.$nextTick(() => {
-        this._action && this._action.stop()
-        const wrapperEl = this.$el
-        const marqueeEl = this.$refs.marquee
-        const wrapperWidth = wrapperEl.clientWidth / 2
-        const marqueeWidth = marqueeEl.offsetWidth
-        const marqueeStyler = styler(marqueeEl)
-        if (marqueeWidth > wrapperWidth) {
-          this._stop = false
-          this.runMarquee(marqueeWidth, wrapperWidth, marqueeStyler)
-        } else {
-          this._stop = true
-          marqueeStyler.set('x', 0)
-        }
-      })
+    stop() {
+      this.marquee && this.marquee.stop()
     }
   },
 
   mounted() {
-    this.$nextTick(this.marquee)
+    this.$nextTick(() => {
+      this.marquee = new Marquee(
+        this.$el,
+        this.$refs.marquee,
+        this.$props
+      )
+      this.start()
+    })
   },
 
   render() {
     return <div styleName="@marquee">
-      <MutationObserver onMutation={this.marquee}>
+      <MutationObserver onMutation={this.start}>
         <div styleName="inner" ref="marquee">
           {this.$slots.default}
         </div>
