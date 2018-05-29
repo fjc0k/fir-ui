@@ -1,3 +1,6 @@
+// @index(!scroll)
+
+export { default as dom } from './dom'
 export { default as isNumeric } from './isNumeric'
 export { default as isThenable } from './isThenable'
 export { default as normalizeData } from './normalizeData'

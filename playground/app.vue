@@ -14,11 +14,46 @@
       最近网站升级，可能出现卡顿，敬请理解。<f-icon name="frown-o" />
     </f-notice-bar>
 
-    <!-- <f-Carousel class="my-carousel">
-      <div class="v-item" style="height: 300px;line-height:300px">carousel 1</div>
-      <div class="v-item" style="height: 300px;line-height:300px">carousel 2</div>
-      <div class="v-item" style="height: 300px;line-height:300px">carousel 3</div>
-    </f-Carousel> -->
+    <br />
+    <f-carousel loop style="height:200px" direction="vertical" autoplay>
+      <div style="height:200px;line-height:200px;text-align:center;background:#ffc069">
+        1
+      </div>
+      <div style="height:200px;line-height:200px;text-align:center;background:#cf1322">
+        2
+      </div>
+      <div v-if="slide4" style="height:200px;line-height:200px;text-align:center;background:blue">
+        2.5
+      </div>
+      <div style="height:200px;line-height:200px;text-align:center;background:#7cb305">
+        3
+      </div>
+    </f-carousel>
+    <br />
+
+    <f-button @click.native="slide4=true">add</f-button>
+
+    <FPagination current="0" total="10" mode="default">
+
+    </FPagination>
+
+    <f-list header="滚动列表">
+      <f-scroll style="height:150px">
+        <f-list-item @click.native="log" v-for="n in 10" :key="n">
+          {{ n }}
+        </f-list-item>
+        <!-- <div slot="top">松开立即刷新</div> -->
+        <div slot="bottom">上拉加载更多</div>
+      </f-scroll>
+    </f-list>
+
+    <br />
+
+    <f-scroll direction="horizontal">
+      <f-card v-for="n in 10" :key="n">
+        {{ n }}
+      </f-card>
+    </f-scroll>
 
     <f-list header="表单" footer="备注">
       <f-list-item  arrow="horizontal">
@@ -51,7 +86,13 @@
 
 <script>
 export default {
+  methods: {
+    log() {
+      console.log('log')
+    }
+  },
   data: () => ({
+    slide4: false,
     actions: ['微信', 'QQ', ['微博', 'wb', {
       danger: true,
       onClick() {

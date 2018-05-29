@@ -5,7 +5,11 @@ import Messenger from 'vue-messenger'
 export default {
   name: 'FInput',
 
-  inject: ['InputStyles'],
+  inject: {
+    InputStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

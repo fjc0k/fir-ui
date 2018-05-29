@@ -19,7 +19,11 @@ import { oneOf } from '../_utils'
 export default {
   name: 'FNavBar',
 
-  inject: ['NavBarStyles'],
+  inject: {
+    NavBarStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('NavBarStyles')

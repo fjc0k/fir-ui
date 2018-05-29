@@ -7,7 +7,11 @@ import Icon from '../Icon/Icon.vue'
 export default {
   name: 'FStepper',
 
-  inject: ['StepperStyles'],
+  inject: {
+    StepperStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

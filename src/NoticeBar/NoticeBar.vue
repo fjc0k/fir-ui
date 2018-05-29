@@ -38,7 +38,11 @@ import Marquee from '../Marquee/Marquee.vue'
 export default {
   name: 'FNoticeBar',
 
-  inject: ['NoticeBarStyles'],
+  inject: {
+    NoticeBarStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     toggleVisibility(true, true),

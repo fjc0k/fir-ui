@@ -16,7 +16,11 @@ export default {
     event: 'input'
   },
 
-  inject: ['ImagePickerStyles'],
+  inject: {
+    ImagePickerStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

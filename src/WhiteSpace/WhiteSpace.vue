@@ -5,7 +5,11 @@ import { oneOf } from '../_utils'
 export default {
   name: 'FWhiteSpace',
 
-  inject: ['WhiteSpaceStyles'],
+  inject: {
+    WhiteSpaceStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('WhiteSpaceStyles')

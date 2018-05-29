@@ -5,7 +5,11 @@ import { oneOf } from '../_utils'
 export default {
   name: 'FDivider',
 
-  inject: ['DividerStyles'],
+  inject: {
+    DividerStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('DividerStyles')

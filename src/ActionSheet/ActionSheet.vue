@@ -51,7 +51,11 @@ import maskProps from '../Popup/maskProps'
 export default {
   name: 'FActionSheet',
 
-  inject: ['ActionSheetStyles'],
+  inject: {
+    ActionSheetStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     toggleVisibility(false, true),

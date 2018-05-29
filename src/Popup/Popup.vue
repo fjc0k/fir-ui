@@ -26,7 +26,11 @@ let zIndex = 5000
 export default {
   name: 'FPopup',
 
-  inject: ['PopupStyles'],
+  inject: {
+    PopupStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     toggleVisibility(false, true),

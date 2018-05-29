@@ -5,7 +5,11 @@ import { oneOf } from '../_utils'
 export default {
   name: 'FWingBlank',
 
-  inject: ['WingBlankStyles'],
+  inject: {
+    WingBlankStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('WingBlankStyles')

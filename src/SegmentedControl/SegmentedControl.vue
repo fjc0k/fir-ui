@@ -6,7 +6,11 @@ import { normalizeData } from '../_utils'
 export default {
   name: 'FSegmentedControl',
 
-  inject: ['SegmentedControlStyles'],
+  inject: {
+    SegmentedControlStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

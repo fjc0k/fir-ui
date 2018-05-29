@@ -27,7 +27,11 @@ import maskProps from '../Popup/maskProps'
 export default {
   name: 'FToast',
 
-  inject: ['ToastStyles'],
+  inject: {
+    ToastStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     toggleVisibility(false, true),

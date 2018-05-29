@@ -12,7 +12,11 @@ const Icon = getIcon({
 export default {
   name: 'FIcon',
 
-  inject: ['IconStyles'],
+  inject: {
+    IconStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [CSSModules('IconStyles')],
 

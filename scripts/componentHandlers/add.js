@@ -26,7 +26,11 @@ export default {
 
   functional: true,
 
-  inject: ['${ParentComponentName || ComponentName}Styles'],
+  inject: {
+    ${ParentComponentName || ComponentName}Styles: {
+      default: () => ({})
+    }
+  },
 
   render(h, ctx) {
     h = CSSModules(h, '${ParentComponentName || ComponentName}Styles', ctx)
@@ -46,7 +50,11 @@ import CSSModules from 'vue-css-modules'
 export default {
   name: 'F${ComponentName}',
 
-  inject: ['${ParentComponentName || ComponentName}Styles'],
+  inject: {
+    ${ParentComponentName || ComponentName}Styles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('${ParentComponentName || ComponentName}Styles')

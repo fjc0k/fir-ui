@@ -27,7 +27,11 @@ export default {
     Item: ListItem
   },
 
-  inject: ['ListStyles'],
+  inject: {
+    ListStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('ListStyles')

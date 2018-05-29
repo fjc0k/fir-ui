@@ -7,7 +7,11 @@ import Marquee from './Marquee'
 export default {
   name: 'FMarquee',
 
-  inject: ['MarqueeStyles'],
+  inject: {
+    MarqueeStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('MarqueeStyles')

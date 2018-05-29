@@ -37,7 +37,11 @@ export default {
     event: 'input'
   },
 
-  inject: ['StepsStyles'],
+  inject: {
+    StepsStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

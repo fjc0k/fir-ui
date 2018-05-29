@@ -6,7 +6,11 @@ import Icon from '../Icon/Icon.vue'
 export default {
   name: 'FButton',
 
-  inject: ['ButtonStyles'],
+  inject: {
+    ButtonStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('ButtonStyles')

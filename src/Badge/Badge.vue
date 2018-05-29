@@ -17,7 +17,11 @@ import { numericType } from '../_utils'
 export default {
   name: 'FBadge',
 
-  inject: ['BadgeStyles'],
+  inject: {
+    BadgeStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('BadgeStyles')

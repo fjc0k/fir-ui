@@ -34,7 +34,11 @@ export default {
     Brief: ListItemBrief
   },
 
-  inject: ['ListStyles'],
+  inject: {
+    ListStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('ListStyles')

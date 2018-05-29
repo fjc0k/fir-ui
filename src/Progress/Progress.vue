@@ -5,7 +5,11 @@ import { numericType, oneOf } from '../_utils'
 export default {
   name: 'FProgress',
 
-  inject: ['ProgressStyles'],
+  inject: {
+    ProgressStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('ProgressStyles')

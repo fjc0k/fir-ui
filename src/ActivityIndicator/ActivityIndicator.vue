@@ -16,7 +16,11 @@ import Icon from '../Icon/Icon.vue'
 export default {
   name: 'FActivityIndicator',
 
-  inject: ['ActivityIndicatorStyles'],
+  inject: {
+    ActivityIndicatorStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     toggleVisibility(true, true),

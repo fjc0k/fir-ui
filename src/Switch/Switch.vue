@@ -11,7 +11,11 @@ export default {
     event: 'input'
   },
 
-  inject: ['SwitchStyles'],
+  inject: {
+    SwitchStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

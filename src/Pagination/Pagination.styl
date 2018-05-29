@@ -1,0 +1,30 @@
+@require '../_styles/settings';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18 * $hd;
+  color: $color-text-base;
+  background: none;
+  text-align: center;
+}
+
+.indicator {
+  flex: 1;
+  .active {
+    color: $color-link;
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 8 * $hd;
+  height: 8 * $hd;
+  margin-right: $h-spacing-sm;
+  border-radius: $radius-circle;
+  background: $color-icon-base;
+  &.active {
+    background: #888;
+  }
+}

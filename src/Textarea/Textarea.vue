@@ -8,7 +8,11 @@ import Input from '../Input/Input.vue'
 export default {
   name: 'FTextarea',
 
-  inject: ['TextareaStyles'],
+  inject: {
+    TextareaStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

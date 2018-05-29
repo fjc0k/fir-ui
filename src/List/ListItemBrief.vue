@@ -4,7 +4,11 @@ import CSSModules from 'vue-css-modules'
 export default {
   name: 'FListItemBrief',
 
-  inject: ['ListStyles'],
+  inject: {
+    ListStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     CSSModules('ListStyles')

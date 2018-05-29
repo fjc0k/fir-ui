@@ -1,0 +1,23 @@
+@require '../_styles/settings';
+
+.container {
+  overflow: hidden;
+}
+
+.scroll {
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  z-index: 1;
+  &.vertical {
+    display: flex;
+    flex-direction: column;
+  }
+  &.horizontal.calculated {
+    display: inline-flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.top, .bottom {
+  flex-center: true;
+}

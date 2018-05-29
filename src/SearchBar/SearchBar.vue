@@ -31,7 +31,11 @@ export default {
 
   inheritAttrs: false,
 
-  inject: ['SearchBarStyles'],
+  inject: {
+    SearchBarStyles: {
+      default: () => ({})
+    }
+  },
 
   mixins: [
     Messenger,

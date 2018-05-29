@@ -1,5 +1,29 @@
 @require '../_styles/settings';
 
-.carousel {
+.container {
+  position: relative;
+  overflow: hidden;
+}
 
+.carousel {
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+.indicator {
+  position: absolute;
+  .horizontal & {
+    bottom: 0;
+    width: 100%;
+  }
+  .vertical & {
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: rotate(90deg) translateZ(0px);
+    z-index: 2;
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+  }
 }

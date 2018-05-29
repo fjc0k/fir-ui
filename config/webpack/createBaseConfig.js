@@ -66,6 +66,7 @@ module.exports = ({ isProd }) => {
           plugins: [
             'transform-vue-jsx',
             '@babel/transform-runtime',
+            '@babel/plugin-proposal-class-properties',
             ['import', {
               libraryName: 'lodash',
               libraryDirectory: '',
