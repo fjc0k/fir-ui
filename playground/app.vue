@@ -63,16 +63,20 @@
           hello
         </f-list-item-brief>
       </f-list-item>
-      <f-list-item error disabled  arrow="horizontal">
-        <f-icon name="sound" slot="thumb" />
-        如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
-        <div slot="extra">
-          亚拉锁
-          <f-list-item-brief>
-            hello
-          </f-list-item-brief>
+      <FSwipeAction>
+        <f-list-item error disabled  arrow="horizontal">
+          <f-icon name="sound" slot="thumb" />
+          如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
+          <div slot="extra">
+            亚拉锁
+          </div>
+        </f-list-item>
+        <div slot="right">
+          <FSwipeActionButton type="cancel">取消</FSwipeActionButton>
+          <FSwipeActionButton>删除</FSwipeActionButton>
+          <FSwipeActionButton type="primary">取关</FSwipeActionButton>
         </div>
-      </f-list-item>
+      </FSwipeAction>
     </f-list>
 
     <f-divider>

@@ -1,0 +1,31 @@
+@require '../_styles/settings';
+
+.swipe-action {
+  position: relative;
+}
+
+.content {
+  width: 100%;
+}
+
+.actions, .actions > *, .button {
+  flex-center: inline;
+}
+
+.actions > *, .button {
+  height: 100%;
+}
+
+.button {
+  color: white;
+  padding: 0 $h-spacing-md;
+  &.danger {
+    background: $brand-error;
+  }
+  &.primary {
+    background: $brand-primary;
+  }
+  &.cancel {
+    background: gray;
+  }
+}
