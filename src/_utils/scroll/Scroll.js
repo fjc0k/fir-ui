@@ -17,7 +17,11 @@ export default class Scroll {
     [PROP_Y]: 0
   }
 
+  options = {}
+
   listeners = []
+
+  scrollCSSText = null
 
   constructor({
     container,
@@ -26,12 +30,7 @@ export default class Scroll {
   } = {}, {
     direction = DIRECTION_VERTICAL_TEXT,
     bindToWrapper = false,
-    klass = {},
     on = {},
-    offset = {
-      minXY: 0,
-      maxXY: 0
-    },
     ...options
   } = {}) {
     const isVertical = direction === DIRECTION_VERTICAL_TEXT
@@ -54,9 +53,7 @@ export default class Scroll {
     this.options = {
       direction,
       bindToWrapper,
-      klass,
       on,
-      offset,
       ...options,
       isVertical,
       XY,
@@ -64,24 +61,74 @@ export default class Scroll {
     }
   }
 
-  init() {
-    if (this.beforeInit) {
-      this.beforeInit()
-    }
-
-    this.refresh()
-
-    if (this.afterInit) {
-      this.afterInit()
+  updateOptions(options = {}) {
+    this.options = {
+      ...this.options,
+      ...options,
+      on: {
+        ...this.options.on,
+        ...options.on
+      }
     }
   }
 
-  start() {
+  hook(name, ...args) {
+    if (this[name]) {
+      return this[name](...args)
+    }
+    return Promise.resolve()
+  }
+
+  listener(name, ...args) {
+    if (this.options.on[name]) {
+      this.options.on[name](...args)
+    }
+  }
+
+  init() {
+    this.hook('beforeInit')
+
+    const {
+      options: {
+        isVertical,
+        XY,
+        WH
+      },
+      nodes: {
+        scroll: scrollNode
+      },
+      stylers: {
+        container: containerStyler,
+        scroll: scrollStyler
+      }
+    } = this
+
+    this.listeners.forEach(listener => listener.stop())
+    this.listeners = []
+
+    if (!isVertical) {
+      if (this.scrollCSSText !== null) {
+        scrollNode.style.cssText = this.scrollCSSText
+      }
+      this.ajustScrollWidth()
+    }
+
+    this.scroll = {
+      ...this.scroll,
+      minXY: containerStyler.get(WH) - scrollStyler.get(WH),
+      maxXY: 0,
+      translateXY: value(0, scrollStyler.set(XY))
+    }
+
+    this.hook('afterInit')
+  }
+
+  start(options) {
+    options && this.updateOptions(options)
+
     this.init()
 
-    if (this.beforeStart) {
-      this.beforeStart()
-    }
+    this.hook('beforeStart')
 
     const {
       nodes: {
@@ -90,8 +137,7 @@ export default class Scroll {
       options: {
         isVertical,
         XY,
-        bindToWrapper,
-        on
+        bindToWrapper
       },
       scroll: {
         translateXY
@@ -107,20 +153,21 @@ export default class Scroll {
       pointer({ [XY]: translateXY.get() })
         .pipe(point => point[XY])
         .start(translateXY)
-      if (this.scrollStart) {
-        this.scrollStart(e, getPointXY(e))
-      }
+      this.hook('scrollStart', e, getPointXY(e))
     }))
 
     this.listeners.push(listen(bindToWrapper ? scrollNode : document, 'touchmove').start(e => {
       if (!isValid) return
       const direction = this.getDirection(getPointXY(e))
+      // eslint-disable-next-line
       if (!(
         (!isVertical && (direction & DIRECTION_HORIZONTAL)) ||
         (isVertical && (direction & DIRECTION_VERTICAL))
       )) {
         isValid = false
         translateXY.stop()
+      } else {
+        this.hook('scrollMove', e, getPointXY(e))
       }
     }))
 
@@ -137,48 +184,14 @@ export default class Scroll {
       }
       e.preventDefault()
       scrolling = true
-      const callback = () => {
+      this.hook('scrollEnd', e, getPointXY(e)).then(() => {
         scrolling = false
         translateXY.stop()
-        on.scrollEnd && on.scrollEnd(this)
-      }
-      if (this.scrollEnd) {
-        this.scrollEnd(e, getPointXY(e)).then(callback)
-      } else {
-        callback()
-      }
+        this.listener('scrollEnd', this)
+      })
     }))
 
-    on.afterStart && on.afterStart()
-  }
-
-  refresh() {
-    const {
-      options: {
-        offset,
-        isVertical,
-        XY,
-        WH
-      },
-      stylers: {
-        container: containerStyler,
-        scroll: scrollStyler
-      }
-    } = this
-
-    this.listeners.forEach(listener => listener.stop())
-    this.listeners = []
-
-    if (!isVertical) {
-      this.ajustScrollWidth()
-    }
-
-    this.scroll = {
-      ...this.scroll,
-      minXY: containerStyler.get(WH) - scrollStyler.get(WH) + offset.minXY,
-      maxXY: 0 + offset.maxXY,
-      translateXY: value(0 + offset.maxXY, scrollStyler.set(XY))
-    }
+    this.listener('ready', this)
   }
 
   scrollTo(targetXY, tweenOptions = {}) {
@@ -221,7 +234,10 @@ export default class Scroll {
     })
 
     scrollStyler.set(PROP_W, totalWidth)
-    scrollNode.style.cssText += `;display:-webkit-inline-box;display:-webkit-inline-flex;display:-moz-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;`
+    if (this.scrollCSSText === null) {
+      this.scrollCSSText = scrollNode.style.cssText
+    }
+    scrollNode.style.cssText = this.scrollCSSText + `;display:-webkit-inline-box;display:-webkit-inline-flex;display:-moz-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;`
   }
 
   getDistance(point) {

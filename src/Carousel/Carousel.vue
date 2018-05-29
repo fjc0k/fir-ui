@@ -5,7 +5,7 @@
         <slot />
       </div>
     </MutationObserver>
-    <slot name="indicator" :index="localIndex" :total="total">
+    <slot name="indicator" :index="localIndex" :total="total" v-if="indicator">
       <Pagination
         styleName="indicator"
         :index="localIndex + 1"
@@ -60,6 +60,10 @@ export default {
       ...numericType(0.1, 0, 1),
       transform: 'number'
     },
+    indicator: {
+      type: Boolean,
+      default: true
+    },
     autoplay: Boolean,
     loop: Boolean
   },
@@ -70,18 +74,11 @@ export default {
   }),
 
   methods: {
-    initiated() {
-      this.observable = true
-    },
-    slideEnd(index) {
-      this.sendIndex(index)
-    },
     handleMutate() {
       this.observable = false
       this.$nextTick(() => {
         this.scroll.start()
       })
-      console.log('mute')
     }
   },
 
@@ -96,10 +93,12 @@ export default {
         interval: this.localInterval,
         threshold: this.localThreshold,
         on: {
-          initiated: this.initiated,
-          slideEnd: this.slideEnd,
-          afterStart: () => {
+          ready: () => {
+            this.observable = true
             this.total = this.scroll.totalPage
+          },
+          slideEnd: index => {
+            this.sendIndex(index)
           }
         }
       })

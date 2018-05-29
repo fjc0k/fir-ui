@@ -60,14 +60,6 @@ export default class Carousel extends Scroll {
     }
   }
 
-  afterInit() {
-    const { options: { on } } = this
-
-    if (on.initiated) {
-      on.initiated()
-    }
-  }
-
   beforeStart() {
     const {
       currentIndex,

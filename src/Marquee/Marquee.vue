@@ -1,8 +1,8 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { MutationObserver } from 'vue-observable'
 import { numericType } from '../_utils'
 import Marquee from './Marquee'
+import MutationObserver from '../MutationObserver/MutationObserver.vue'
 
 export default {
   name: 'FMarquee',
@@ -44,7 +44,7 @@ export default {
 
   render() {
     return <div styleName="@marquee">
-      <MutationObserver onMutation={this.start}>
+      <MutationObserver onMutate={this.start}>
         <div styleName="inner" ref="marquee">
           {this.$slots.default}
         </div>

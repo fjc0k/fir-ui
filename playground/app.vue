@@ -15,18 +15,18 @@
     </f-notice-bar>
 
     <br />
-    <f-carousel loop style="height:200px" direction="vertical" autoplay>
+    <f-carousel loop style="height:200px" :indicator="false" autoplay>
       <div style="height:200px;line-height:200px;text-align:center;background:#ffc069">
         1
       </div>
       <div style="height:200px;line-height:200px;text-align:center;background:#cf1322">
         2
       </div>
-      <div v-if="slide4" style="height:200px;line-height:200px;text-align:center;background:blue">
-        2.5
-      </div>
       <div style="height:200px;line-height:200px;text-align:center;background:#7cb305">
         3
+      </div>
+      <div v-if="slide4" style="height:200px;line-height:200px;text-align:center;background:blue">
+        4
       </div>
     </f-carousel>
     <br />
