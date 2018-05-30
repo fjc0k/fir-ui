@@ -1,15 +1,18 @@
 <template>
   <Carousel
+    :index="$slots.left ? 1 : 0"
     direction="horizontal"
     :indicator="false"
-    styleName="@swipe-action">
-    <div styleName="actions">
+    :scrollOptions="scrollOptions"
+    styleName="@swipe-action"
+    ref="carousel">
+    <div styleName="actions" v-if="$slots.left">
       <slot name="left" />
     </div>
     <div styleName="content">
       <slot />
     </div>
-    <div styleName="actions">
+    <div styleName="actions" v-if="$slots.right">
       <slot name="right" />
     </div>
   </Carousel>
@@ -33,9 +36,27 @@ export default {
     }
   },
 
+  provide() {
+    return {
+      SwipeAction: this
+    }
+  },
+
   mixins: [
     CSSModules('SwipeActionStyles')
   ],
+
+  data: () => ({
+    scrollOptions: {
+      disableCross: true
+    }
+  }),
+
+  methods: {
+    close() {
+      this.$refs.carousel.scroll.slideTo(this.$slots.left ? 1 : 0)
+    }
+  },
 
   components: { Carousel }
 }

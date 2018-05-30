@@ -71,9 +71,14 @@
             亚拉锁
           </div>
         </f-list-item>
-        <div slot="right">
+        <div slot="left">
           <FSwipeActionButton type="cancel">取消</FSwipeActionButton>
           <FSwipeActionButton>删除</FSwipeActionButton>
+          <FSwipeActionButton type="primary">取关</FSwipeActionButton>
+        </div>
+        <div slot="right">
+          <FSwipeActionButton type="cancel">取消</FSwipeActionButton>
+          <FSwipeActionButton :autoClose="false" @click="close => close()">删除</FSwipeActionButton>
           <FSwipeActionButton type="primary">取关</FSwipeActionButton>
         </div>
       </FSwipeAction>

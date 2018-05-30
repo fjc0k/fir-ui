@@ -1,4 +1,4 @@
-import { toArray } from 'lodash'
+import { toArray, isObject } from 'lodash'
 import { listen, styler, value, pointer, tween, chain, action } from 'popmotion'
 import { getDirection, getDistance, getPointXY } from './calc'
 import {
@@ -17,9 +17,9 @@ export default class Scroll {
     [PROP_Y]: 0
   }
 
-  options = {}
-
   listeners = []
+
+  options = {}
 
   scrollCSSText = null
 
@@ -30,6 +30,7 @@ export default class Scroll {
   } = {}, {
     direction = DIRECTION_VERTICAL_TEXT,
     bindToWrapper = false,
+    disableCross = false,
     on = {},
     ...options
   } = {}) {
@@ -50,15 +51,16 @@ export default class Scroll {
       scroll: scrollStyler
     }
 
-    this.options = {
+    this.updateOptions({
       direction,
       bindToWrapper,
+      disableCross,
       on,
       ...options,
       isVertical,
       XY,
       WH
-    }
+    })
   }
 
   updateOptions(options = {}) {
@@ -66,8 +68,25 @@ export default class Scroll {
       ...this.options,
       ...options,
       on: {
-        ...this.options.on,
-        ...options.on
+        ...(this.options.on || {}),
+        ...(options.on || {})
+      },
+      disableCross: {
+        ...(
+          'disableCross' in options ? (
+            isObject(options.disableCross) ?
+              options.disableCross : (
+                options.disableCross === true ?
+                  {
+                    top: true,
+                    right: true,
+                    bottom: true,
+                    left: true
+                  } :
+                  {}
+              )
+          ) : (this.options.disableCross || {})
+        )
       }
     }
   }
@@ -137,10 +156,13 @@ export default class Scroll {
       options: {
         isVertical,
         XY,
-        bindToWrapper
+        bindToWrapper,
+        disableCross
       },
       scroll: {
-        translateXY
+        translateXY,
+        minXY,
+        maxXY
       }
     } = this
 
@@ -152,6 +174,11 @@ export default class Scroll {
       this.originalPoint = getPointXY(e)
       pointer({ [XY]: translateXY.get() })
         .pipe(point => point[XY])
+        .while(isVertical ? v => {
+          return !(!!disableCross.bottom && v <= maxXY) && !(!!disableCross.top && v >= minXY)
+        } : v => {
+          return !(!!disableCross.right && v <= maxXY) && !(!!disableCross.left && v >= minXY)
+        })
         .start(translateXY)
       this.hook('scrollStart', e, getPointXY(e))
     }))
@@ -203,11 +230,14 @@ export default class Scroll {
           translateXY
         }
       } = this
+
+      const to = Math.min(Math.max(targetXY, minXY), maxXY)
+
       chain(
         tween({
           ...tweenOptions,
           from: translateXY.get(),
-          to: Math.min(Math.max(targetXY, minXY), maxXY)
+          to
         }),
         action(resolve)
       ).start(translateXY)

@@ -65,7 +65,11 @@ export default {
       default: true
     },
     autoplay: Boolean,
-    loop: Boolean
+    loop: Boolean,
+    scrollOptions: {
+      type: Object,
+      default: () => ({})
+    }
   },
 
   data: () => ({
@@ -88,6 +92,7 @@ export default {
         container: this.$refs.container,
         scroll: this.$refs.scroll
       }, {
+        ...this.scrollOptions,
         ...this.$props,
         index: this.localIndex,
         interval: this.localInterval,
