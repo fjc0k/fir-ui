@@ -1,6 +1,6 @@
 <template>
   <div styleName="container $direction" ref="container">
-    <MutationObserver :observable="observable" @mutate="handleMutate">
+    <MutationObserver :observable="observable" @mutate="refresh">
       <div styleName="@carousel" ref="scroll">
         <slot />
       </div>
@@ -78,11 +78,18 @@ export default {
   }),
 
   methods: {
-    handleMutate() {
-      this.observable = false
-      this.$nextTick(() => {
-        this.scroll.start()
-      })
+    onReceiveIndex(index) {
+      if (this.scroll) {
+        this.scroll.slideTo(index)
+      }
+    },
+    refresh(options) {
+      if (this.scroll) {
+        this.observable = false
+        this.$nextTick(() => {
+          this.scroll.start(options)
+        })
+      }
     }
   },
 
