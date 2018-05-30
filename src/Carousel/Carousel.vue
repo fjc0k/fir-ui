@@ -103,6 +103,7 @@ export default {
             this.total = this.scroll.totalPage
           },
           slideEnd: index => {
+            this.$emit('slide-end', index)
             this.sendIndex(index)
           }
         }
