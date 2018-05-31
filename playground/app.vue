@@ -31,7 +31,7 @@
     </f-carousel>
     <br />
 
-    <f-button @click.native="slide4=true">add</f-button>
+    <f-button @click.native="slide4=true">Toggle</f-button>
 
     <FPagination current="0" total="10" mode="default">
 
@@ -84,20 +84,11 @@
       </FSwipeAction>
     </f-list>
 
-    <f-modal position="bottom" visible>
-      <f-list header="委托买入">
-        <f-list-item extra="长城">股票名称</f-list-item>
-        <f-list-item extra="CC">代码</f-list-item>
-      </f-list>
-      <f-modal-button-group direction="horizontal" slot="footer">
-        <f-modal-button>
-          取消
-        </f-modal-button>
-        <f-modal-button>
-          买入
-        </f-modal-button>
-      </f-modal-button-group>
-    </f-modal>
+    <f-modal-operation v-model="slide4">
+      <f-modal-button>标为未读</f-modal-button>
+      <f-modal-button>置顶聊天</f-modal-button>
+      <f-modal-button>删除 Ta</f-modal-button>
+    </f-modal-operation>
 
     <f-divider>
       <f-icon name="sound" /> 我是有底线的

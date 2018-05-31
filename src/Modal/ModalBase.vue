@@ -5,7 +5,7 @@
     :maskClosable="maskClosable"
     :maskThrough="maskThrough"
     :maskTransparent="maskTransparent">
-    <div styleName="@modal $position" v-show="localVisible">
+    <div :styleName="`@modal $position ${extraStyleName}`" v-show="localVisible">
       <div styleName="content">
         <div styleName="header" v-if="title || $slots.title">
           <div styleName="title">
@@ -52,6 +52,7 @@ export default {
       ...oneOf(['center', 'top', 'bottom'])
     },
     title: null,
+    extraStyleName: String,
     ...maskProps({
       closable: true,
       transparent: false,

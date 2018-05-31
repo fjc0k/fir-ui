@@ -22,23 +22,27 @@ $button-common {
   width: 100%;
   flex-center: true;
   flex-direction: column;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background-color: $fill-base;
   &.center {
     width: 270 * $hd;
-    border-radius: $radius-lg;
-    padding-top: $v-spacing-lg;
   }
   &.top, &.bottom {
     max-height: 60%;
     width: 100%;
   }
+  [data-component-list] [data-component-header] {
+    padding: $v-spacing-md;
+  }
 }
 
 .content {
+  background-color: $fill-base;
   width: 100%;
   text-align: center;
+  overflow: hidden;
+  .center & {
+    border-radius: $radius-lg;
+    padding-top: $v-spacing-lg;
+  }
 }
 
 .header {
@@ -87,6 +91,25 @@ $button-common {
       position: relative;
       hairline(top);
       @extend $button-common;
+    }
+  }
+}
+
+.operation {
+  .content {
+    border-radius: $radius-lg;
+    height: auto;
+    padding-top: 0;
+    .body {
+      padding: 0!important;
+    }
+    .button {
+      color: $color-text-base;
+      text-align: left;
+      padding-left: $h-spacing-lg;
+      &:first-child {
+        hairline-remove(top);
+      }
     }
   }
 }

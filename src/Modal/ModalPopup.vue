@@ -1,21 +1,16 @@
 <script>
-import CSSModules from 'vue-css-modules'
+import { values } from 'lodash'
+import Modal from './ModalBase.vue'
 
 export default {
   name: 'FModalPopup',
 
-  inject: {
-    ModalStyles: {
-      default: () => ({})
-    }
-  },
+  functional: true,
 
-  mixins: [
-    CSSModules('ModalStyles')
-  ],
-
-  render() {
-    return <div styleName="@modal-popup"></div>
+  render(h, { data, slots }) {
+    data.attrs = data.attrs || {}
+    data.attrs.position = 'bottom'
+    return h(Modal, data, values(slots()))
   }
 }
 </script>
