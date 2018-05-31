@@ -1,0 +1,92 @@
+@require '../_styles/settings';
+
+$button-common {
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: $color-link;
+  font-size: $modal-button-font-size;
+  height: $modal-button-height;
+  line-height: $modal-button-height;
+  display: block;
+  user-select: none;
+  ellipsis: 1;
+  &:active {
+    background-color: $fill-tap;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  flex-center: true;
+  flex-direction: column;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: $fill-base;
+  &.center {
+    width: 270 * $hd;
+    border-radius: $radius-lg;
+    padding-top: $v-spacing-lg;
+  }
+  &.top, &.bottom {
+    max-height: 60%;
+    width: 100%;
+  }
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  padding: $v-spacing-sm $h-spacing-lg $v-spacing-lg;
+  .title {
+    margin: 0;
+    font-size: $modal-font-size-heading;
+    line-height: $line-height-base;
+    color: $color-text-base;
+    text-align: center;
+  }
+}
+
+.body {
+  font-size: $font-size-subhead;
+  color: $color-text-caption;
+  line-height: $line-height-paragraph;
+  overflow: auto;
+  .modal.center & {
+    padding: 0 $h-spacing-lg $v-spacing-lg;
+  }
+}
+
+.button-group {
+  &.horizontal {
+    position: relative;
+    display: flex;
+    hairline(top);
+    .button {
+      -webkit-touch-callout: none;
+      flex: 1;
+      @extend $button-common;
+      &:first-child {
+        color: $color-text-base;
+      }
+      &:not(:first-child) {
+        position: relative;
+        hairline(left);
+      }
+    }
+  }
+  &.vertical {
+    .button {
+      -webkit-touch-callout: none;
+      display: block;
+      position: relative;
+      hairline(top);
+      @extend $button-common;
+    }
+  }
+}
