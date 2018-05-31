@@ -90,6 +90,10 @@
       <f-modal-button>删除 Ta</f-modal-button>
     </f-modal-operation>
 
+    <f-flex wrap="wrap">
+      <f-flex-item basis="20%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
+    </f-flex>
+
     <f-divider>
       <f-icon name="sound" /> 我是有底线的
     </f-divider>

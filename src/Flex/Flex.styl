@@ -1,0 +1,60 @@
+use('./camelCase.js');
+
+@require '../_styles/settings';
+
+$props = {
+  direction: {
+    key: flex-direction,
+    values: (row row-reverse column column-reverse)
+  },
+  wrap: {
+    key: flex-wrap,
+    values: (nowrap wrap wrap-reverse)
+  },
+  justify-content: {
+    key: justify-content,
+    values: (flex-start flex-end center space-between space-around)
+  },
+  align-items: {
+    key: align-items,
+    values: (stretch flex-start flex-end center baseline)
+  },
+  align-content: {
+    key: align-content,
+    values: (stretch flex-start flex-end center space-between space-around)
+  },
+  align-self: {
+    key: align-self,
+    values: (auto flex-start flex-end center baseline stretch)
+  }
+};
+
+.flex {
+  display: flex;
+  &.inline {
+    display: inline-flex;
+  }
+}
+
+.item {
+  flex: 1;
+}
+
+for $propName in keys($props) {
+  $propDescriptor = $props[$propName]
+  .{$propName} {
+    for $value in $propDescriptor.values {
+      &-{$value} {
+        // $propDescriptor.key will throw errors
+        // https://github.com/stylus/stylus/issues/1405
+        {$propDescriptor['key']}: $value;
+      }
+    }
+  }
+}
+
+:export {
+  for $propName in keys($props) {
+    {camelCase($props[$propName]['key'])}: $props[$propName].values;
+  }
+}
