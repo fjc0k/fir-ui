@@ -22,7 +22,7 @@ export default {
       ...oneOf(styles.alignSelf.split(/ /g))
     },
     order: numericType(0),
-    grow: numericType(1),
+    grow: numericType(0),
     shrink: numericType(1),
     basis: {
       type: String,
