@@ -1,0 +1,42 @@
+@require '../_styles/settings';
+
+.form {
+
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.guide {
+  display: flex;
+  align-items: center;
+  margin-right: $h-spacing-sm;
+}
+
+.icon + .label {
+  margin-left: $h-spacing-sm;
+}
+
+.desc {
+  color: $color-text-caption;
+  font-size: $font-size-subhead;
+  line-height: $line-height-paragraph;
+  ellipsis: 1;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.extra {
+  text-align: right;
+  color: $color-text-caption;
+  font-size: $font-size-caption;
+  line-height: $line-height-paragraph;
+  padding: (7 * $hd) 0 (7 * $hd) $h-spacing-sm;
+  ellipsis: 1;
+}

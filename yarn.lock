@@ -8383,6 +8383,10 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
+vue-hoc@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/vue-hoc/-/vue-hoc-0.4.3.tgz#1edbe4e6fa0f40979cbf25602b65b26af439c86a"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
@@ -8407,9 +8411,9 @@ vue-merge-data@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-merge-data/-/vue-merge-data-0.2.1.tgz#e655e190cd488ca946c05051192a4bf4ea440972"
 
-vue-messenger@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.3.0.tgz#c01a4720aa3f2e3dcc700f011d23907040343dcb"
+vue-messenger@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.3.1.tgz#db34a390553208e0b0db59a287041101c955921a"
 
 vue-observable@^0.1.1:
   version "0.1.1"

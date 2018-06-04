@@ -10,79 +10,13 @@
       </div>
     </f-nav-bar>
 
-    <f-notice-bar mode="closable">
-      最近网站升级，可能出现卡顿，敬请理解。<f-icon name="frown-o" />
-    </f-notice-bar>
-
-    <br />
-    <f-carousel loop style="height:200px" :indicator="false" autoplay>
-      <div style="height:200px;line-height:200px;text-align:center;background:#ffc069">
-        1
-      </div>
-      <div style="height:200px;line-height:200px;text-align:center;background:#cf1322">
-        2
-      </div>
-      <div style="height:200px;line-height:200px;text-align:center;background:#7cb305">
-        3
-      </div>
-      <div v-if="slide4" style="height:200px;line-height:200px;text-align:center;background:blue">
-        4
-      </div>
-    </f-carousel>
-    <br />
-
-    <f-button @click.native="slide4=true">Toggle</f-button>
-
-    <FPagination current="0" total="10" mode="default">
-
-    </FPagination>
-
-    <f-list header="滚动列表">
-      <f-scroll style="height:150px">
-        <f-list-item @click.native="log" v-for="n in 10" :key="n">
-          {{ n }}
-        </f-list-item>
-        <!-- <div slot="top">松开立即刷新</div> -->
-        <div slot="bottom">上拉加载更多</div>
-      </f-scroll>
-    </f-list>
-
-    <br />
-
-    <f-scroll direction="horizontal">
-      <f-card v-for="n in 10" :key="n">
-        {{ n }}
-      </f-card>
-    </f-scroll>
-
-    <f-list header="表单" footer="备注">
-      <f-list-item  arrow="horizontal">
-        <f-icon name="sound" slot="thumb" />
-        如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
-        <f-list-item-brief>
-          hello
-        </f-list-item-brief>
-      </f-list-item>
-      <FSwipeAction>
-        <f-list-item error disabled  arrow="horizontal">
-          <f-icon name="sound" slot="thumb" />
-          如果是属性发生变化,则返回attributes.如果是一个CharacterData节点发生变化,
-          <div slot="extra">
-            亚拉锁
-          </div>
-        </f-list-item>
-        <div slot="left">
-          <FSwipeActionButton type="cancel">取消</FSwipeActionButton>
-          <FSwipeActionButton>删除</FSwipeActionButton>
-          <FSwipeActionButton type="primary">取关</FSwipeActionButton>
-        </div>
-        <div slot="right">
-          <FSwipeActionButton type="cancel">取消</FSwipeActionButton>
-          <FSwipeActionButton :autoClose="false" @click="close => close()">删除</FSwipeActionButton>
-          <FSwipeActionButton type="primary">取关</FSwipeActionButton>
-        </div>
-      </FSwipeAction>
-    </f-list>
+    <f-form title="表单">
+      <f-form-item   label="姓名" desc="三字以内">
+        <f-input placeholder="输入" />
+        <div slot="extra">￥</div>
+      </f-form-item>
+      <div slot="tip">提示</div>
+    </f-form>
 
     <f-modal-operation v-model="slide4">
       <f-modal-button>标为未读</f-modal-button>
@@ -91,7 +25,7 @@
     </f-modal-operation>
 
     <f-flex wrap="wrap">
-      <f-flex-item basis="20%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
+      <f-flex-item basis="15%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
     </f-flex>
 
     <f-divider>

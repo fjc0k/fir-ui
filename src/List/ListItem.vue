@@ -6,9 +6,11 @@
       </slot>
     </div>
     <div styleName="line multiple=multipleLine :wrap">
-      <div styleName="content" v-if="$slots.default">
-        <slot />
-      </div>
+      <slot name="content">
+        <div styleName="content" v-if="$slots.default">
+          <slot />
+        </div>
+      </slot>
       <div styleName="extra" v-if="extra || $slots.extra">
         <slot name="extra">
           {{ extra }}
