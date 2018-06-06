@@ -17,7 +17,11 @@ module.exports = ({ isProd }) => {
       .end()
     .output
       .path(outDir)
-      .filename('[name].js')
+
+  config.resolve
+    .set('symlinks', true)
+    .alias
+      .set('@globalStyle', resolve('src/_styles/index.js'))
 
   if (!isProd) {
     config.devtool('cheap-module-eval-source-map')
@@ -28,11 +32,6 @@ module.exports = ({ isProd }) => {
       .test(/\.svg$/)
       .use('svg-to-symbol-loader')
         .loader('svg-to-symbol-loader')
-        .options({
-          extractId({ name }) {
-            return name.replace(/^ios-/, '')
-          }
-        })
 
   config.module
     .rule('html')
@@ -72,12 +71,6 @@ module.exports = ({ isProd }) => {
               libraryDirectory: '',
               camel2DashComponentName: false
             }, 'lodash'],
-            // ['import', {
-            //   libraryName: 'ant-design-icons',
-            //   customName: name => {
-            //     return `ant-design-icons/dist/mobile/svg/${name}.svg`
-            //   }
-            // }, 'ant-design-icons'],
             ['import', {
               libraryName: 'vue-observable',
               libraryDirectory: 'src',
@@ -94,7 +87,7 @@ module.exports = ({ isProd }) => {
   }
   stylusRule.use('css-loader').loader('css-loader').options({
     modules: true,
-    localIdentName: `[local]_[hash:base64:8]`,
+    localIdentName: isProd ? 'f_[hash:base64:3]' : '[local]_[hash:base64:8]',
     importLoaders: 1,
     sourceMap: !isProd
   })
@@ -121,7 +114,7 @@ module.exports = ({ isProd }) => {
       }
     ])
     config.plugin('extract-css').use(MiniCssExtractPlugin, [{
-      filename: 'fir-ui.css'
+      filename: '[name].css'
     }])
   }
 

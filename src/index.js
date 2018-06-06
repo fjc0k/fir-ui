@@ -1,4 +1,4 @@
-import './_styles'
+import '@globalStyle'
 import ComponentRegister from 'vue-component-register'
 import * as components from './components'
 
