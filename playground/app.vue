@@ -5,10 +5,28 @@
         <f-icon name="left" />
       </div>
       冬菜助手
-      <div slot="right">
+      <div @click="drawer=!drawer" slot="right">
         <f-icon name="ellipsis" />
       </div>
     </f-nav-bar>
+
+    <FDrawer apper="push" v-model="drawer" @show="$log('show')">
+      <f-form title="表单" labelWidth="5em">
+        <f-form-item label="姓名" desc="三字以内">
+          min1
+          <div slot="extra">￥</div>
+        </f-form-item>
+        <f-form-item label="姓名" desc="三字以内">
+          min1
+          <div slot="extra">￥</div>
+        </f-form-item>
+        <f-form-item label="姓名" desc="三字以内">
+          min1
+          <div slot="extra">￥</div>
+        </f-form-item>
+        <div slot="tip">请勾选注册协议</div>
+      </f-form>
+    </FDrawer>
 
     <f-form title="表单" labelWidth="5em">
       <f-form-item label="姓名" desc="三字以内">
@@ -49,6 +67,7 @@ export default {
     }
   },
   data: () => ({
+    drawer: false,
     slide4: false,
     actions: ['微信', 'QQ', ['微博', 'wb', {
       danger: true,
