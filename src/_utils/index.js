@@ -1,5 +1,6 @@
 // @index(!scroll)
 
+export { default as chunk } from './chunk'
 export { default as dom } from './dom'
 export { default as isNumeric } from './isNumeric'
 export { default as isThenable } from './isThenable'

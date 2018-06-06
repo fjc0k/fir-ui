@@ -14,6 +14,15 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
     </f-notice-bar>
 
+    <f-grid cols="6">
+      <f-grid-item icon="voice">hellohellohellohello</f-grid-item>
+      <f-grid-item icon="voice">hello</f-grid-item>
+      <f-grid-item icon="voice">hello</f-grid-item>
+      <f-grid-item icon="voice">hello</f-grid-item>
+      <f-grid-item icon="voice">hello</f-grid-item>
+      <f-grid-item icon="voice">hello</f-grid-item>
+    </f-grid>
+
     <FDrawer apper="push" v-model="drawer" @show="$log('show')">
       <f-form title="表单" labelWidth="5em">
         <f-form-item label="姓名" desc="三字以内">
