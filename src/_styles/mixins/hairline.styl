@@ -32,10 +32,10 @@ v-hairline-base() {
   }
 }
 
-hairline($directions = all, $color = $border-color-base, $radius = 0) {
+hairline($directions = all, $color = $border-color-base, $radius = 0, $type = 'solid') {
   if $directions == all {
     // all
-    border: 1PX solid $color;
+    border: 1PX $type $color;
     border-radius: $radius;
 
     :global(html:not([data-scale])) & {
@@ -50,7 +50,7 @@ hairline($directions = all, $color = $border-color-base, $radius = 0) {
           top: 0;
           width: 200%;
           height: 200%;
-          border: 1PX solid $color;
+          border: 1PX $type $color;
           border-radius: $radius * 2;
           transform-origin: 0 0;
           transform: scale(0.5);
@@ -62,7 +62,7 @@ hairline($directions = all, $color = $border-color-base, $radius = 0) {
   } else {
     // a list: (top? right? bottom? left?)
     for $direction in $directions {
-      border-{$direction}: 1PX solid $color;
+      border-{$direction}: 1PX $type $color;
     }
 
     :global(html:not([data-scale])) & {
