@@ -12,14 +12,14 @@
     </div>
     <div styleName="action">
       <Icon
-        name="close"
-        size="xxs"
+        name="cross"
+        size="md"
         @click.native="hide"
         v-if="mode === 'closable'"
       />
       <Icon
         name="right"
-        size="xxs"
+        size="md"
         @click.native="go"
         v-else-if="mode === 'link'"
       />
@@ -56,7 +56,7 @@ export default {
     },
     icon: {
       type: String,
-      default: 'sound'
+      default: 'voice'
     },
     url: String
   },

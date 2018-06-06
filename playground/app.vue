@@ -10,6 +10,10 @@
       </div>
     </f-nav-bar>
 
+    <f-notice-bar mode="link">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
+    </f-notice-bar>
+
     <FDrawer apper="push" v-model="drawer" @show="$log('show')">
       <f-form title="表单" labelWidth="5em">
         <f-form-item label="姓名" desc="三字以内">
