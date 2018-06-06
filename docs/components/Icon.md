@@ -21,11 +21,14 @@
     ```
 
 ## 图标列表
-<f-notice-bar>点击图标复制代码~</f-notice-bar>
 
-<div v-for="icon in icons" :key="icon.id">
-  <f-icon :name="icon.id" /> {{ icon.name }}
-</div>
+点击图标复制代码。
+
+<f-grid cols="5">
+  <f-grid-item v-for="icon in icons" :key="icon.id" :style="getStyle(icon)">
+  <f-icon :name="icon.id" style="width:25%;height:25%;" slot="icon" />
+  </f-grid-item>
+</f-grid>
 
 ## API
 
@@ -40,6 +43,14 @@ size | 图标大小 | `default`（继承父元素的大小） &vert; `xxs` &vert
 import icons from 'ant-design-icons/dist/mobile/anticons.json'
 
 export default {
-  data: () => ({ icons })
+  data: () => ({ icons }),
+  methods: {
+    getStyle(icon) {
+      return {
+        cursor: 'pointer',
+        background: ['dislike', 'fail', 'success'].indexOf(icon.id) >= 0 ? 'gray' : null
+      }
+    }
+  }
 }
 </script>
