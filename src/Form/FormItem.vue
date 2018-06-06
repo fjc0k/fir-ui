@@ -1,5 +1,5 @@
 <template>
-  <ListItem>
+  <ListItem :feedback="false">
     <div styleName="item">
       <component :is="tag" :for="id" styleName="guide" v-if="icon || $slots.icon || label || $slots.label">
         <div styleName="icon" v-if="icon || $slots.icon">

@@ -1,5 +1,5 @@
 <template>
-  <div styleName="@list-item $align :error :disabled">
+  <div styleName="@list-item $align :feedback :error :disabled">
     <div styleName="thumb" v-if="thumb || $slots.thumb">
       <slot name="thumb">
         <img :src="thumb" />
@@ -60,7 +60,11 @@ export default {
     error: Boolean,
     multipleLine: Boolean,
     wrap: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    feedback: {
+      type: Boolean,
+      default: true
+    }
   },
 
   components: { Icon }

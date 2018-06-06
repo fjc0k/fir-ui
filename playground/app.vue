@@ -15,8 +15,12 @@
         <f-input placeholder="输入" />
         <div slot="extra">￥</div>
       </f-form-item>
-      <div slot="tip">提示</div>
+      <div slot="tip">请勾选注册协议</div>
     </f-form>
+
+    <f-wing-blank>
+      <f-button type="primary">注册</f-button>
+    </f-wing-blank>
 
     <f-modal-operation v-model="slide4">
       <f-modal-button>标为未读</f-modal-button>
