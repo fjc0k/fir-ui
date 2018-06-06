@@ -54,8 +54,8 @@
       <f-flex-item basis="15%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
     </f-flex>
 
-    <f-divider>
-      <f-icon name="voice" /> 我是有底线的
+    <f-divider type="dotted">
+      完
     </f-divider>
 
     <!-- <f-action-sheet :maskClosable="true" maskThrough title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->

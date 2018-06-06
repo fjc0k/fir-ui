@@ -27,11 +27,19 @@
   flex: 1;
   min-width: 20 * $hd;
   color: rgba($color-text-caption, 50%);
-  hairline(top, currentColor);
   .right &.right {
     flex: 0;
   }
   .left &.left {
     flex: 0;
+  }
+  &.solid {
+    hairline(top, currentColor, , solid);
+  }
+  &.dashed {
+    hairline(top, currentColor, , dashed);
+  }
+  &.dotted {
+    hairline(top, currentColor, , dotted);
   }
 }

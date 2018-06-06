@@ -16,6 +16,10 @@ export default {
   ],
 
   props: {
+    type: {
+      type: String,
+      ...oneOf(['solid', 'dashed', 'dotted'])
+    },
     align: {
       type: String,
       ...oneOf(['center', 'left', 'right'])
@@ -26,9 +30,9 @@ export default {
   render() {
     return <div styleName="@divider">
       <div styleName="inner $align :full">
-        <div styleName="line left" />
+        <div styleName="line left $type" />
         <div styleName="content">{this.$slots.default}</div>
-        <div styleName="line right" />
+        <div styleName="line right $type" />
       </div>
     </div>
   }
