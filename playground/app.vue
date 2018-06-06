@@ -10,9 +10,9 @@
       </div>
     </f-nav-bar>
 
-    <f-form title="表单">
-      <f-form-item   label="姓名" desc="三字以内">
-        <f-input placeholder="输入" />
+    <f-form title="表单" labelWidth="5em">
+      <f-form-item label="姓名" desc="三字以内">
+        min1
         <div slot="extra">￥</div>
       </f-form-item>
       <div slot="tip">请勾选注册协议</div>

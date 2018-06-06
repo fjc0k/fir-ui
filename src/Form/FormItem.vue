@@ -7,7 +7,7 @@
             <Icon :name="icon" />
           </slot>
         </div>
-        <div styleName="label" v-if="label || $slots.label">
+        <div styleName="label" :style="{ width: localLabelWidth }" v-if="label || $slots.label">
           <slot name="label">
             {{ label }}
           </slot>
@@ -46,6 +46,9 @@ export default {
   inject: {
     FormStyles: {
       default: () => ({})
+    },
+    FForm: {
+      default: null
     }
   },
 
@@ -58,7 +61,8 @@ export default {
     label: null,
     desc: null,
     extra: null,
-    labeled: Boolean
+    labeled: Boolean,
+    labelWidth: String
   },
 
   data: () => ({
@@ -68,6 +72,9 @@ export default {
   computed: {
     tag() {
       return this.labeled ? 'label' : 'div'
+    },
+    localLabelWidth() {
+      return this.labelWidth || (this.FForm && this.FForm.labelWidth)
     }
   },
 

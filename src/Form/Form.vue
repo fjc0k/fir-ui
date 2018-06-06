@@ -34,13 +34,20 @@ export default {
     }
   },
 
+  provide() {
+    return {
+      FForm: this
+    }
+  },
+
   mixins: [
     CSSModules('FormStyles')
   ],
 
   props: {
     title: null,
-    tip: null
+    tip: null,
+    labelWidth: String
   },
 
   components: { List }

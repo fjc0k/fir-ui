@@ -15,8 +15,11 @@
   margin-right: $h-spacing-sm;
 }
 
-.icon + .label {
-  margin-left: $h-spacing-sm;
+.label {
+  ellipsis: 1;
+  .icon + & {
+    margin-left: $h-spacing-sm;
+  }
 }
 
 .desc {
