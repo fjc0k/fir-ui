@@ -1,31 +1,8 @@
-import loading from './loading.svg'
-import {
-  sound,
-  ellipsis,
-  left,
-  right,
-  plus,
-  minus,
-  close,
-  search,
-  checkCircleO,
-  closeCircleO,
-  frownO
-} from 'ant-design-icons'
+import { values } from 'lodash'
+import * as symbols from 'ant-design-icons/dist/mobile'
 
 export default [
   '<svg><defs>',
-  loading,
-  sound,
-  ellipsis,
-  left,
-  right,
-  plus,
-  minus,
-  close,
-  search,
-  checkCircleO,
-  closeCircleO,
-  frownO,
+  ...values(symbols),
   '</defs></svg>'
 ].join('')

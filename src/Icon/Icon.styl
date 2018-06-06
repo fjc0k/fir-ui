@@ -20,15 +20,22 @@
   font-size: $icon-size-lg;
 }
 
-:global(.__svg_loading_path__) {
-  stroke: $brand-primary;
+:global {
+  symbol#loading path {
+    &:nth-child(1) {
+      fill: #ccc;
+    }
+    &:nth-child(2) {
+      stroke: $brand-primary;
+    }
+  }
 }
 
 .loading {
-  animation: cirle-anim 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
-@keyframes cirle-anim {
+@keyframes spin {
   100% {
     transform: rotate(360deg);
   }

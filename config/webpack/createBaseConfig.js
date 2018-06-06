@@ -72,12 +72,12 @@ module.exports = ({ isProd }) => {
               libraryDirectory: '',
               camel2DashComponentName: false
             }, 'lodash'],
-            ['import', {
-              libraryName: 'ant-design-icons',
-              customName: name => {
-                return `ant-design-icons/dist/svg/${name}.svg`
-              }
-            }, 'ant-design-icons'],
+            // ['import', {
+            //   libraryName: 'ant-design-icons',
+            //   customName: name => {
+            //     return `ant-design-icons/dist/mobile/svg/${name}.svg`
+            //   }
+            // }, 'ant-design-icons'],
             ['import', {
               libraryName: 'vue-observable',
               libraryDirectory: 'src',

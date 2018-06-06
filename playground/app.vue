@@ -2,11 +2,11 @@
   <f-container>
     <f-nav-bar mode="light">
       <div slot="left">
-        <f-icon name="left" />
+        <f-icon name="left" size="md" />
       </div>
       冬菜助手
       <div @click="drawer=!drawer" slot="right">
-        <f-icon name="ellipsis" />
+        <f-icon name="ellipsis" size="md" />
       </div>
     </f-nav-bar>
 
@@ -36,8 +36,12 @@
       <div slot="tip">请勾选注册协议</div>
     </f-form>
 
+    <f-icon name="loading" />
+
     <f-wing-blank>
-      <f-button type="primary">注册</f-button>
+      <f-button type="primary">
+        注册
+      </f-button>
     </f-wing-blank>
 
     <f-modal-operation v-model="slide4">
@@ -51,7 +55,7 @@
     </f-flex>
 
     <f-divider>
-      <f-icon name="sound" /> 我是有底线的
+      <f-icon name="voice" /> 我是有底线的
     </f-divider>
 
     <!-- <f-action-sheet :maskClosable="true" maskThrough title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->
