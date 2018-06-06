@@ -10,7 +10,7 @@
       </div>
     </f-nav-bar>
 
-    <f-notice-bar mode="link">
+    <f-notice-bar icon="check-circle-o" mode="link">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
     </f-notice-bar>
 

@@ -40,8 +40,16 @@ export default {
     }
   },
 
+  methods: {
+    handleClick(e) {
+      if (!this.disabled) {
+        this.$emit('click', e)
+      }
+    }
+  },
+
   render() {
-    return <a styleName="@button $type $size :inline :disabled">
+    return <a styleName="@button $type $size :inline :disabled" onClick={this.handleClick}>
       {this.IconNode}
       {this.$slots.default}
     </a>
