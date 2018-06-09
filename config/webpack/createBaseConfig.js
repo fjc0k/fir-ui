@@ -1,13 +1,13 @@
 const path = require('path')
 const Config = require('webpack-chain')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const resolve = path.resolve.bind(path, __dirname, '../../')
 const outDir = resolve('dist')
 
-module.exports = ({ isProd }) => {
+module.exports = ({ isProd, localIdentPrefix = 'f_', localIdentStart = 0 }) => {
   const config = new Config()
 
   config
@@ -87,9 +87,12 @@ module.exports = ({ isProd }) => {
   }
   stylusRule.use('css-loader').loader('css-loader').options({
     modules: true,
-    localIdentName: isProd ? 'f_[hash:base64:3]' : '[local]_[hash:base64:8]',
+    localIdentName: '[local]_[hash:base64:8]',
     importLoaders: 1,
-    sourceMap: !isProd
+    sourceMap: !isProd,
+    ...(isProd ? {
+      getLocalIdent: () => `${localIdentPrefix}${localIdentStart++}`
+    } : {})
   })
   stylusRule.use('postcss-loader').loader('postcss-loader').options({
     plugins: [require('autoprefixer')({
@@ -107,12 +110,12 @@ module.exports = ({ isProd }) => {
   config.plugin('vue-loader').use(VueLoaderPlugin)
 
   if (isProd) {
-    config.plugin('clean').use(CleanWebpackPlugin, [
-      [outDir],
-      {
-        root: resolve('.')
-      }
-    ])
+    // config.plugin('clean').use(CleanWebpackPlugin, [
+    //   [outDir],
+    //   {
+    //     root: resolve('.')
+    //   }
+    // ])
     config.plugin('extract-css').use(MiniCssExtractPlugin, [{
       filename: '[name].css'
     }])

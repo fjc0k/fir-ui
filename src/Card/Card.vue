@@ -51,11 +51,11 @@ export default {
 
   props: {
     thumb: String,
-    title: String,
-    extraTitle: String,
-    content: String,
-    note: String,
-    extraNote: String,
+    title: null,
+    extraTitle: null,
+    content: null,
+    note: null,
+    extraNote: null,
     full: Boolean
   }
 }

@@ -43,12 +43,14 @@ export default {
   },
 
   render() {
-    return <div styleName="@marquee">
-      <MutationObserver onMutate={this.start}>
-        <div styleName="inner" ref="marquee">
-          {this.$slots.default}
-        </div>
-      </MutationObserver>
+    return <div styleName="wrapper">
+      <div styleName="@marquee">
+        <MutationObserver onMutate={this.start}>
+          <div styleName="inner" ref="marquee">
+            {this.$slots.default}
+          </div>
+        </MutationObserver>
+      </div>
     </div>
   }
 }

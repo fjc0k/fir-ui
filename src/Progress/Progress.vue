@@ -17,9 +17,9 @@ export default {
 
   props: {
     percent: numericType(0, 0, 100),
-    position: {
-      type: String,
-      ...oneOf(['fixed', 'normal'])
+    fixed: {
+      type: Boolean,
+      default: true
     },
     unfilled: {
       type: Boolean,
@@ -30,7 +30,7 @@ export default {
   render() {
     const { percent } = this
 
-    return <div styleName="@progress $position :unfilled">
+    return <div styleName="@progress :fixed :unfilled">
       <div styleName="bar" style={{
         width: `${percent}%`
       }} />

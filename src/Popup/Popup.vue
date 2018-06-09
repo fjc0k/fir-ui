@@ -6,7 +6,7 @@
         :style="{ zIndex }"
         @click.passive="handleMaskClick"
         v-show="localVisible">
-        <transition appear :name="popupTransition">
+        <transition :name="popupTransition" appear v-on="$listeners">
           <slot />
         </transition>
       </div>

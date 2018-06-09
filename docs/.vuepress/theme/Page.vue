@@ -112,12 +112,16 @@ export default {
   }
 }
 
+// MOD: 跳过分类
 function resolvePrev (page, items) {
-  return find(page, items, -1)
+  const item = find(page, items, -1)
+  return item && item.title[0] === '@' ? find(page, items, -2) : item
 }
 
+// MOD: 跳过分类
 function resolveNext (page, items) {
-  return find(page, items, 1)
+  const item = find(page, items, 1)
+  return item && item.title[0] === '@' ? find(page, items, 2) : item
 }
 
 function find (page, items, offset) {

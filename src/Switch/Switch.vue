@@ -7,7 +7,7 @@ export default {
   name: 'FSwitch',
 
   model: {
-    prop: 'checked',
+    prop: 'on',
     event: 'input'
   },
 
@@ -23,41 +23,37 @@ export default {
   ],
 
   props: {
-    checked: Boolean,
+    on: Boolean,
     disabled: Boolean,
-    color: String,
-    platform: {
-      type: String,
-      ...oneOf(['ios', 'android'])
-    }
+    color: String
   },
 
   methods: {
     handleChange({ target: { checked } }) {
-      this.sendChecked(checked)
+      this.sendOn(checked)
     }
   },
 
   render() {
     const {
-      localChecked,
+      localOn,
       disabled,
       color,
       handleChange
     } = this
 
-    return <label styleName="@switch $platform">
+    return <label styleName="@switch">
       <input
         styleName="checkbox"
         type="checkbox"
-        domPropsChecked={localChecked}
+        domPropsChecked={localOn}
         disabled={disabled}
         onChange={handleChange}
       />
       <div
         styleName="switcher :disabled"
         style={{
-          backgroundColor: localChecked ? color : null
+          backgroundColor: localOn ? color : null
         }}
       />
     </label>

@@ -22,11 +22,11 @@ export default {
       ...oneOf(styles.alignSelf.split(/ /g))
     },
     order: numericType(0),
-    grow: numericType(0),
+    grow: numericType(1),
     shrink: numericType(1),
     basis: {
       type: String,
-      default: '0%'
+      default: 'auto'
     }
   },
 

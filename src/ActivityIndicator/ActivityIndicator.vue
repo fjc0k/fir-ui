@@ -1,5 +1,5 @@
 <template>
-  <div styleName="@activity-indicator $size">
+  <div styleName="@activity-indicator $size" v-if="localVisible">
     <Icon styleName="loading" name="loading" />
     <div styleName="tip" v-if="$slots.default">
       <slot />

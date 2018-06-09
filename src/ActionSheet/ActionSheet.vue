@@ -68,7 +68,8 @@ export default {
     data: {
       type: Array,
       default: () => [],
-      watch: true
+      watch: true,
+      transform: normalizeData
     },
     showCancel: {
       type: Boolean,
@@ -86,9 +87,6 @@ export default {
   },
 
   methods: {
-    onReceiveData(data, transform) {
-      transform(normalizeData(data))
-    },
     handleItemClick(item, index) {
       this.$emit('item-click', item, index)
       if (item.onClick) {

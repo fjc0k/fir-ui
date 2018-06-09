@@ -10,6 +10,8 @@
           :open="i === openGroupIndex"
           :collapsable="item.collapsable"
           @toggle="toggleGroup(i)"/>
+        <!-- // MOD: 分类 -->
+        <div class="sidebar-cat" v-else-if="item.title && item.title[0] === '@'">{{ item.title.slice(1) }}</div>
         <SidebarLink v-else :item="item"/>
       </li>
     </ul>
@@ -92,6 +94,12 @@ function resolveOpenGroupIndex (route, items) {
       padding 0.5rem 0 0.5rem 1.5rem
   .sidebar-links
     padding 1.5rem 0
+
+  // MOD: 分类
+  .sidebar-cat {
+    padding: 1rem 1rem;
+    color: rgba(0,0,0,.45);
+  }
 
 @media (max-width: $MQMobile)
   .sidebar

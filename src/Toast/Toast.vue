@@ -60,9 +60,9 @@ export default {
     localIcon() {
       const { icon, type } = this
       return icon || (
-        type === 'success' ? 'check-circle-o' :
-          type === 'fail' ? 'close-circle-o' :
-            type === 'offline' ? 'frown-o' :
+        type === 'success' ? 'success' :
+          type === 'fail' ? 'fail' :
+            type === 'offline' ? 'dislike' :
               type === 'loading' ? 'loading' :
                 null
       )
@@ -71,10 +71,22 @@ export default {
 
   components: { Popup, Icon },
 
-  mounted() {
-    const { duration } = this
-    if (duration > 0) {
-      setTimeout(this.hide, duration * 1000)
+  methods: {
+    timing(visible = this.visible) {
+      if (visible) {
+        const { duration } = this
+        if (duration > 0) {
+          this.timer = setTimeout(this.hide, duration * 1000)
+        }
+      } else {
+        clearTimeout(this.timer)
+      }
+    },
+    onReceiveVisible(visible) {
+      this.timing(visible)
+    },
+    onSendVisible(visible) {
+      this.timing(visible)
     }
   }
 }

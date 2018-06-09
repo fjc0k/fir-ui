@@ -30,7 +30,7 @@ export default {
   props: {
     text: [String, Number],
     overflowCount: numericType(99),
-    corner: Boolean,
+    corner: Boolean, // todo: 完善
     dot: Boolean,
     hot: Boolean
   },

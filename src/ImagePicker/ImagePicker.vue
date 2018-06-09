@@ -1,8 +1,8 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
-import { chunk, toArray } from 'lodash'
-import { numericType } from '../_utils'
+import { toArray } from 'lodash'
+import { numericType, chunk } from '../_utils'
 import { getOrientation, getRotation } from './utils'
 import Icon from '../Icon/Icon.vue'
 
@@ -32,11 +32,11 @@ export default {
       type: Array,
       default: () => []
     },
-    selectable: Boolean,
+    disabled: Boolean,
     multiple: Boolean,
     accept: {
       type: String,
-      default: 'image/*'
+      default: 'image/gif,image/jpeg,image/jpg,image/png'
     },
     cols: numericType(4)
   },
@@ -93,22 +93,16 @@ export default {
 
   computed: {
     lists() {
-      const { cols } = this
+      const { cols, disabled } = this
       const items = [
         ...this.localFiles,
-        IMAGE_SELECTOR
+        ...(disabled ? [] : [IMAGE_SELECTOR])
       ]
-      const remainder = items.length % cols
-      if (remainder !== 0) {
-        let i = cols - remainder
-        while (i--) {
-          items.push(null)
-        }
-      }
       return chunk(items, cols)
     },
     ListsNode() {
       const {
+        cols,
         multiple,
         accept,
         lists,
@@ -118,36 +112,39 @@ export default {
       } = this
       return lists.map((list, listIndex) => (
         <div styleName="list" key={listIndex}>
-          {list.map((item, itemIndex) => (
-            <div styleName="item" key={itemIndex}>
-              {item === IMAGE_SELECTOR ? (
-                <div styleName="content select">
-                  <Icon styleName="add" name="plus" />
-                  <input
-                    styleName="input"
-                    type="file"
-                    accept={accept}
-                    multiple={multiple}
-                    onChange={handleInputChange}
+          {list.map((item, itemIndex) => {
+            itemIndex = (listIndex * cols) + itemIndex
+            return (
+              <div styleName="item" key={itemIndex}>
+                {item === IMAGE_SELECTOR ? (
+                  <div styleName="content select">
+                    <Icon styleName="add" name="plus" />
+                    <input
+                      styleName="input"
+                      type="file"
+                      accept={accept}
+                      multiple={multiple}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                ) : item && [
+                  <Icon
+                    styleName="remove"
+                    name="cross"
+                    nativeOnClick={handleRemoveClick.bind(this, item, itemIndex)}
+                  />,
+                  <div
+                    styleName="content image"
+                    style={{
+                      backgroundImage: `url(${item.url})`,
+                      transform: `rotate(${getRotation(item.orientation)}deg)`
+                    }}
+                    onClick={handleImageClick.bind(this, item, itemIndex)}
                   />
-                </div>
-              ) : item && [
-                <Icon
-                  styleName="remove"
-                  name="close"
-                  nativeOnClick={handleRemoveClick.bind(this, item, itemIndex)}
-                />,
-                <div
-                  styleName="content image"
-                  style={{
-                    backgroundImage: `url(${item.url})`,
-                    transform: `rotate(${getRotation(item.orientation)}deg)`
-                  }}
-                  onClick={handleImageClick.bind(this, item, itemIndex)}
-                />
-              ]}
-            </div>
-          ))}
+                ]}
+              </div>
+            )
+          })}
         </div>
       ))
     }
