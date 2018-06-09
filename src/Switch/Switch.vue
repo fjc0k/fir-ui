@@ -42,14 +42,21 @@ export default {
       handleChange
     } = this
 
-    return <input
-      styleName="@switch"
-      type="checkbox"
-      domPropsChecked={localOn}
-      disabled={disabled}
-      style={{ color: localOn ? color : null }}
-      onChange={handleChange}
-    />
+    return <label styleName="@switch">
+      <input
+        styleName="checkbox"
+        type="checkbox"
+        domPropsChecked={localOn}
+        disabled={disabled}
+        onChange={handleChange}
+      />
+      <div
+        styleName="switcher :disabled"
+        style={{
+          backgroundColor: localOn ? color : null
+        }}
+      />
+    </label>
   }
 }
 </script>
