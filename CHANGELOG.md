@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.52.0"></a>
+# [0.52.0](https://github.com/fjc0k/fir-ui/compare/v0.51.0...v0.52.0) (2018-06-09)
+
+
+### Bug Fixes
+
+* **Marquee:** just one action ([b41587d](https://github.com/fjc0k/fir-ui/commit/b41587d))
+
+
+### Features
+
+* **Carousel:** index twoway binding ([d882e5a](https://github.com/fjc0k/fir-ui/commit/d882e5a))
+* **components:** add basic Carousel ([c2f44c6](https://github.com/fjc0k/fir-ui/commit/c2f44c6))
+* **components:** add basic SwipeAction ([d4913a9](https://github.com/fjc0k/fir-ui/commit/d4913a9))
+* **components:** add Drawer ([4d10171](https://github.com/fjc0k/fir-ui/commit/4d10171))
+* **components:** add Flex ([0129f6b](https://github.com/fjc0k/fir-ui/commit/0129f6b))
+* **components:** add Form ([763c265](https://github.com/fjc0k/fir-ui/commit/763c265))
+* **components:** add Grid, GridItem ([9cb7d55](https://github.com/fjc0k/fir-ui/commit/9cb7d55))
+* **components:** add Modal ([74c5718](https://github.com/fjc0k/fir-ui/commit/74c5718))
+* **components:** add Scroll, Carousel, MutationObserver ([acca6ac](https://github.com/fjc0k/fir-ui/commit/acca6ac))
+* **Divider:** add type prop ([925381c](https://github.com/fjc0k/fir-ui/commit/925381c))
+* **Form:** add labelWidth prop ([1885592](https://github.com/fjc0k/fir-ui/commit/1885592))
+* **Modal:** improve ([6bd644d](https://github.com/fjc0k/fir-ui/commit/6bd644d))
+* **SwipeAction:** support close & open ([fb4fab6](https://github.com/fjc0k/fir-ui/commit/fb4fab6))
+* build noGlobal ([fa51ab4](https://github.com/fjc0k/fir-ui/commit/fa51ab4))
+* optimize scroll ([a817b37](https://github.com/fjc0k/fir-ui/commit/a817b37))
+
+
+
+
 <a name="0.51.0"></a>
 # [0.51.0](https://github.com/fjc0k/fir-ui/compare/v0.50.6...v0.51.0) (2018-05-25)
 
