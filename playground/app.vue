@@ -10,6 +10,8 @@
       </div>
     </f-nav-bar>
 
+    <f-switch on color="red" disabled />
+
 <f-nav-bar><f-icon name="left" size="md" slot="left" />
 <f-segmented-control :data="['动态', '附近']" :detail.sync="detail" color="#fff" />
 <f-icon name="search" size="md" slot="right" /></f-nav-bar>

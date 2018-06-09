@@ -29,8 +29,8 @@ export default {
   },
 
   methods: {
-    handleChange({ target: { checked } }) {
-      this.sendOn(checked)
+    handleChange(e) {
+      this.sendOn(e.target.checked)
     }
   },
 
@@ -42,21 +42,14 @@ export default {
       handleChange
     } = this
 
-    return <label styleName="@switch">
-      <input
-        styleName="checkbox"
-        type="checkbox"
-        domPropsChecked={localOn}
-        disabled={disabled}
-        onChange={handleChange}
-      />
-      <div
-        styleName="switcher :disabled"
-        style={{
-          backgroundColor: localOn ? color : null
-        }}
-      />
-    </label>
+    return <input
+      styleName="@switch"
+      type="checkbox"
+      domPropsChecked={localOn}
+      disabled={disabled}
+      style={{ color: localOn ? color : null }}
+      onChange={handleChange}
+    />
   }
 }
 </script>

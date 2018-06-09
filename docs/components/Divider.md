@@ -54,8 +54,8 @@
 
 ### Props
 
-属性  | 说明     | 类型                                    | 默认值
-------|----------|-----------------------------------------|----------
-type  | 分割线类型 | `solid` &vert; `dashed` &vert; `dotted` | solid
-align | 文字对齐方向 | `center` &vert; `left`  &vert; `right`  | center
+属性  | 说明                    | 类型                                    | 默认值
+------|-------------------------|-----------------------------------------|--------
+type  | 分割线类型              | `solid` &vert; `dashed` &vert; `dotted` | solid
+align | 文字对齐方向            | `center` &vert; `left`  &vert; `right`  | center
 full  | 是否通栏，即 `100%` 宽度 | boolean                                 | false
