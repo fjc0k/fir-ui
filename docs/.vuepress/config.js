@@ -26,6 +26,7 @@ module.exports = {
           'Drawer',
         '_DataEntry',
           'Button',
+          'Choose',
           'ImagePicker',
           'Switch',
           'Stepper',

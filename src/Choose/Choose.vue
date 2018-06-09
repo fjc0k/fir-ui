@@ -2,10 +2,12 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import { isArray, isBoolean, includes } from 'lodash'
+import { oneOf } from '../_utils';
 
-const CHECKBOX = 1
-const RADIO = 2
-const AGREE = 3
+const AUTO = 'auto'
+const CHECKBOX = 'checkbox'
+const RADIO = 'radio'
+const AGREE = 'agree'
 
 export default {
   name: 'FChoose',
@@ -29,29 +31,33 @@ export default {
   props: {
     selected: null,
     value: null,
-    disabled: Boolean
+    disabled: Boolean,
+    type: {
+      type: String,
+      ...oneOf([AUTO, RADIO, CHECKBOX, AGREE])
+    }
   },
 
   computed: {
-    type() {
-      const { localSelected } = this
-      return (
+    localType() {
+      const { type, localSelected } = this
+      return type === AUTO ? (
         isBoolean(localSelected) ?
           AGREE :
           isArray(localSelected) ?
             CHECKBOX :
             RADIO
-      )
+      ) : type
     },
-    nativeType() {
-      return this.type === RADIO ? 'radio' : 'checkbox'
+    inputType() {
+      return this.localType === RADIO ? 'radio' : 'checkbox'
     },
     isSelected() {
-      const { type, localSelected, value } = this
+      const { localType, localSelected, value } = this
       return (
-        type === CHECKBOX ?
+        localType === CHECKBOX ?
           includes(localSelected, value) :
-          type === RADIO ?
+          localType === RADIO ?
             localSelected === value :
             localSelected
       )
@@ -60,11 +66,11 @@ export default {
 
   methods: {
     handleChange({ target: { checked } }) {
-      const { type, localSelected, value } = this
+      const { localType, localSelected, value } = this
 
       let selectedValue
 
-      if (type === CHECKBOX) {
+      if (localType === CHECKBOX) {
         selectedValue = localSelected.slice()
         if (checked) {
           selectedValue.push(value)
@@ -74,7 +80,7 @@ export default {
             1
           )
         }
-      } else if (type === AGREE) {
+      } else if (localType === AGREE) {
         selectedValue = checked
       } else {
         selectedValue = value
@@ -86,22 +92,22 @@ export default {
 
   render() {
     const {
-      nativeType,
+      inputType,
       isSelected,
       disabled,
       color,
       handleChange
     } = this
 
-    return <label styleName="@choose">
+    return <label styleName="@choose :disabled">
       <input
         styleName="input"
-        type={nativeType}
+        type={inputType}
         domPropsChecked={isSelected}
         disabled={disabled}
         onChange={handleChange}
       />
-      <div styleName={`box ${nativeType}`} />
+      <div styleName={`box ${inputType}`} />
       {this.$slots.default}
     </label>
   }
