@@ -1,0 +1,47 @@
+@require '../_styles/settings';
+
+.choose {
+  flex-center: inline;
+  height: $icon-size-sm;
+}
+
+.input {
+  display: none;
+}
+
+.box {
+  position: relative;
+  width: $icon-size-sm;
+  height: $icon-size-sm;
+  border: 1 * $hd solid currentColor;
+  border-radius: $radius-circle;
+  box-sizing: border-box;
+  flex-center: inline;
+  color: #ccc;
+  &:after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .input:checked + & {
+    color: $brand-primary;
+    &.radio:after {
+      width: ($icon-size-sm / 3);
+      height: ($icon-size-sm / 3);
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+    &.checkbox {
+      background-color: currentColor;
+      &:after {
+        top: 1.5 * $hd;
+        width: 5 * $hd;
+        height: 11 * $hd;
+        border-style: solid;
+        border-width: 0 1 * $hd 1 * $hd 0;
+        border-color: white;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

@@ -1,5 +1,11 @@
 <template>
   <ListItem :feedback="false">
+    <!-- // todo -->
+    <div styleName="icon" slot="thumb" v-if="icon || $slots.icon">
+      <slot name="icon">
+        <Icon :name="icon" />
+      </slot>
+    </div>
     <div styleName="item">
       <component :is="tag" :for="id" styleName="guide" v-if="icon || $slots.icon || label || $slots.label">
         <div styleName="icon" v-if="icon || $slots.icon">
@@ -18,7 +24,7 @@
           </div>
         </div>
       </component>
-      <div styleName="content">
+      <div styleName="content $align">
         <Content />
       </div>
       <div styleName="extra" v-if="extra || $slots.extra">
@@ -35,6 +41,7 @@ import CSSModules from 'vue-css-modules'
 import { get, set } from 'lodash'
 import ListItem from '../List/ListItem.vue'
 import Icon from '../Icon/Icon.vue'
+import { oneOf } from '../_utils';
 
 let id = 0
 
@@ -62,7 +69,11 @@ export default {
     desc: null,
     extra: null,
     labeled: Boolean,
-    labelWidth: String
+    labelWidth: String,
+    align: {
+      type: String,
+      ...oneOf(['left', 'center', 'right'])
+    }
   },
 
   data: () => ({

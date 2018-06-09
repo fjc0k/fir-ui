@@ -10,7 +10,16 @@
       </div>
     </f-nav-bar>
 
-    <f-switch on color="red" disabled />
+    <f-white-space />
+    <f-choose v-model="selectedRadio" :value="2">hello</f-choose>
+    <f-choose v-model="selectedRadio" :value="1">hello</f-choose>
+
+    <f-choose v-model="selectedCheckbox" :value="2">hello</f-choose>
+    <f-choose v-model="selectedCheckbox" :value="1">hello</f-choose>
+
+    <f-choose v-model="selectedAgree">hello</f-choose>
+
+    <f-white-space />
 
 <f-nav-bar><f-icon name="left" size="md" slot="left" />
 <f-segmented-control :data="['动态', '附近']" :detail.sync="detail" color="#fff" />
@@ -33,12 +42,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti li
 
     <FDrawer  position="left" v-model="drawer" @show="$log('show')">
       <f-form title="表单" labelWidth="5em">
-        <f-form-item label="姓名" desc="三字以内">
-          min1
+        <f-form-item icon="voice" label="姓名" desc="三字以内" align="right">
+          <f-switch on color="red" />
           <div slot="extra">￥</div>
         </f-form-item>
         <f-form-item label="姓名" desc="三字以内">
-          min1
+          <f-input placeholder="输入名字" />
           <div slot="extra">￥</div>
         </f-form-item>
         <f-form-item label="姓名" desc="三字以内">
@@ -92,6 +101,9 @@ export default {
     }
   },
   data: () => ({
+    selectedRadio: 2,
+    selectedCheckbox: [2],
+    selectedAgree: false,
     detail: {},
     drawer: false,
     slide4: false,
