@@ -20,6 +20,14 @@
     <f-icon name="voice" size="lg" />
     ```
 
+- 使用 `color` 指定图标颜色
+
+    <f-icon name="voice" color="blue" />
+
+    ```html
+    <f-icon name="voice" color="blue" />
+    ```
+
 - 使用 `style` 自定义图标大小与颜色
 
     <f-icon name="voice" style="font-size:30px;color:blue;" />
@@ -28,7 +36,7 @@
     <f-icon name="voice" style="font-size:30px;color:blue;" />
     ```
 
-## 图标列表
+## 内置图标列表
 
 点击图标复制代码。
 
@@ -44,10 +52,11 @@
 
 ### Props
 
-属性 | 说明     | 类型                                                                   | 默认值
------|----------|------------------------------------------------------------------------|-----------
-name | 图标名称 | string                                                                 | -
-size | 图标大小 | `default`（继承父元素的大小） &vert; `xxs` &vert; `xs` &vert; `sm` &vert; `md` &vert; `lg` | default
+属性  | 说明     | 类型                                                                                     | 默认值
+------|----------|------------------------------------------------------------------------------------------|---------
+name  | 图标名称 | string                                                                                   | -
+size  | 图标大小 | `default`（继承父元素的大小） &vert; `xxs` &vert; `xs` &vert; `sm` &vert; `md` &vert; `lg` | default
+color | 图标颜色 | string                                                                                   | -
 
 ## 使用其他图标
 

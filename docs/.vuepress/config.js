@@ -16,6 +16,7 @@ module.exports = {
       '/components/': [
         '',
         '_Layout',
+          'Container',
           'Flex',
           'WingBlank',
           'WhiteSpace',
@@ -40,7 +41,6 @@ module.exports = {
           'ActivityIndicator',
           'Progress',
         '_Other',
-          'Container',
           'Divider',
           'Marquee'
       ]

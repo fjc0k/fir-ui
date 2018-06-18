@@ -1,6 +1,6 @@
 # Container 容器
 
-`Fir UI` 的全部组件（除 `Container` 自身外） `都只能` 在 `Container` 组件内正常使用。
+`Fir UI` 的全部组件（除 `Container` 自身外） **都只能**在 `Container` 组件内正常使用。
 
 ## 代码演示
 
