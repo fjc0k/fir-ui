@@ -36,16 +36,29 @@
     <f-divider align="left" full>英雄介绍</f-divider>
     ```
 
-- 虚线分割线
+- 主要分割线与警告分割线
 
-    <f-divider type="dashed"><f-icon name="question-circle" /></f-divider>
-    <f-divider type="dotted"><f-icon name="down" /></f-divider>
+    <f-divider type="primary">英雄列表</f-divider>
+    <f-divider type="warning"><f-icon name="exclamation-circle" /> 请先完善以下信息</f-divider>
 
     ```html
-    <f-divider type="dashed">
+    <f-divider type="primary">英雄列表</f-divider>
+    <f-divider type="warning">
+      <f-icon name="exclamation-circle" />
+      请先完善以下信息
+    </f-divider>
+    ```
+
+- 虚线分割线
+
+    <f-divider line="dashed"><f-icon name="question-circle" /></f-divider>
+    <f-divider line="dotted"><f-icon name="down" /></f-divider>
+
+    ```html
+    <f-divider line="dashed">
       <f-icon name="question-circle" />
     </f-divider>
-    <f-divider type="dotted">
+    <f-divider line="dotted">
       <f-icon name="down" />
     </f-divider>
     ```
@@ -54,8 +67,9 @@
 
 ### Props
 
-属性  | 说明                    | 类型                                    | 默认值
-------|-------------------------|-----------------------------------------|--------
-type  | 分割线类型              | `solid` &vert; `dashed` &vert; `dotted` | solid
-align | 文字对齐方向            | `center` &vert; `left`  &vert; `right`  | center
-full  | 是否通栏，即 `100%` 宽度 | boolean                                 | false
+属性  | 说明                    | 类型                                        | 默认值
+------|-------------------------|---------------------------------------------|---------
+type  | 分割线类型              | `default` &vert; `primary` &vert; `warning` | default
+line  | 分割线样式              | `solid` &vert; `dashed` &vert; `dotted`     | solid
+align | 文字对齐方向            | `center` &vert; `left`  &vert; `right`      | center
+full  | 是否通栏，即 `100%` 宽度 | boolean                                     | false
