@@ -96,7 +96,7 @@ color | 图标颜色 | string                                                   
 
     ```html
     <!-- 引入 CSS -->
-    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- 使用 -->
     <f-icon name="fa-book" />
