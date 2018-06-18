@@ -55,7 +55,7 @@ const Icons = {
     family: 'material-icons',
     component: {
       beforeRender(_, ctx) {
-        ctx.children = ctx.props.name
+        ctx.children = String(ctx.props.name).replace(/-/g, '_')
         ctx.props.name = null
       }
     }
