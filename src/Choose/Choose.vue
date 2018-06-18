@@ -30,6 +30,7 @@ export default {
   props: {
     selected: null,
     value: null,
+    square: Boolean,
     disabled: Boolean,
     type: {
       type: String,
@@ -97,7 +98,7 @@ export default {
       handleChange
     } = this
 
-    return <label styleName="@choose :disabled">
+    return <label styleName="@choose :square :disabled">
       <input
         styleName="input"
         type={inputType}

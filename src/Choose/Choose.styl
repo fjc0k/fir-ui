@@ -17,10 +17,13 @@
   width: $icon-size-sm;
   height: $icon-size-sm;
   border: 1 * $hd solid currentColor;
-  border-radius: $radius-circle;
+  border-radius: 50%;
   box-sizing: border-box;
   flex-center: inline;
   color: #ccc;
+  .square & {
+    border-radius: 0;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -33,6 +36,9 @@
       height: ($icon-size-sm / 3);
       border-radius: 50%;
       background-color: currentColor;
+      .square & {
+        border-radius: 0;
+      }
     }
     &.checkbox {
       background-color: currentColor;

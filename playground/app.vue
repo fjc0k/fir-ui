@@ -15,11 +15,11 @@
     <f-choose v-model="selectedRadio" :value="2" disabled>hello</f-choose>
     <f-choose v-model="selectedRadio" :value="1">hello</f-choose>
 
-    <f-choose v-model="selectedCheckbox" :value="2">hello</f-choose>
+    <f-choose v-model="selectedCheckbox" :value="2" square>hello</f-choose>
     <f-choose v-model="selectedCheckbox" :value="1">hello</f-choose>
 
     <f-choose v-model="selectedAgree" :value="true" type="radio">hello</f-choose>
-    <f-choose v-model="selectedAgree" :value="false" type="radio">hello</f-choose>
+    <f-choose v-model="selectedAgree" :value="false" type="radio" square>hello</f-choose>
 
     <f-white-space />
 
