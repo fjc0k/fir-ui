@@ -21,6 +21,12 @@
   &:not(:empty) {
     margin: 0 $h-spacing-sm;
   }
+  .primary & {
+    color: $brand-primary;
+  }
+  .warning & {
+    color: $brand-error;
+  }
 }
 
 .line {
@@ -41,5 +47,11 @@
   }
   &.dotted {
     hairline(top, currentColor, , dotted);
+  }
+  .primary & {
+    color: $brand-primary;
+  }
+  .warning & {
+    color: $brand-error;
   }
 }

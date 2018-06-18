@@ -19,6 +19,10 @@ export default {
   props: {
     type: {
       type: String,
+      enum: ['default', 'primary', 'warning']
+    },
+    line: {
+      type: String,
       enum: ['solid', 'dashed', 'dotted']
     },
     align: {
@@ -29,11 +33,11 @@ export default {
   },
 
   render() {
-    return <div styleName="@divider">
+    return <div styleName="@divider $type">
       <div styleName="inner $align :full">
-        <div styleName="line left $type" />
+        <div styleName="line left $line" />
         <div styleName="content">{this.$slots.default}</div>
-        <div styleName="line right $type" />
+        <div styleName="line right $line" />
       </div>
     </div>
   }

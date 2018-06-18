@@ -86,8 +86,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti li
       <f-flex-item basis="15%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
     </f-flex>
 
-    <f-divider type="dotted">
-      完
+    <f-divider type="warning">
+      请完善相关资料
     </f-divider>
 
     <!-- <f-action-sheet :maskClosable="true" maskThrough title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->
