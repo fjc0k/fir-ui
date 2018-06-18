@@ -84,10 +84,14 @@ export default {
     size: {
       type: String,
       enum: ['default', 'md', 'xxs', 'xs', 'sm', 'lg']
-    }
+    },
+    color: String
   },
 
   computed: {
+    style() {
+      return { color: this.color }
+    },
     typeAndName() {
       const [type, name] = this.name ? this.name.split(/-(.+)?/, 2) : []
       if (types.indexOf(type) >= 0 && name) {
@@ -102,10 +106,11 @@ export default {
   },
 
   render() {
-    const { Icon, typeAndName } = this
+    const { style, Icon, typeAndName } = this
     return <Icon
       name={typeAndName[1]}
       styleName="@icon $size $name"
+      style={style}
     />
   }
 }
