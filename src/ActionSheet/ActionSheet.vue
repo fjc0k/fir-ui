@@ -68,7 +68,6 @@ export default {
     data: {
       type: Array,
       default: () => [],
-      watch: true,
       transform: normalizeData
     },
     showCancel: {

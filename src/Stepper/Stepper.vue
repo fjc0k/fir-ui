@@ -1,7 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
-import { numericType } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
@@ -19,10 +18,23 @@ export default {
   ],
 
   props: {
-    value: numericType(),
-    min: numericType(Number.NEGATIVE_INFINITY, true),
-    max: numericType(Number.POSITIVE_INFINITY, true),
-    step: numericType(1),
+    value: {
+      numeric: true
+    },
+    min: {
+      numeric: true,
+      infinite: true,
+      default: -Infinity
+    },
+    max: {
+      numeric: true,
+      infinite: true,
+      default: Infinity
+    },
+    step: {
+      numeric: true,
+      default: 1
+    },
     readonly: Boolean,
     disabled: Boolean
   },

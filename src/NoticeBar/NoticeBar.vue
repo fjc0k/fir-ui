@@ -30,7 +30,6 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
 import { toggleVisibility } from '../_mixins'
 import Icon from '../Icon/Icon.vue'
 import Marquee from '../Marquee/Marquee.vue'
@@ -52,7 +51,7 @@ export default {
   props: {
     mode: {
       type: String,
-      ...oneOf(['default', 'closable', 'link'])
+      enum: ['default', 'closable', 'link']
     },
     icon: {
       type: String,

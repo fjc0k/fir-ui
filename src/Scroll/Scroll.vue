@@ -14,7 +14,7 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf, numericType } from '../_utils'
+import Messenger from 'vue-messenger'
 import Scroll from './Scroll'
 
 export default {
@@ -27,20 +27,25 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('ScrollStyles')
   ],
 
   props: {
     direction: {
       type: String,
-      ...oneOf(['vertical', 'horizontal'])
+      enum: ['vertical', 'horizontal']
     },
     bindToWrapper: Boolean,
     mode: {
       type: String,
-      ...oneOf(['scroll', 'page'])
+      enum: ['scroll', 'page']
     },
-    pageThreshold: numericType(0.1, 0, 1),
+    pageThreshold: {
+      numeric: true,
+      default: 0.1,
+      range: [0, 1]
+    },
     pageIndex: 0
   },
 

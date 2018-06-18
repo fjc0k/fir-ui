@@ -2,7 +2,7 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import { isNil } from 'lodash'
-import { valueTypes } from 'popmotion';
+import { valueTypes } from 'popmotion'
 import { normalizeData } from '../_utils'
 
 const { color } = valueTypes
@@ -31,7 +31,6 @@ export default {
     },
     data: {
       type: Array,
-      watch: true,
       transform: normalizeData,
       default: () => []
     },
@@ -86,7 +85,7 @@ export default {
         const { label, value } = item
         const selected = selectedValue === value
         if (selected && !this.notFirstRender) {
-          this.notFirstRender = true
+          this.notFirstRender = true // eslint-disable-line vue/no-side-effects-in-computed-properties
           this.sendDetail(item)
         }
         const itemStyle = {

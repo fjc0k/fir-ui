@@ -2,7 +2,6 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import autoSize from 'autosize'
-import { numericType } from '../_utils'
 import Input from '../Input/Input.vue'
 
 export default {
@@ -21,7 +20,10 @@ export default {
 
   props: {
     value: [String, Number],
-    rows: numericType(2),
+    rows: {
+      numeric: true,
+      default: 2
+    },
     autoHeight: Boolean
   },
 

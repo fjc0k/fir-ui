@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FModalButtonGroup',
@@ -12,13 +12,14 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('ModalStyles')
   ],
 
   props: {
     direction: {
       type: String,
-      ...oneOf(['vertical', 'horizontal'])
+      enum: ['vertical', 'horizontal']
     }
   },
 

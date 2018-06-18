@@ -16,7 +16,6 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf, numericType } from '../_utils'
 import { transferDOMToBody } from '../_directives'
 import { toggleVisibility } from '../_mixins'
 import maskProps from './maskProps'
@@ -44,9 +43,12 @@ export default {
   props: {
     position: {
       type: String,
-      ...oneOf(['center', 'top', 'right', 'bottom', 'left'])
+      enum: ['center', 'top', 'right', 'bottom', 'left']
     },
-    zIndex: numericType(() => zIndex++),
+    zIndex: {
+      numeric: true,
+      default: () => zIndex++
+    },
     ...maskProps({
       closable: true,
       transparent: false,

@@ -25,7 +25,7 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 import Icon from '../Icon/Icon.vue'
 import ListItemBrief from './ListItemBrief.vue'
 
@@ -43,6 +43,7 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('ListStyles')
   ],
 
@@ -51,11 +52,12 @@ export default {
     extra: null,
     arrow: {
       type: String,
-      ...oneOf(['horizontal', 'up', 'down', 'empty'], null)
+      enum: ['horizontal', 'up', 'down', 'empty'],
+      default: null
     },
     align: {
       type: String,
-      ...oneOf(['middle', 'top', 'bottom'])
+      enum: ['middle', 'top', 'bottom']
     },
     error: Boolean,
     multipleLine: Boolean,

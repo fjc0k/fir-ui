@@ -2,7 +2,6 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import { isArray, isBoolean, includes } from 'lodash'
-import { oneOf } from '../_utils';
 
 const AUTO = 'auto'
 const CHECKBOX = 'checkbox'
@@ -34,7 +33,7 @@ export default {
     disabled: Boolean,
     type: {
       type: String,
-      ...oneOf([AUTO, RADIO, CHECKBOX, AGREE])
+      enum: [AUTO, RADIO, CHECKBOX, AGREE]
     }
   },
 
@@ -95,7 +94,6 @@ export default {
       inputType,
       isSelected,
       disabled,
-      color,
       handleChange
     } = this
 

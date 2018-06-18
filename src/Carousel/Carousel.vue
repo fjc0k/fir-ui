@@ -19,7 +19,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
-import { oneOf, numericType } from '../_utils'
 import Carousel from './Carousel'
 import Pagination from '../Pagination/Pagination.vue'
 import MutationObserver from '../MutationObserver/MutationObserver.vue'
@@ -45,20 +44,24 @@ export default {
 
   props: {
     index: {
-      ...numericType(0),
-      transform: 'integer'
+      numeric: true,
+      default: 0,
+      transform: index => parseInt(index, 10)
     },
     direction: {
       type: String,
-      ...oneOf(['horizontal', 'vertical'])
+      enum: ['horizontal', 'vertical']
     },
     interval: {
-      ...numericType(3000),
-      transform: 'number'
+      numeric: true,
+      default: 3000,
+      transform: Number
     },
     threshold: {
-      ...numericType(0.1, 0, 1),
-      transform: 'number'
+      numeric: true,
+      default: 0.1,
+      range: [0, 1],
+      transform: Number
     },
     indicator: {
       type: Boolean,

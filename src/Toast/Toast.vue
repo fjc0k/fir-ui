@@ -19,7 +19,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import { toggleVisibility } from '../_mixins'
-import { oneOf, numericType } from '../_utils'
 import Popup from '../Popup/Popup.vue'
 import Icon from '../Icon/Icon.vue'
 import maskProps from '../Popup/maskProps'
@@ -41,14 +40,17 @@ export default {
   props: {
     type: {
       type: String,
-      ...oneOf(['info', 'success', 'fail', 'loading', 'offline'])
+      enum: ['info', 'success', 'fail', 'loading', 'offline']
     },
     icon: String,
     position: {
       type: String,
-      ...oneOf(['center', 'top', 'bottom'])
+      enum: ['center', 'top', 'bottom']
     },
-    duration: numericType(3), // 秒
+    duration: {
+      numeric: true,
+      default: 3
+    },
     ...maskProps({
       closable: false,
       through: false,

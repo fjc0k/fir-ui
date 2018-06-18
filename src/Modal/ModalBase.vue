@@ -28,7 +28,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import { toggleVisibility } from '../_mixins'
-import { oneOf } from '../_utils'
 import Popup from '../Popup/Popup.vue'
 import maskProps from '../Popup/maskProps'
 
@@ -49,7 +48,7 @@ export default {
   props: {
     position: {
       type: String,
-      ...oneOf(['center', 'top', 'bottom'])
+      enum: ['center', 'top', 'bottom']
     },
     title: null,
     extraStyleName: String,

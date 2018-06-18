@@ -9408,9 +9408,9 @@ vue-merge-data@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-merge-data/-/vue-merge-data-0.2.1.tgz#e655e190cd488ca946c05051192a4bf4ea440972"
 
-vue-messenger@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-1.3.2.tgz#b381fadcac814575654b5fc6ae385926488625dd"
+vue-messenger@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-2.3.2.tgz#5a80d63ff8c6f4282194ad67dfacaa3ffe2093ac"
 
 vue-router@^3.0.1:
   version "3.0.1"

@@ -1,8 +1,8 @@
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import getIcon from 'vue-iconfont'
 import SVGSprite from './sprite'
-import { oneOf } from '../_utils'
 
 const Icon = getIcon({
   type: 'svg',
@@ -18,7 +18,10 @@ export default {
     }
   },
 
-  mixins: [CSSModules('IconStyles')],
+  mixins: [
+    Messenger,
+    CSSModules('IconStyles')
+  ],
 
   props: {
     name: {
@@ -27,7 +30,7 @@ export default {
     },
     size: {
       type: String,
-      ...oneOf(['default', 'md', 'xxs', 'xs', 'sm', 'lg'])
+      enum: ['default', 'md', 'xxs', 'xs', 'sm', 'lg']
     }
   },
 

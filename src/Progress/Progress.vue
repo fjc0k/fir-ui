@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { numericType, oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FProgress',
@@ -12,11 +12,16 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('ProgressStyles')
   ],
 
   props: {
-    percent: numericType(0, 0, 100),
+    percent: {
+      numeric: true,
+      default: 0,
+      range: [0, 100]
+    },
     fixed: {
       type: Boolean,
       default: true

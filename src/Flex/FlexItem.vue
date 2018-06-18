@@ -1,7 +1,7 @@
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import styles from './Flex.styl'
-import { oneOf, numericType } from '../_utils'
 
 export default {
   name: 'FFlexItem',
@@ -13,17 +13,27 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('FlexStyles')
   ],
 
   props: {
     alignSelf: {
       type: String,
-      ...oneOf(styles.alignSelf.split(/ /g))
+      enum: styles.alignSelf.split(/ /g)
     },
-    order: numericType(0),
-    grow: numericType(1),
-    shrink: numericType(1),
+    order: {
+      numeric: true,
+      default: 0
+    },
+    grow: {
+      numeric: true,
+      default: 1
+    },
+    shrink: {
+      numeric: true,
+      default: 1
+    },
     basis: {
       type: String,
       default: 'auto'

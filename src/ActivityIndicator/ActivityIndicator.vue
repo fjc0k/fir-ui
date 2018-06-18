@@ -10,7 +10,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import { toggleVisibility } from '../_mixins'
-import { oneOf } from '../_utils'
 import Icon from '../Icon/Icon.vue'
 
 export default {
@@ -30,7 +29,7 @@ export default {
   props: {
     size: {
       type: String,
-      ...oneOf(['sm', 'lg'])
+      enum: ['sm', 'lg']
     }
   },
 

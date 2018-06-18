@@ -2,7 +2,7 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import { toArray } from 'lodash'
-import { numericType, chunk } from '../_utils'
+import { chunk } from '../_utils'
 import { getOrientation, getRotation } from './utils'
 import Icon from '../Icon/Icon.vue'
 
@@ -38,7 +38,10 @@ export default {
       type: String,
       default: 'image/gif,image/jpeg,image/jpg,image/png'
     },
-    cols: numericType(4)
+    cols: {
+      numeric: true,
+      default: 4
+    }
   },
 
   methods: {

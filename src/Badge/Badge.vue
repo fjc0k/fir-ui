@@ -11,8 +11,8 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import { isNumber } from 'lodash'
-import { numericType } from '../_utils'
 
 export default {
   name: 'FBadge',
@@ -24,12 +24,16 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('BadgeStyles')
   ],
 
   props: {
     text: [String, Number],
-    overflowCount: numericType(99),
+    overflowCount: {
+      numeric: true,
+      default: 99
+    },
     corner: Boolean, // todo: 完善
     dot: Boolean,
     hot: Boolean

@@ -1,7 +1,7 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import { noop } from 'lodash'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FSwipeActionButton',
@@ -16,13 +16,14 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('SwipeActionStyles')
   ],
 
   props: {
     type: {
       type: String,
-      ...oneOf(['danger', 'primary', 'cancel'])
+      enum: ['danger', 'primary', 'cancel']
     },
     autoClose: {
       type: Boolean,

@@ -1,7 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
-import { oneOf } from '../_utils'
 
 export default {
   name: 'FSwitch',

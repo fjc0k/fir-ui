@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FWhiteSpace',
@@ -12,13 +12,14 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('WhiteSpaceStyles')
   ],
 
   props: {
     size: {
       type: String,
-      ...oneOf(['md', 'xs', 'sm', 'lg', 'xl'])
+      enum: ['md', 'xs', 'sm', 'lg', 'xl']
     }
   },
 

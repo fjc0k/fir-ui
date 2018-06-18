@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { numericType } from '../_utils'
+import Messenger from 'vue-messenger'
 import Marquee from './Marquee'
 import MutationObserver from '../MutationObserver/MutationObserver.vue'
 
@@ -14,12 +14,19 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('MarqueeStyles')
   ],
 
   props: {
-    speed: numericType(30), // 每秒多少像素
-    delay: numericType(1.5) // 延迟多少秒
+    speed: { // 每秒多少像素
+      numeric: true,
+      default: 30
+    },
+    delay: { // 延迟多少秒
+      numeric: true,
+      default: 1.5
+    }
   },
 
   methods: {

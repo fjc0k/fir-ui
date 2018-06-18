@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FDivider',
@@ -12,17 +12,18 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('DividerStyles')
   ],
 
   props: {
     type: {
       type: String,
-      ...oneOf(['solid', 'dashed', 'dotted'])
+      enum: ['solid', 'dashed', 'dotted']
     },
     align: {
       type: String,
-      ...oneOf(['center', 'left', 'right'])
+      enum: ['center', 'left', 'right']
     },
     full: Boolean
   },

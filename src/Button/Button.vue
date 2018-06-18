@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 import Icon from '../Icon/Icon.vue'
 
 export default {
@@ -13,17 +13,18 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('ButtonStyles')
   ],
 
   props: {
     type: {
       type: String,
-      ...oneOf(['default', 'primary', 'ghost', 'warning'])
+      enum: ['default', 'primary', 'ghost', 'warning']
     },
     size: {
       type: String,
-      ...oneOf(['lg', 'sm'])
+      enum: ['lg', 'sm']
     },
     icon: String,
     disabled: Boolean,

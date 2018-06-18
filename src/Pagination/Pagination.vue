@@ -26,7 +26,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
-import { oneOf, numericType } from '../_utils'
 import Button from '../Button/Button.vue'
 
 export default {
@@ -50,18 +49,19 @@ export default {
 
   props: {
     index: {
-      ...numericType(1),
-      transform: 'integer'
+      numeric: true,
+      default: 1,
+      transform: index => parseInt(index, 10)
     },
     total: {
-      ...numericType(0),
-      watch: true,
-      transform: 'integer'
+      numeric: true,
+      default: 0,
+      transform: index => parseInt(index, 10)
     },
     disabled: Boolean,
     mode: {
       type: String,
-      ...oneOf(['default', 'button', 'number', 'pointer'])
+      enum: ['default', 'button', 'number', 'pointer']
     },
     prevText: {
       type: null,

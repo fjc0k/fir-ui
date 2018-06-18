@@ -38,10 +38,10 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import { get, set } from 'lodash'
 import ListItem from '../List/ListItem.vue'
 import Icon from '../Icon/Icon.vue'
-import { oneOf } from '../_utils';
 
 let id = 0
 
@@ -60,6 +60,7 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('FormStyles')
   ],
 
@@ -72,7 +73,7 @@ export default {
     labelWidth: String,
     align: {
       type: String,
-      ...oneOf(['left', 'center', 'right'])
+      enum: ['left', 'center', 'right']
     }
   },
 

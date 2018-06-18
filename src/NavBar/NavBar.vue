@@ -14,7 +14,7 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FNavBar',
@@ -26,13 +26,14 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('NavBarStyles')
   ],
 
   props: {
     mode: {
       type: String,
-      ...oneOf(['dark', 'light'])
+      enum: ['dark', 'light']
     }
   }
 }

@@ -24,7 +24,7 @@ import { styler, tween } from 'popmotion'
 import Popup from '../Popup/Popup.vue'
 import maskProps from '../Popup/maskProps'
 import { toggleVisibility } from '../_mixins'
-import { oneOf, parseCSSUnit } from '../_utils'
+import { parseCSSUnit } from '../_utils'
 
 export default {
   name: 'FDrawer',
@@ -48,7 +48,7 @@ export default {
     backgroundColor: String,
     position: {
       type: String,
-      ...oneOf(['left', 'right'])
+      enum: ['left', 'right']
     },
     push: Boolean,
     ...maskProps({

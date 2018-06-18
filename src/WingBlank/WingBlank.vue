@@ -1,6 +1,6 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { oneOf } from '../_utils'
+import Messenger from 'vue-messenger'
 
 export default {
   name: 'FWingBlank',
@@ -12,13 +12,14 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('WingBlankStyles')
   ],
 
   props: {
     size: {
       type: String,
-      ...oneOf(['lg', 'sm', 'md'])
+      enum: ['lg', 'sm', 'md']
     }
   },
 

@@ -1,7 +1,7 @@
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import styles from './Flex.styl'
-import { oneOf } from '../_utils'
 import FlexItem from './FlexItem.vue'
 
 export default {
@@ -18,6 +18,7 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('FlexStyles')
   ],
 
@@ -25,23 +26,23 @@ export default {
     inline: Boolean,
     wrap: {
       type: String,
-      ...oneOf(styles.flexWrap.split(/ /g))
+      enum: styles.flexWrap.split(/ /g)
     },
     direction: {
       type: String,
-      ...oneOf(styles.flexDirection.split(/ /g))
+      enum: styles.flexDirection.split(/ /g)
     },
     alignContent: {
       type: String,
-      ...oneOf(styles.alignContent.split(/ /g))
+      enum: styles.alignContent.split(/ /g)
     },
     alignItems: {
       type: String,
-      ...oneOf(styles.alignItems.split(/ /g))
+      enum: styles.alignItems.split(/ /g)
     },
     justifyContent: {
       type: String,
-      ...oneOf(styles.justifyContent.split(/ /g))
+      enum: styles.justifyContent.split(/ /g)
     }
   },
 

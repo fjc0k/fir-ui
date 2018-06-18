@@ -1,7 +1,8 @@
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
 import GridItem from './GridItem.vue'
-import { numericType, chunk } from '../_utils'
+import { chunk } from '../_utils'
 
 export default {
   name: 'FGrid',
@@ -23,12 +24,19 @@ export default {
   },
 
   mixins: [
+    Messenger,
     CSSModules('GridStyles')
   ],
 
   props: {
-    cols: numericType(4),
-    rows: numericType(0),
+    cols: {
+      numeric: true,
+      default: 4
+    },
+    rows: {
+      numeric: true,
+      default: 0
+    },
     border: {
       type: Boolean,
       default: true
