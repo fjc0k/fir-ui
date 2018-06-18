@@ -44,10 +44,10 @@
 
   - 同意（若 `selected` 的值是布尔类型）
 
-      <f-choose v-model="agree">&nbsp;同意用户协议</f-choose>
+      <f-choose v-model="agree" square>&nbsp;同意用户协议</f-choose>
 
       ```html
-      <f-choose v-model="agree">同意用户协议</f-choose>
+      <f-choose v-model="agree" square>同意用户协议</f-choose>
 
       <script>
         export default {
@@ -116,4 +116,5 @@ export default {
 selected | 选中值，可使用 `v-model` 双向绑定 | any                                                                                                        | -
 value    | 当前值                           | any                                                                                                        | -
 type     | 选择器类型                       | `auto` (根据 `selected` 的值自动判断) &vert; `radio` (单选) &vert; `checkbox` (多选) &vert; `agree` (同意) | auto
+square   | 是否正方形                       | boolean                                                                                                    | false
 disabled | 是否禁用                         | boolean                                                                                                    | false

@@ -5,7 +5,7 @@
         <f-icon name="left" size="md" />
       </div>
       冬菜助手 <f-icon name="fab-font-awesome" /> <f-icon name="ion-md-finger-print" />
-      <f-icon name="md-book" />
+      <f-icon name="md-done-all" />
       <div @click="drawer=!drawer" slot="right">
         <f-icon name="ellipsis" size="md" />
       </div>

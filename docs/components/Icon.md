@@ -49,6 +49,54 @@
 name | 图标名称 | string                                                                 | -
 size | 图标大小 | `default`（继承父元素的大小） &vert; `xxs` &vert; `xs` &vert; `sm` &vert; `md` &vert; `lg` | default
 
+## 使用其他图标
+
+### Material Icons 3
+
+- 官网：[https://material.io/tools/icons](https://material.io/tools/icons)
+- 示例：
+
+    ```html
+    <!-- 引入 CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- 使用 -->
+    <f-icon name="md-alarm" />
+    <f-icon name="md-done-all" />
+    ```
+
+### Ionicons 4
+
+- 官网：[https://ionicons.com](https://ionicons.com)
+- 示例：
+
+    ```html
+    <!-- 引入 CSS -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- 使用 -->
+    <f-icon name="ion-ios-at" />
+    <f-icon name="ion-md-at" />
+    <f-icon name="ion-logo-javascript" />
+    ```
+
+### Font Awesome 5
+
+- 官网：[https://fontawesome.com/icons](https://fontawesome.com/icons)
+- 示例：
+
+    ```html
+    <!-- 引入 CSS -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- 使用 -->
+    <f-icon name="fa-book" />
+    <f-icon name="fas-book" /><!-- Solid -->
+    <f-icon name="far-book" /><!-- Regular -->
+    <f-icon name="fal-book" /><!-- Light -->
+    <f-icon name="fab-facebook" /><!-- Brand -->
+    ```
+
 <script>
 import icons from 'ant-design-icons/dist/mobile/anticons.json'
 
