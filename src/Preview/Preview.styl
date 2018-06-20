@@ -1,0 +1,62 @@
+@require '../_styles/settings';
+
+.preview {
+  background: $fill-base;
+  display: flex;
+  flex-wrap: wrap;
+  hairline(top bottom);
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #999;
+  font-size: $font-size-base;
+  margin-left: 15 * $hd;
+  padding: 8 * $hd 15 * $hd 8 * $hd 0;
+  .label {
+    min-width: 4em;
+    text-align-last: justify;
+    text-align: right;
+    margin-right: $h-spacing-lg;
+  }
+  .value {
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: right;
+    line-height: $line-height-paragraph;
+  }
+  &:first-child {
+    align-items: center;
+    hairline(bottom);
+    .value {
+      color: $color-text-base;
+      font-size: $font-size-heading;
+    }
+  }
+  &:not(:first-child) {
+    padding: 6 * $hd 15 * $hd 6 * $hd 0;
+  }
+}
+
+.button {
+  flex: 1;
+  flex-center: true;
+  padding: $v-spacing-lg 0;
+  font-size: $font-size-subhead;
+  hairline(top);
+  &.default {
+    color: #999;
+  }
+  &.primary {
+    color: $brand-primary;
+  }
+  &.warning {
+    color: $brand-error;
+  }
+  &:not(:last-child) {
+    hairline(right);
+  }
+}

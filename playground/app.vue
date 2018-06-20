@@ -13,6 +13,18 @@
 
     <f-white-space />
 
+    <f-divider>订单详情</f-divider>
+
+    <f-preview>
+      <f-preview-item label="合计">¥300</f-preview-item>
+      <f-preview-item label="预订日期">2018-06-19</f-preview-item>
+      <f-preview-item label="备注信息">明日之子</f-preview-item>
+      <f-preview-item label="订单状态">退款</f-preview-item>
+      <f-preview-button type="warning">删除订单</f-preview-button>
+    </f-preview>
+
+    <f-white-space />
+
     <f-rate style="color:red" count="8" v-model="rate" readonly /> {{ rate }}
 
     <f-white-space />
