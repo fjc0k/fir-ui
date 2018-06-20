@@ -13,7 +13,7 @@
 
     <f-white-space />
 
-    <f-rate count="8" v-model="rate" /> {{ rate }}
+    <f-rate style="color:red" count="8" v-model="rate" readonly /> {{ rate }}
 
     <f-white-space />
     <f-choose v-model="selectedRadio" :value="2" disabled>hello</f-choose>

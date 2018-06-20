@@ -27,7 +27,8 @@ export default {
     count: {
       numeric: true,
       default: 5
-    }
+    },
+    readonly: Boolean
   },
 
   computed: {
@@ -50,6 +51,7 @@ export default {
 
   methods: {
     handleStarClick(index) {
+      if (this.readonly) return
       this.sendValue(index + 1)
     }
   },
