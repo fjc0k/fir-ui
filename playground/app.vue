@@ -4,12 +4,16 @@
       <div slot="left">
         <f-icon name="left" size="md" />
       </div>
-      冬菜助手 <f-icon name="fab-font-awesome" /> <f-icon name="ion-md-finger-print" />
+      <f-icon name="star" /> 冬菜助手 <f-icon name="fab-font-awesome" /> <f-icon name="ion-md-finger-print" />
       <f-icon name="md-done-all" />
       <div @click="drawer=!drawer" slot="right">
         <f-icon name="ellipsis" size="md" />
       </div>
     </f-nav-bar>
+
+    <f-white-space />
+
+    <f-rate count="8" v-model="rate" /> {{ rate }}
 
     <f-white-space />
     <f-choose v-model="selectedRadio" :value="2" disabled>hello</f-choose>
@@ -103,6 +107,7 @@ export default {
     }
   },
   data: () => ({
+    rate: 2,
     selectedRadio: 2,
     selectedCheckbox: [2],
     selectedAgree: false,

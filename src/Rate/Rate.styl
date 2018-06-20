@@ -1,0 +1,18 @@
+@require '../_styles/settings';
+
+.rate {
+  display: inline-block;
+  font-size: $icon-size-sm;
+}
+
+.star {
+  margin-right: $h-spacing-sm;
+  user-select: none;
+  color: $rate-star-bg;
+  transition: all .3s;
+  &.active {
+    color: $rate-star-color;
+  }
+}
+
+
