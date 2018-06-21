@@ -13,6 +13,10 @@
 
     <f-white-space />
 
+    <f-step />
+
+    <f-white-space />
+
     <f-divider>订单详情</f-divider>
 
     <f-preview>

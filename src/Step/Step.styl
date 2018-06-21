@@ -1,0 +1,36 @@
+@require '../_styles/settings';
+
+.step {
+  display: flex;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  .tail {
+    flex: 1;
+    hairline(top);
+    &.left {
+      margin-right: 10px;
+    }
+    &.right {
+      margin-left: 10px;
+    }
+  }
+  .item:first-child & {
+    .tail.left {
+      visibility: hidden;
+    }
+  }
+  .item:last-child & {
+    .tail.right {
+      visibility: hidden;
+    }
+  }
+}
