@@ -13,7 +13,11 @@
 
     <f-white-space />
 
-    <f-step />
+    <f-step current="1">
+      <f-step-item title="同意协议" icon="voice" />
+      <f-step-item title="注册" />
+      <f-step-item title="激活" icon="voice" />
+    </f-step>
 
     <f-white-space />
 

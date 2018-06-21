@@ -1,64 +1,14 @@
-<template>
-  <div styleName="@step">
-    <div styleName="item">
-      <div styleName="indicator">
-        <div styleName="tail left" />
-        <div styleName="icon">
-          <f-icon name="voice" />
-        </div>
-        <div styleName="tail right" />
-      </div>
-      <div styleName="content">
-        <div styleName="title">
-          第一步
-        </div>
-        <div styleName="desc">
-          第一步呀
-        </div>
-      </div>
-    </div>
-    <div styleName="item">
-      <div styleName="indicator">
-        <div styleName="tail left" />
-        <div styleName="icon">
-          <f-icon name="voice" />
-        </div>
-        <div styleName="tail right" />
-      </div>
-      <div styleName="content">
-        <div styleName="title">
-          第2步
-        </div>
-        <div styleName="desc">
-          第2步呀
-        </div>
-      </div>
-    </div>
-    <div styleName="item">
-      <div styleName="indicator">
-        <div styleName="tail left" />
-        <div styleName="icon">
-          <f-icon name="voice" />
-        </div>
-        <div styleName="tail right" />
-      </div>
-      <div styleName="content">
-        <div styleName="title">
-          第3步
-        </div>
-        <div styleName="desc">
-          第3步呀
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import CSSModules from 'vue-css-modules'
+import Messenger from 'vue-messenger'
+import StepItem from './StepItem.vue'
 
 export default {
   name: 'FStep',
+
+  subComponents: {
+    Item: StepItem
+  },
 
   inject: {
     StepStyles: {
@@ -66,8 +16,37 @@ export default {
     }
   },
 
+  provide() {
+    return {
+      Step: this
+    }
+  },
+
   mixins: [
+    Messenger,
     CSSModules('StepStyles')
-  ]
+  ],
+
+  props: {
+    current: {
+      numeric: true,
+      default: 0,
+      transform: Number
+    },
+    error: Boolean
+  },
+
+  render() {
+    return <div styleName="@step :error">
+      {(this.$slots.default || []).map((child, index) => {
+        if (child.tag) {
+          child.data = child.data || {}
+          child.data.attrs = child.data.attrs || {}
+          child.data.attrs.index = index
+        }
+        return child
+      })}
+    </div>
+  }
 }
 </script>
