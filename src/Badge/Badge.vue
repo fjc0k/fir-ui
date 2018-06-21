@@ -1,7 +1,7 @@
 <template>
-  <div :styleName="`@badge ${corner ? 'overflow-hidden' : ''}`">
+  <div :styleName="`wrapper ${corner ? 'overflow-hidden' : ''}`">
     <slot />
-    <div :styleName="`text :corner :dot :hot ${$slots.default ? 'has-attachment' : ''}`">
+    <div :styleName="`@badge text :corner :dot :hot ${$slots.default ? 'has-attachment' : ''}`">
       <slot name="text" v-if="!dot">
         {{ localText }}
       </slot>

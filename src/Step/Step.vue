@@ -1,6 +1,7 @@
 <script>
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
+import { patchIndex } from '../_utils'
 import StepItem from './StepItem.vue'
 
 export default {
@@ -38,14 +39,7 @@ export default {
 
   render() {
     return <div styleName="@step :error">
-      {(this.$slots.default || []).map((child, index) => {
-        if (child.tag) {
-          child.data = child.data || {}
-          child.data.attrs = child.data.attrs || {}
-          child.data.attrs.index = index
-        }
-        return child
-      })}
+      {patchIndex(this.$slots.default)}
     </div>
   }
 }

@@ -4,7 +4,7 @@
       <div slot="left">
         <f-icon name="left" size="md" />
       </div>
-      <f-icon name="star" /> 冬菜助手 <f-icon name="fab-font-awesome" /> <f-icon name="ion-md-finger-print" />
+      <f-icon name="star" /> <f-badge :text="444" overflowStyle="ellipsis">冬菜助手</f-badge> <f-icon name="fab-font-awesome" /> <f-icon name="ion-md-finger-print" />
       <f-icon name="md-done-all" />
       <div @click="drawer=!drawer" slot="right">
         <f-icon name="ellipsis" size="md" />
@@ -115,6 +115,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti li
     </f-divider>
 
     <!-- <f-action-sheet :maskClosable="true" maskThrough title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->
+
+    <FTabBar selected="x">
+      <FTabBarItem icon="voice">通知</FTabBarItem>
+      <FTabBarItem icon="search">搜索</FTabBarItem>
+      <FTabBarItem icon="cross" :badge="{
+        dot: true
+      }" value="x">我的</FTabBarItem>
+    </FTabBar>
 
   </f-container>
 </template>

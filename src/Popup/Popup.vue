@@ -1,12 +1,12 @@
 <template>
   <div v-transfer-to-body>
-    <transition appear name="f--fade">
+    <transition :appear="appear" name="f--fade">
       <div
         styleName="@popup $position through=maskThrough transparent=maskTransparent"
         :style="{ zIndex }"
         @click.passive="handleMaskClick"
         v-show="localVisible">
-        <transition :name="popupTransition" appear v-on="$listeners">
+        <transition :name="popupTransition" :appear="appear" v-on="$listeners">
           <slot />
         </transition>
       </div>
@@ -48,6 +48,10 @@ export default {
     zIndex: {
       numeric: true,
       default: () => zIndex++
+    },
+    appear: {
+      type: Boolean,
+      default: true
     },
     ...maskProps({
       closable: true,
