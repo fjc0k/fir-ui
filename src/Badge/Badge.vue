@@ -34,6 +34,10 @@ export default {
       numeric: true,
       default: 99
     },
+    overflowStyle: {
+      type: String,
+      enum: ['plus', 'ellipsis']
+    },
     corner: Boolean, // todo: 完善
     dot: Boolean,
     hot: Boolean
@@ -41,12 +45,14 @@ export default {
 
   computed: {
     localText() {
-      const { text, overflowCount } = this
+      const { text, overflowCount, overflowStyle } = this
       return (
         isNumber(text) ? (
-          text > overflowCount ?
-            `${overflowCount}+` :
-            text
+          text > overflowCount ? (
+            overflowStyle === 'ellipsis' ?
+              '...' :
+              `${overflowCount}+`
+          ) : text
         ) : text
       )
     }
