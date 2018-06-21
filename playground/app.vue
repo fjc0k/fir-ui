@@ -21,7 +21,7 @@
 
     <f-white-space />
 
-    <f-divider>订单详情</f-divider>
+    <f-divider>订单详情1</f-divider>
 
     <f-preview>
       <f-preview-item label="合计">¥300</f-preview-item>
