@@ -1,6 +1,5 @@
 <script>
 import CSSModules from 'vue-css-modules'
-import { toggleVisibility } from '../_mixins'
 import { transferDOMToBody } from '../_directives'
 import Popper from 'popper.js'
 
@@ -14,7 +13,6 @@ export default {
   },
 
   mixins: [
-    toggleVisibility(false, true),
     CSSModules('PopoverStyles')
   ],
 
