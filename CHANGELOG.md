@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.54.0"></a>
+# [0.54.0](https://github.com/fjc0k/fir-ui/compare/v0.53.0...v0.54.0) (2018-06-22)
+
+
+### Features
+
+* **Badge:** add overflowStyle props ([173ea30](https://github.com/fjc0k/fir-ui/commit/173ea30))
+* **components:** add Popover ([de8ea85](https://github.com/fjc0k/fir-ui/commit/de8ea85))
+* **components:** add Step ([dc616d2](https://github.com/fjc0k/fir-ui/commit/dc616d2))
+* **components:** add TabBar ([a444b2c](https://github.com/fjc0k/fir-ui/commit/a444b2c))
+
+
+
+
 <a name="0.53.0"></a>
 # [0.53.0](https://github.com/fjc0k/fir-ui/compare/v0.52.0...v0.53.0) (2018-06-20)
 
