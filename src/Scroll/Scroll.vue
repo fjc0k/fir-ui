@@ -1,6 +1,6 @@
 <template>
   <div styleName="container" ref="container">
-    <div styleName="@scroll $direction" ref="scroll">
+    <div styleName="@scroll :horizontal :vertical" ref="scroll">
       <div styleName="top" ref="top" v-if="$slots.top">
         <slot name="top" />
       </div>
@@ -14,7 +14,6 @@
 
 <script>
 import CSSModules from 'vue-css-modules'
-import Messenger from 'vue-messenger'
 import Scroll from './Scroll'
 
 export default {
@@ -27,32 +26,23 @@ export default {
   },
 
   mixins: [
-    Messenger,
     CSSModules('ScrollStyles')
   ],
 
   props: {
-    direction: {
-      type: String,
-      enum: ['vertical', 'horizontal']
-    },
-    bindToWrapper: Boolean,
-    mode: {
-      type: String,
-      enum: ['scroll', 'page']
-    },
-    pageThreshold: {
-      numeric: true,
-      default: 0.1,
-      range: [0, 1]
-    },
-    pageIndex: 0
+    horizontal: Boolean
+  },
+
+  computed: {
+    vertical() {
+      return !this.horizontal
+    }
   },
 
   mounted() {
     this.$nextTick(() => {
       this.scroll = new Scroll(this.$refs, {
-        ...this.$props,
+        direction: this.horizontal ? 'horizontal' : 'vertical',
         klass: this.ScrollStyles,
         on: {
           scrollEnd: this.$emit.bind(this, 'scroll-end')

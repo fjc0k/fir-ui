@@ -30,13 +30,21 @@
       </f-popover>
     </f-divider>
 
-    <f-preview>
-      <f-preview-item label="合计">¥300</f-preview-item>
-      <f-preview-item label="预订日期">2018-06-19</f-preview-item>
-      <f-preview-item label="备注信息">明日之子</f-preview-item>
-      <f-preview-item label="订单状态">退款</f-preview-item>
-      <f-preview-button type="warning">删除订单</f-preview-button>
-    </f-preview>
+    <!-- <f-carousel direction="vertical" style="height: 50px" autoplay loop>
+      <p style="height:50px">1</p>
+      <p style="height:50px">2</p>
+      <p style="height:50px">3</p>
+    </f-carousel> -->
+
+    <f-scroll style="height:100px">
+      <f-preview>
+        <f-preview-item label="合计">¥300</f-preview-item>
+        <f-preview-item label="预订日期">2018-06-19</f-preview-item>
+        <f-preview-item label="备注信息">明日之子</f-preview-item>
+        <f-preview-item label="订单状态">退款</f-preview-item>
+        <f-preview-button type="warning">删除订单</f-preview-button>
+      </f-preview>
+    </f-scroll>
 
     <f-white-space />
 
