@@ -21,7 +21,14 @@
 
     <f-white-space />
 
-    <f-divider>订单详情1</f-divider>
+    <f-divider>
+      <f-popover :placement="placement" :visible="popoverVisible">
+        <f-button inline size="sm" @click="popoverVisible=!popoverVisible">按钮</f-button>
+        <div slot="message" style="width:90px">
+          电话：15974872223
+        </div>
+      </f-popover>
+    </f-divider>
 
     <f-preview>
       <f-preview-item label="合计">¥300</f-preview-item>
@@ -135,6 +142,8 @@ export default {
     }
   },
   data: () => ({
+    popoverVisible: false,
+    placement: 'top',
     rate: 2,
     selectedRadio: 2,
     selectedCheckbox: [2],

@@ -1,0 +1,60 @@
+@require '../_styles/settings';
+
+$popover-arrow-width = 7 * $hd;
+
+.popover {
+  z-index: 2;
+  visibility: hidden;
+  pointer-events: none;
+  &[x-placement^=top], &[x-placement^=bottom] {
+    flex-direction: column;
+    margin: 3px 0;
+  }
+  &[x-placement^=left], &[x-placement^=right] {
+    flex-direction: row;
+    margin: 0 3px;
+  }
+  &.visible {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.message {
+  flex: 1;
+  background: white;
+  padding: $v-spacing-md $h-spacing-md;
+  hairline(, , 3 * $hd);
+  order: 1;
+}
+
+.arrow {
+  width: $popover-arrow-width;
+  height: $popover-arrow-width;
+  background-color: $fill-base;
+  hairline(top right);
+  [x-placement^=top] & {
+    order: 2;
+    transform: rotate(135deg);
+    margin-top: -($popover-arrow-width / 2);
+  }
+  [x-placement^=right] & {
+    order: 0;
+    transform: rotate(-135deg);
+    margin-right: -($popover-arrow-width / 2);
+  }
+  [x-placement^=bottom] & {
+    order: 0;
+    transform: rotate(-45deg);
+    margin-bottom: -($popover-arrow-width / 2);
+  }
+  [x-placement^=left] & {
+    order: 2;
+    transform: rotate(45deg);
+    margin-left: -($popover-arrow-width / 2);
+  }
+}
