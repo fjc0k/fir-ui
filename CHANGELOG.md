@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.54.3"></a>
+## [0.54.3](https://github.com/fjc0k/fir-ui/compare/v0.54.2...v0.54.3) (2018-06-22)
+
+
+
+
+**Note:** Version bump only for package fir-ui
+
 <a name="0.54.2"></a>
 ## [0.54.2](https://github.com/fjc0k/fir-ui/compare/v0.54.1...v0.54.2) (2018-06-22)
 
