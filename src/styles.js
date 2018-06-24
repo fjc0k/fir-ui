@@ -21,6 +21,7 @@ export { default as MutationObserverStyles } from './MutationObserver/MutationOb
 export { default as NavBarStyles } from './NavBar/NavBar.styl'
 export { default as NoticeBarStyles } from './NoticeBar/NoticeBar.styl'
 export { default as PaginationStyles } from './Pagination/Pagination.styl'
+export { default as PickerStyles } from './Picker/Picker.styl'
 export { default as PopoverStyles } from './Popover/Popover.styl'
 export { default as PopupStyles } from './Popup/Popup.styl'
 export { default as PreviewStyles } from './Preview/Preview.styl'

@@ -1,4 +1,4 @@
-import { isArray, isPlainObject, defaultTo } from 'lodash'
+import { isArray, isPlainObject } from 'lodash'
 
 export default (data, {
   label: labelKey = 'label',
@@ -18,10 +18,10 @@ export default (data, {
 
     // e.g. ['10', 10]
     if (isArray(item)) {
-      const [label, value, extra] = item
+      const [label, value = label, extra] = item
       return {
         [labelKey]: label,
-        [valueKey]: defaultTo(value, label),
+        [valueKey]: value,
         ...extra
       }
     }

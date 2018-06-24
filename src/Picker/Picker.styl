@@ -1,0 +1,90 @@
+@require '../_styles/settings';
+
+$picker-item-height = 34 * $hd;
+
+.view {
+  background: $fill-base;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  font-size: $font-size-caption;
+}
+
+.mask, .indicator {
+  position: absolute !important;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.mask {
+  top: 0;
+  height: 100%;
+  margin: 0 auto;
+  background-image:
+    linear-gradient(
+      180deg,
+      hsla(0, 0%, 100%, .95),
+      hsla(0, 0%, 100%, .6)
+    ),
+    linear-gradient(
+      0deg,
+      hsla(0, 0%, 100%, .95),
+      hsla(0, 0%, 100%, .6)
+    );
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+
+.indicator {
+  hairline(top bottom);
+}
+
+.caption {
+  display: flex;
+  padding: $v-spacing-sm 0;
+  color: $color-text-caption;
+  font-size: $font-size-caption-sm;
+}
+
+.caption-item {
+  flex: 1;
+  text-align: center;
+  ellipsis: 1;
+}
+
+.content {
+  display: flex;
+  align-items: baseline;
+}
+
+.group {
+  flex: 1;
+}
+
+.item {
+  color: $color-text-base;
+  height: $picker-item-height;
+  line-height: $picker-item-height;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  text-align: center;
+  ellipsis: 1;
+
+  &.selected {
+    font-size: $font-size-heading;
+  }
+}
+
+.divider {
+  flex: 1;
+  flex-center: true;
+}
+
+.divider-content {
+  ellipsis: 1;
+}

@@ -8,7 +8,9 @@ import {
   PROP_X,
   PROP_Y,
   PROP_W,
-  PROP_H
+  PROP_H,
+  PROP_CW,
+  PROP_CH
 } from './consts'
 
 export default class Scroll {
@@ -31,12 +33,14 @@ export default class Scroll {
     direction = DIRECTION_VERTICAL_TEXT,
     bindToWrapper = false,
     disableCross = false,
+    scrollEndAlways = false,
     on = {},
     ...options
   } = {}) {
     const isVertical = direction === DIRECTION_VERTICAL_TEXT
     const XY = isVertical ? PROP_Y : PROP_X
     const WH = isVertical ? PROP_H : PROP_W
+    const CWH = isVertical ? PROP_CH : PROP_CW
     const containerStyler = styler(container)
     const scrollStyler = styler(scroll)
 
@@ -55,11 +59,13 @@ export default class Scroll {
       direction,
       bindToWrapper,
       disableCross,
+      scrollEndAlways,
       on,
       ...options,
       isVertical,
       XY,
-      WH
+      WH,
+      CWH
     })
   }
 
@@ -111,13 +117,13 @@ export default class Scroll {
       options: {
         isVertical,
         XY,
-        WH
+        CWH
       },
       nodes: {
-        scroll: scrollNode
+        scroll: scrollNode,
+        container: containerNode
       },
       stylers: {
-        container: containerStyler,
         scroll: scrollStyler
       }
     } = this
@@ -134,7 +140,7 @@ export default class Scroll {
 
     this.scroll = {
       ...this.scroll,
-      minXY: containerStyler.get(WH) - scrollStyler.get(WH),
+      minXY: containerNode[CWH] - scrollNode[CWH],
       maxXY: 0,
       translateXY: value(0, scrollStyler.set(XY))
     }
@@ -157,7 +163,8 @@ export default class Scroll {
         isVertical,
         XY,
         bindToWrapper,
-        disableCross
+        disableCross,
+        scrollEndAlways
       },
       scroll: {
         translateXY,
@@ -192,7 +199,13 @@ export default class Scroll {
         (isVertical && (direction & DIRECTION_VERTICAL))
       )) {
         isValid = false
-        translateXY.stop()
+        if (scrollEndAlways) {
+          this
+            .hook('scrollEnd', e, getPointXY(e))
+            .then(() => translateXY.stop())
+        } else {
+          translateXY.stop()
+        }
       } else {
         this.hook('scrollMove', e, getPointXY(e))
       }

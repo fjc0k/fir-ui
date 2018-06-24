@@ -30,106 +30,17 @@
       </f-popover>
     </f-divider>
 
-    <!-- <f-carousel direction="vertical" style="height: 50px" autoplay loop>
-      <p style="height:50px">1</p>
-      <p style="height:50px">2</p>
-      <p style="height:50px">3</p>
-    </f-carousel> -->
+    {{ pickerDetail }}
 
-    <f-scroll style="height:100px">
-      <f-preview>
-        <f-preview-item label="合计">¥300</f-preview-item>
-        <f-preview-item label="预订日期">2018-06-19</f-preview-item>
-        <f-preview-item label="备注信息">明日之子</f-preview-item>
-        <f-preview-item label="订单状态">退款</f-preview-item>
-        <f-preview-button type="warning">删除订单</f-preview-button>
-      </f-preview>
-    </f-scroll>
+    {{ pickerValue }}
 
-    <f-white-space />
-
-    <f-rate style="color:red" count="8" v-model="rate" readonly /> {{ rate }}
-
-    <f-white-space />
-    <f-choose v-model="selectedRadio" :value="2" disabled>hello</f-choose>
-    <f-choose v-model="selectedRadio" :value="1">hello</f-choose>
-
-    <f-choose v-model="selectedCheckbox" :value="2" square>hello</f-choose>
-    <f-choose v-model="selectedCheckbox" :value="1">hello</f-choose>
-
-    <f-choose v-model="selectedAgree" :value="true" type="radio">hello</f-choose>
-    <f-choose v-model="selectedAgree" :value="false" type="radio" square>hello</f-choose>
-
-    <f-white-space />
-
-<f-nav-bar><f-icon name="left" size="md" slot="left" />
-<f-segmented-control :data="['动态', '附近']" :detail.sync="detail" color="#fff" />
-<f-icon name="search" size="md" slot="right" /></f-nav-bar>
-
-{{ detail }}
-
-    <f-notice-bar icon="check-circle-o" mode="link">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Refert tamen, quo modo.
-    </f-notice-bar>
-
-    <f-grid cols="6">
-      <f-grid-item icon="voice">hellohellohellohello</f-grid-item>
-      <f-grid-item icon="voice">hello</f-grid-item>
-      <f-grid-item icon="voice">hello</f-grid-item>
-      <f-grid-item icon="voice">hello</f-grid-item>
-      <f-grid-item icon="voice">hello</f-grid-item>
-      <f-grid-item icon="voice">hello</f-grid-item>
-    </f-grid>
-
-    <FDrawer  position="left" v-model="drawer" @show="$log('show')">
-      <f-form title="表单" labelWidth="5em">
-        <f-form-item icon="voice" label="姓名" desc="三字以内" align="right">
-          <f-switch on color="red" />
-          <div slot="extra">￥</div>
-        </f-form-item>
-        <f-form-item label="姓名" desc="三字以内">
-          <f-input placeholder="输入名字" />
-          <div slot="extra">￥</div>
-        </f-form-item>
-        <f-form-item label="姓名" desc="三字以内">
-          min1
-          <div slot="extra">￥</div>
-        </f-form-item>
-        <div slot="tip">请勾选注册协议</div>
-      </f-form>
-    </FDrawer>
-
-    <f-form title="表单" labelWidth="5em">
-      <f-form-item label="姓名" desc="三字以内">
-        min1
-        <div slot="extra">￥</div>
-      </f-form-item>
-      <div slot="tip">请勾选注册协议</div>
-    </f-form>
-
-    <f-icon name="loading" />
-
-    <f-wing-blank>
-      <f-button type="primary">
-        注册
-      </f-button>
-    </f-wing-blank>
-
-    <f-modal-operation v-model="slide4">
-      <f-modal-button>标为未读</f-modal-button>
-      <f-modal-button>置顶聊天</f-modal-button>
-      <f-modal-button>删除 Ta</f-modal-button>
-    </f-modal-operation>
-
-    <f-flex wrap="wrap">
-      <f-flex-item basis="15%" v-for="i in 20" :key="i">{{ i }}</f-flex-item>
-    </f-flex>
-
-    <f-divider type="warning">
-      请完善相关资料
-    </f-divider>
-
-    <!-- <f-action-sheet :maskClosable="true" maskThrough title="分享到" message="选择渠道" :showCancel="true" :data="actions" :visible="true" /> -->
+    <FPickerView
+      :caption="['开始年份', '结束年份']"
+      visibleItemCount="5"
+      :data="pickerData"
+      :detail.sync="pickerDetail"
+      v-model="pickerValue"
+    ></FPickerView>
 
     <FTabBar selected="x">
       <FTabBarItem icon="voice">通知</FTabBarItem>
@@ -150,6 +61,12 @@ export default {
     }
   },
   data: () => ({
+    pickerDetail: [],
+    pickerData: [
+      [2018, 2019],
+      [2020, 2021, 2022, 2023, 2024, 2025]
+    ],
+    pickerValue: [2, 7],
     popoverVisible: false,
     placement: 'top',
     rate: 2,

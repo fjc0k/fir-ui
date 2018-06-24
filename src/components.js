@@ -21,6 +21,7 @@ export { default as MutationObserver } from './MutationObserver/MutationObserver
 export { default as NavBar } from './NavBar/NavBar.vue'
 export { default as NoticeBar } from './NoticeBar/NoticeBar.vue'
 export { default as Pagination } from './Pagination/Pagination.vue'
+export { default as Picker } from './Picker/Picker.vue'
 export { default as Popover } from './Popover/Popover.vue'
 export { default as Popup } from './Popup/Popup.vue'
 export { default as Preview } from './Preview/Preview.vue'
