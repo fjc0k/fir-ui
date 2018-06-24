@@ -5,15 +5,6 @@ import { isArray, fill, range, findIndex } from 'lodash'
 import { normalizeData, parseCSSUnit } from '../_utils'
 import Picker from './Picker'
 
-// const normalizeCascadedData = data => [
-//   normalizeData(data).map(item => {
-//     if (item.children) {
-//       item.children = normalizeCascadedData(item.children)
-//     }
-//     return item
-//   })
-// ]
-
 export default {
   name: 'FPickerView',
 
@@ -90,7 +81,8 @@ export default {
         }
         return fill(Array(this.groupCount), caption)
       }
-    }
+    },
+    cascaded: Boolean
   },
 
   data: () => ({

@@ -42,6 +42,14 @@
       v-model="pickerValue"
     ></FPickerView>
 
+    <FCascadedPickerView
+      :caption="['开始年份', '结束年份']"
+      visibleItemCount="5"
+      :data="pickerData2"
+      :detail.sync="pickerDetail2"
+      v-model="pickerValue2"
+    ></FCascadedPickerView>
+
     <FTabBar selected="x">
       <FTabBarItem icon="voice">通知</FTabBarItem>
       <FTabBarItem icon="search">搜索</FTabBarItem>
@@ -67,6 +75,18 @@ export default {
       [2020, 2021, 2022, 2023, 2024, 2025]
     ],
     pickerValue: [2, 7],
+    pickerDetail2: [],
+    pickerData2: [
+      [2016, 2016, { children: [
+        1,
+        2
+      ] }],
+      [2017, 2017, { children: [
+        11,
+        22
+      ] }]
+    ],
+    pickerValue2: [2, 7],
     popoverVisible: false,
     placement: 'top',
     rate: 2,
