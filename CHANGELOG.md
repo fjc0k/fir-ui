@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.55.0"></a>
+# [0.55.0](https://github.com/fjc0k/fir-ui/compare/v0.54.4...v0.55.0) (2018-06-26)
+
+
+### Bug Fixes
+
+* Scroll ([42ff041](https://github.com/fjc0k/fir-ui/commit/42ff041))
+* **Choose:** styles ([7402044](https://github.com/fjc0k/fir-ui/commit/7402044))
+
+
+### Features
+
+* **Choose:** support block prop ([8645f72](https://github.com/fjc0k/fir-ui/commit/8645f72))
+* **components:** add PickerView ([b656083](https://github.com/fjc0k/fir-ui/commit/b656083))
+
+
+
+
 <a name="0.54.4"></a>
 ## [0.54.4](https://github.com/fjc0k/fir-ui/compare/v0.54.3...v0.54.4) (2018-06-22)
 
