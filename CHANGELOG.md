@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.56.0"></a>
+# [0.56.0](https://github.com/fjc0k/fir-ui/compare/v0.55.0...v0.56.0) (2018-06-26)
+
+
+### Features
+
+* **components:** add ChooseGroup ([68ef943](https://github.com/fjc0k/fir-ui/commit/68ef943))
+
+
+
+
 <a name="0.55.0"></a>
 # [0.55.0](https://github.com/fjc0k/fir-ui/compare/v0.54.4...v0.55.0) (2018-06-26)
 
