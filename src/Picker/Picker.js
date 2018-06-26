@@ -1,3 +1,4 @@
+import { isNumber } from 'lodash'
 import { chain, action, spring, transform } from 'popmotion'
 import { Scroll } from '../_utils/scroll'
 
@@ -22,7 +23,9 @@ export default class Picker extends Scroll {
 
     this.itemHeight = scrollNode.firstChild[CWH]
 
-    index && this.wheelTo(index, { duration: 0 })
+    if (isNumber(index)) {
+      this.wheelTo(index, { duration: 0 })
+    }
   }
 
   scrollEnd() {
@@ -60,7 +63,8 @@ export default class Picker extends Scroll {
         action(() => {
           this.listener(
             'wheelEnd',
-            Math.abs(translateXY.get() / itemHeight)
+            Math.abs(translateXY.get() / itemHeight),
+            true
           )
           resolve()
         })
@@ -71,7 +75,14 @@ export default class Picker extends Scroll {
   wheelTo(index, tweenOptions) {
     return new Promise(resolve => {
       const nextXY = this.itemHeight * index
-      this.scrollTo(-nextXY, tweenOptions).then(resolve)
+      this.scrollTo(-nextXY, tweenOptions).then(() => {
+        this.listener(
+          'wheelEnd',
+          index,
+          false
+        )
+        resolve()
+      })
     })
   }
 }

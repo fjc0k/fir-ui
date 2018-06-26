@@ -23,16 +23,16 @@ export default {
     value: {
       type: Array,
       default: () => [],
-      transform: value => value.slice(),
-      on: {
-        receive() {
-          this.$nextTick(() => {
-            this.picker && this.picker.forEach(
-              (picker, groupIndex) => picker.wheelTo(this.selectedIndex[groupIndex])
-            )
-          })
-        }
-      }
+      transform: value => value.slice()
+      // on: {
+      //   receive() {
+      //     this.$nextTick(() => {
+      //       this.picker && this.picker.forEach(
+      //         (picker, groupIndex) => picker.wheelTo(this.selectedIndex[groupIndex])
+      //       )
+      //     })
+      //   }
+      // }
     },
     detail: {
       type: Array,
@@ -178,7 +178,8 @@ export default {
         }, {
           index: selectedIndex[groupIndex],
           on: {
-            wheelEnd: index => {
+            wheelEnd: (index, isNative) => {
+              console.log(index, isNative)
               const value = this.localData[groupIndex][index].value
               if (value === this.localValue[groupIndex]) return
               const localValue = this.localValue.slice()
