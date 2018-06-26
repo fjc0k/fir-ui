@@ -2,8 +2,17 @@
 
 .choose {
   flex-center: inline;
-  &.block {
+  .group.horizontal & {
+    display: inline-flex;
+    &:not(:first-child) {
+      margin-left: $h-spacing-md;
+    }
+  }
+  .group.vertical & {
     display: flex;
+    &:not(:first-child) {
+      margin-top: $v-spacing-md;
+    }
   }
   &.disabled {
     disabled: true;

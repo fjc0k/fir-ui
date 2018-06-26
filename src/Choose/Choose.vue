@@ -2,14 +2,15 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import { isArray, isBoolean, includes } from 'lodash'
-
-const AUTO = 'auto'
-const CHECKBOX = 'checkbox'
-const RADIO = 'radio'
-const AGREE = 'agree'
+import ChooseGroup from './ChooseGroup.vue'
+import { AUTO, CHECKBOX, RADIO, AGREE } from './consts'
 
 export default {
   name: 'FChoose',
+
+  subComponents: {
+    Group: ChooseGroup
+  },
 
   model: {
     prop: 'selected',
@@ -19,6 +20,9 @@ export default {
   inject: {
     ChooseStyles: {
       default: () => ({})
+    },
+    ChooseGroup: {
+      default: null
     }
   },
 
@@ -30,49 +34,68 @@ export default {
   props: {
     selected: null,
     value: null,
-    square: Boolean,
-    disabled: Boolean,
+    square: {
+      type: [Boolean, String],
+      enum: [AUTO, true, false],
+      default() {
+        return this.ChooseGroup ? this.ChooseGroup.square : AUTO
+      }
+    },
+    disabled: {
+      type: Boolean,
+      default() {
+        return this.ChooseGroup ? this.ChooseGroup.disabled : false
+      }
+    },
     type: {
       type: String,
-      enum: [AUTO, RADIO, CHECKBOX, AGREE]
-    },
-    block: Boolean
+      enum: [AUTO, RADIO, CHECKBOX, AGREE],
+      default() {
+        return this.ChooseGroup ? this.ChooseGroup.type : AUTO
+      }
+    }
   },
 
   computed: {
-    localType() {
-      const { type, localSelected } = this
+    localSelectedX() {
+      return this.ChooseGroup ? this.ChooseGroup.localValue : this.localSelected
+    },
+    localSquare() {
+      return this.square === AUTO ? this.chooseType === CHECKBOX : this.square
+    },
+    chooseType() {
+      const { type, localSelectedX } = this
       return type === AUTO ? (
-        isBoolean(localSelected) ?
+        isBoolean(localSelectedX) ?
           AGREE :
-          isArray(localSelected) ?
+          isArray(localSelectedX) ?
             CHECKBOX :
             RADIO
       ) : type
     },
     inputType() {
-      return this.localType === RADIO ? 'radio' : 'checkbox'
+      return this.chooseType === RADIO ? 'radio' : 'checkbox'
     },
     isSelected() {
-      const { localType, localSelected, value } = this
+      const { chooseType, localSelectedX, value } = this
       return (
-        localType === CHECKBOX ?
-          includes(localSelected, value) :
-          localType === RADIO ?
-            localSelected === value :
-            localSelected
+        chooseType === CHECKBOX ?
+          includes(localSelectedX, value) :
+          chooseType === RADIO ?
+            localSelectedX === value :
+            localSelectedX
       )
     }
   },
 
   methods: {
     handleChange({ target: { checked } }) {
-      const { localType, localSelected, value } = this
+      const { chooseType, localSelectedX, value } = this
 
       let selectedValue
 
-      if (localType === CHECKBOX) {
-        selectedValue = localSelected.slice()
+      if (chooseType === CHECKBOX) {
+        selectedValue = localSelectedX.slice()
         if (checked) {
           selectedValue.push(value)
         } else {
@@ -81,13 +104,17 @@ export default {
             1
           )
         }
-      } else if (localType === AGREE) {
+      } else if (chooseType === AGREE) {
         selectedValue = checked
       } else {
         selectedValue = value
       }
 
-      this.sendSelected(selectedValue)
+      if (this.ChooseGroup) {
+        this.ChooseGroup.sendValue(selectedValue)
+      } else {
+        this.sendSelected(selectedValue)
+      }
     }
   },
 
@@ -99,7 +126,7 @@ export default {
       handleChange
     } = this
 
-    return <label styleName="@choose :square :block :disabled">
+    return <label styleName="@choose square=localSquare :disabled">
       <input
         styleName="input"
         type={inputType}

@@ -21,17 +21,19 @@
 
     <f-white-space />
 
-    <f-choose>
-      A、向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 (比如
-    </f-choose>
+    <f-choose-group square direction="horizontal" v-model="cs" >
+      <f-choose :value="cs1">
+        男生
+      </f-choose>
 
-    <f-choose block>
-      B、向响应式对象
-    </f-choose>
+      <f-choose :value="cs2" block>
+        女生
+      </f-choose>
 
-    <f-choose block>
-      B、向响应式对象
-    </f-choose>
+      <f-choose :value="cs3" block>
+        双性人
+      </f-choose>
+    </f-choose-group>
 
     <f-white-space />
 
@@ -83,6 +85,10 @@ export default {
     }
   },
   data: () => ({
+    cs: 1,
+    cs1: 1,
+    cs2: 2,
+    cs3: 3,
     pickerDetail: [],
     pickerData: [
       [2018, 2019],
