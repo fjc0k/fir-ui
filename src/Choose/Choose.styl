@@ -1,8 +1,17 @@
 @require '../_styles/settings';
 
 .choose {
-  flex-center: inline;
-  height: $icon-size-sm;
+  display: inline-flex;
+  justify-content: center;
+  &.center {
+    align-items: center;
+  }
+  &.start {
+    align-items: flex-start;  
+  }
+  &.end {
+    align-items: flex-end;  
+  }
   &.disabled {
     disabled: true;
   }
@@ -53,4 +62,9 @@
       }
     }
   }
+}
+
+.message {
+  flex: 1;
+  margin-left: $h-spacing-sm;
 }

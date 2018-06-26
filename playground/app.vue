@@ -21,6 +21,12 @@
 
     <f-white-space />
 
+    <f-choose>
+      A、向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 (比如
+    </f-choose>
+
+    <f-white-space />
+
     <f-divider>
       <f-popover :placement="placement" :visible="popoverVisible">
         <f-button inline size="sm" @click="popoverVisible=!popoverVisible">按钮</f-button>

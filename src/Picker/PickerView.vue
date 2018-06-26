@@ -90,6 +90,16 @@ export default {
   }),
 
   computed: {
+    groups() {
+      const { localData, cascaded, selectedIndex } = this
+      if (!cascaded) return localData
+      let lastItem = localData
+      return selectedIndex.map(index => {
+        const group = lastItem[index]
+        // lastItem = lastItem
+        return group
+      })
+    },
     groupCount() {
       return this.data.length
     },
@@ -199,16 +209,18 @@ export default {
 
     return (
       <div styleName="view">
-        {localCaption && <div styleName="caption">
-          {localCaption.map((caption, groupIndex) => [
-            <div styleName="caption-item" style={styles.caption} key={groupIndex}>
-              {caption}
-            </div>,
-            localDivider && localDivider[groupIndex] && (
-              <div styleName="caption-item" style={styles.caption} key={`_${groupIndex}`} />
-            )
-          ])}
-        </div>}
+        {localCaption && (
+          <div styleName="caption">
+            {localCaption.map((caption, groupIndex) => [
+              <div styleName="caption-item" style={styles.caption} key={groupIndex}>
+                {caption}
+              </div>,
+              localDivider && localDivider[groupIndex] && (
+                <div styleName="caption-item" style={styles.caption} key={`_${groupIndex}`} />
+              )
+            ])}
+          </div>
+        )}
         <div styleName="container" style={styles.container} ref="container">
           <div styleName="mask" style={styles.mask} />
           <div styleName="indicator" style={styles.indicator} />
@@ -231,7 +243,9 @@ export default {
                 </div>,
                 localDivider && localDivider[groupIndex] && (
                   <div styleName="divider" style={styles.divider} key={`_${groupIndex}`}>
-                    <span styleName="divider-content">{localDivider[groupIndex]}</span>
+                    <span styleName="divider-content">
+                      {localDivider[groupIndex]}
+                    </span>
                   </div>
                 )
               ]

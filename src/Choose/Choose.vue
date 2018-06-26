@@ -35,6 +35,10 @@ export default {
     type: {
       type: String,
       enum: [AUTO, RADIO, CHECKBOX, AGREE]
+    },
+    align: {
+      type: String,
+      enum: ['center', 'start', 'end']
     }
   },
 
@@ -98,7 +102,7 @@ export default {
       handleChange
     } = this
 
-    return <label styleName="@choose :square :disabled">
+    return <label styleName="@choose $align :square :disabled">
       <input
         styleName="input"
         type={inputType}
@@ -107,7 +111,11 @@ export default {
         onChange={handleChange}
       />
       <div styleName={`box ${inputType}`} />
-      {this.$slots.default}
+      {this.$slots.default && (
+        <div styleName="message">
+          {this.$slots.default}
+        </div>
+      )}
     </label>
   }
 }
