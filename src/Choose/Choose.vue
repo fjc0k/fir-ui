@@ -36,10 +36,7 @@ export default {
       type: String,
       enum: [AUTO, RADIO, CHECKBOX, AGREE]
     },
-    align: {
-      type: String,
-      enum: ['center', 'start', 'end']
-    }
+    block: Boolean
   },
 
   computed: {
@@ -102,7 +99,7 @@ export default {
       handleChange
     } = this
 
-    return <label styleName="@choose $align :square :disabled">
+    return <label styleName="@choose :square :block :disabled">
       <input
         styleName="input"
         type={inputType}

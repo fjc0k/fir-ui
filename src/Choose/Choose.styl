@@ -1,16 +1,9 @@
 @require '../_styles/settings';
 
 .choose {
-  display: inline-flex;
-  justify-content: center;
-  &.center {
-    align-items: center;
-  }
-  &.start {
-    align-items: flex-start;  
-  }
-  &.end {
-    align-items: flex-end;  
+  flex-center: inline;
+  &.block {
+    display: flex;
   }
   &.disabled {
     disabled: true;
