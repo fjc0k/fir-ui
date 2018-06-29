@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.56.2"></a>
+## [0.56.2](https://github.com/fjc0k/fir-ui/compare/v0.56.1...v0.56.2) (2018-06-29)
+
+
+### Bug Fixes
+
+* **Input:** e.target.value ([9b734f3](https://github.com/fjc0k/fir-ui/commit/9b734f3))
+
+
+
+
 <a name="0.56.1"></a>
 ## [0.56.1](https://github.com/fjc0k/fir-ui/compare/v0.56.0...v0.56.1) (2018-06-29)
 
