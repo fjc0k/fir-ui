@@ -9364,8 +9364,8 @@ vue-component-register@^1.1.0:
   resolved "https://registry.yarnpkg.com/vue-component-register/-/vue-component-register-1.1.0.tgz#07aada9463e52091e5dbb7878871cbb2d44e2a0a"
 
 vue-css-modules@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-css-modules/-/vue-css-modules-1.1.0.tgz#26a688d88a78ced3d8443bfeca423cb099847f42"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue-css-modules/-/vue-css-modules-1.2.0.tgz#04bddaac7cbe32cc3213f1977c9087ed82622803"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
