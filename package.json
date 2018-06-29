@@ -19,6 +19,9 @@
     "dist",
     "lib"
   ],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "ant-design-icons": "^1.2.1",
     "autosize": "^4.0.2",
