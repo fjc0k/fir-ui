@@ -1,6 +1,6 @@
 {
   "name": "fir-ui",
-  "version": "0.56.3",
+  "version": "0.56.4",
   "main": "dist/fir-ui.js",
   "license": "MIT",
   "scripts": {

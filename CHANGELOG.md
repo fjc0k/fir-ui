@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.56.4"></a>
+## [0.56.4](https://github.com/fjc0k/fir-ui/compare/v0.56.3...v0.56.4) (2018-06-29)
+
+
+### Bug Fixes
+
+* **styles:** border-radius: 0 ([7e9e961](https://github.com/fjc0k/fir-ui/commit/7e9e961))
+
+
+
+
 <a name="0.56.3"></a>
 ## [0.56.3](https://github.com/fjc0k/fir-ui/compare/v0.56.2...v0.56.3) (2018-06-29)
 
