@@ -17,7 +17,7 @@ export default {
   ],
 
   props: {
-    value: [String, Number],
+    value: null,
     tag: {
       type: String,
       default: 'input'
@@ -32,12 +32,12 @@ export default {
   methods: {
     handleInput(e) {
       if (!this.lazy) {
-        this.sendValue(e)
+        this.sendValue(e.target.value)
       }
     },
     handleChange(e) {
       if (this.lazy) {
-        this.sendValue(e)
+        this.sendValue(e.target.value)
       }
     }
   },
