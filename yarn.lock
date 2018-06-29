@@ -9363,7 +9363,7 @@ vue-component-register@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vue-component-register/-/vue-component-register-1.1.0.tgz#07aada9463e52091e5dbb7878871cbb2d44e2a0a"
 
-vue-css-modules@^1.1.0:
+vue-css-modules@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/vue-css-modules/-/vue-css-modules-1.2.0.tgz#04bddaac7cbe32cc3213f1977c9087ed82622803"
 
@@ -9412,9 +9412,9 @@ vue-merge-data@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-merge-data/-/vue-merge-data-0.2.1.tgz#e655e190cd488ca946c05051192a4bf4ea440972"
 
-vue-messenger@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-2.3.2.tgz#5a80d63ff8c6f4282194ad67dfacaa3ffe2093ac"
+vue-messenger@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/vue-messenger/-/vue-messenger-2.3.3.tgz#acba2332108e121bce30f2523a2f71a640db3a7a"
 
 vue-router@^3.0.1:
   version "3.0.1"

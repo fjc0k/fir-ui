@@ -27,10 +27,10 @@
     "popmotion": "^8.2.1",
     "popper.js": "^1.14.3",
     "vue-component-register": "^1.1.0",
-    "vue-css-modules": "^1.1.0",
+    "vue-css-modules": "^1.2.0",
     "vue-iconfont": "^2.5.1",
     "vue-merge-data": "^0.2.1",
-    "vue-messenger": "^2.3.2"
+    "vue-messenger": "^2.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.47",
