@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.57.0"></a>
+# [0.57.0](https://github.com/fjc0k/fir-ui/compare/v0.56.4...v0.57.0) (2018-07-04)
+
+
+### Features
+
+* **components:** add Image ([741abf0](https://github.com/fjc0k/fir-ui/commit/741abf0))
+* **components:** add PreviewLine ([5195861](https://github.com/fjc0k/fir-ui/commit/5195861))
+* **Preview:** add plain prop ([14bf173](https://github.com/fjc0k/fir-ui/commit/14bf173))
+
+
+
+
 <a name="0.56.4"></a>
 ## [0.56.4](https://github.com/fjc0k/fir-ui/compare/v0.56.3...v0.56.4) (2018-06-29)
 
