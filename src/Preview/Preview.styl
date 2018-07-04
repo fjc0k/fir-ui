@@ -30,10 +30,12 @@
   }
   &:first-child {
     align-items: center;
-    hairline(bottom);
-    .value {
-      color: $color-text-base;
-      font-size: $font-size-heading;
+    .preview:not(.plain) & {
+      hairline(bottom);
+      .value {
+        color: $color-text-base;
+        font-size: $font-size-heading;
+      }
     }
   }
   &:not(:first-child) {
@@ -62,4 +64,10 @@
   &:active {
     background-color: $fill-tap;
   }
+}
+
+.line {
+  width: 100%;
+  margin-left: 15 * $hd;
+  hairline(bottom);
 }

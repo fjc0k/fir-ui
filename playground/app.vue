@@ -12,6 +12,16 @@
     </f-nav-bar>
 
     <f-white-space />
+    <f-preview plain>
+      <f-preview-item label="订单状态">已完成</f-preview-item>
+      <f-preview-item label="订单时间">2018-09-02</f-preview-item>
+      <f-preview-item label="订单编号">20180902</f-preview-item>
+      <f-preview-line />
+      <f-preview-item label="快递公司">顺丰</f-preview-item>
+      <f-preview-item label="快递单号">3455466779899434</f-preview-item>
+    </f-preview>
+
+    <f-white-space />
 
     <f-step current="1">
       <f-step-item title="同意协议" icon="voice" />
