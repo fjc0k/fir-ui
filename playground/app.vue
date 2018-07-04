@@ -12,6 +12,16 @@
     </f-nav-bar>
 
     <f-white-space />
+
+    <f-image
+      src="http://yd.huichifangqiu.com//uploads/goodsimg/20180608/20dc04834f37891d9413ba368fdfada2.png"
+      square
+      circle
+      alt="dd"
+      title="fff"
+    />
+
+    <f-white-space />
     <f-preview plain>
       <f-preview-item label="订单状态">已完成</f-preview-item>
       <f-preview-item label="订单时间">2018-09-02</f-preview-item>

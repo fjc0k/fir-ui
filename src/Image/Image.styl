@@ -1,0 +1,30 @@
+@require '../_styles/settings';
+
+.image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  &.circle {
+    border-radius: 50%;
+  }
+  .holder {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+  .img {
+    width: 100%;
+    height: 100%;
+    &.background {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  .holder + .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
