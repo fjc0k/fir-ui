@@ -9,7 +9,7 @@
       <!-- // 头部 -->
       <div styleName="header" v-if="headerVisible">
         <!-- // 取消 -->
-        <div styleName="action cancel" v-if="cancelText || $slots.cancel">
+        <div styleName="action cancel" @click="handleCancelClick" v-if="cancelText || $slots.cancel">
           <slot name="cancel">
             {{ cancelText }}
           </slot>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <!-- // 确认 -->
-        <div styleName="action confirm" v-if="confirmText || $slots.confirm">
+        <div styleName="action confirm" @click="handleConfirmClick" v-if="confirmText || $slots.confirm">
           <slot name="confirm">
             {{ confirmText }}
           </slot>
@@ -103,19 +103,22 @@ export default {
   },
 
   methods: {
-    // handleItemClick(item, index) {
-    //   this.$emit('item-click', item, index)
-    //   if (item.onClick) {
-    //     const result = item.onClick(item, index)
-    //     if (isThenable(result)) {
-    //       result.then(this.hide)
-    //     } else {
-    //       this.hide()
-    //     }
-    //   } else {
-    //     this.hide()
-    //   }
-    // }
+    handleCancelClick() {
+      if (this.cancelClosable) {
+        this.sendVisible(false)
+        this.$emit('cancel')
+      } else {
+        this.$emit('cancel', () => this.sendVisible(false))
+      }
+    },
+    handleConfirmClick() {
+      if (this.confirmClosable) {
+        this.sendVisible(false)
+        this.$emit('confirm')
+      } else {
+        this.$emit('confirm', () => this.sendVisible(false))
+      }
+    }
   },
 
   components: { Popup }

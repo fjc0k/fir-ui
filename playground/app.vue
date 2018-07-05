@@ -11,8 +11,19 @@
       </div>
     </f-nav-bar>
 
-    <f-sheet v-model="sheetVisible" title="只只能选择1个哦~只能选择1个哦~只能选择1个哦~能选择1个哦~" message="hello">
-      hello world.
+    <f-sheet
+      v-model="sheetVisible"
+      title="确认订单信息"
+      :confirmClosable="false"
+      @confirm="done => window.setTimeout(done, 3000)">
+      <f-preview plain>
+        <f-preview-item label="订单状态">已完成</f-preview-item>
+        <f-preview-item label="订单时间">2018-09-02</f-preview-item>
+        <f-preview-item label="订单编号">20180902</f-preview-item>
+        <f-preview-line />
+        <f-preview-item label="快递公司">顺丰</f-preview-item>
+        <f-preview-item label="快递单号">3455466779899434</f-preview-item>
+      </f-preview>
     </f-sheet>
 
     <f-button @click="sheetVisible=true">open sheet</f-button>
@@ -111,6 +122,7 @@ export default {
     }
   },
   data: () => ({
+    window: window,
     sheetVisible: false,
     cs: 1,
     cs1: 1,
