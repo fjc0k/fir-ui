@@ -1,6 +1,6 @@
 <template>
   <div styleName="item">
-    <div styleName="label">
+    <div styleName="label" v-if="label || $slots.label">
       <slot name="label">
         {{ label }}
       </slot>
