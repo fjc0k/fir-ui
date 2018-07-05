@@ -11,6 +11,12 @@
       </div>
     </f-nav-bar>
 
+    <f-sheet v-model="sheetVisible" title="只只能选择1个哦~只能选择1个哦~只能选择1个哦~能选择1个哦~" message="hello">
+      hello world.
+    </f-sheet>
+
+    <f-button @click="sheetVisible=true">open sheet</f-button>
+
     <f-white-space />
 
     <f-image
@@ -105,6 +111,7 @@ export default {
     }
   },
   data: () => ({
+    sheetVisible: false,
     cs: 1,
     cs1: 1,
     cs2: 2,
