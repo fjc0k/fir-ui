@@ -1,5 +1,5 @@
 <template>
-  <div styleName="@preview :plain">
+  <div styleName="@preview :plain :borderless">
     <slot />
   </div>
 </template>
@@ -30,7 +30,8 @@ export default {
   ],
 
   props: {
-    plain: Boolean
+    plain: Boolean,
+    borderless: Boolean
   }
 }
 </script>

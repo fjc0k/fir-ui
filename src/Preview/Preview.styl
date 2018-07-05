@@ -4,7 +4,9 @@
   background: $fill-base;
   display: flex;
   flex-wrap: wrap;
-  hairline(top bottom);
+  &:not(.borderless) {
+    hairline(top bottom);
+  }
 }
 
 .item {
