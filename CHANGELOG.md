@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.59.0"></a>
+# [0.59.0](https://github.com/fjc0k/fir-ui/compare/v0.57.0...v0.59.0) (2018-07-05)
+
+
+### Features
+
+* basic Sheet ([c77da5a](https://github.com/fjc0k/fir-ui/commit/c77da5a))
+* **components:** add Sheet ([4544ba4](https://github.com/fjc0k/fir-ui/commit/4544ba4))
+* **Preview:** add borderless prop ([390274e](https://github.com/fjc0k/fir-ui/commit/390274e))
+
+
+
+
 <a name="0.57.0"></a>
 # [0.57.0](https://github.com/fjc0k/fir-ui/compare/v0.56.4...v0.57.0) (2018-07-04)
 
