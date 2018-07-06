@@ -2,17 +2,8 @@
 
 .choose {
   flex-center: inline;
-  .group.horizontal & {
-    display: inline-flex;
-    &:not(:first-child) {
-      margin-left: $h-spacing-md;
-    }
-  }
-  .group.vertical & {
-    display: flex;
-    &:not(:first-child) {
-      margin-top: $v-spacing-md;
-    }
+  &:not(:first-child) {
+    margin-left: $h-spacing-md;
   }
   &.disabled {
     disabled: true;
@@ -25,12 +16,11 @@
 
 .box {
   position: relative;
-  width: $icon-size-sm;
-  height: $icon-size-sm;
+  width: 22 * $hd;
+  height: 22 * $hd;
   border: 1 * $hd solid currentColor;
   border-radius: 50%;
   box-sizing: border-box;
-  flex-center: inline;
   color: #ccc;
   .square & {
     border-radius: 0;
@@ -43,10 +33,14 @@
   .input:checked + & {
     color: $brand-primary;
     &.radio:after {
-      width: ($icon-size-sm / 3);
-      height: ($icon-size-sm / 3);
+      width: 8 * $hd;
+      height: 8 * $hd;
       border-radius: 50%;
       background-color: currentColor;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0px);
+      z-index: 1;
       .square & {
         border-radius: 0;
       }
@@ -54,13 +48,15 @@
     &.checkbox {
       background-color: currentColor;
       &:after {
-        top: 1.5 * $hd;
-        width: 5 * $hd;
-        height: 11 * $hd;
+        top: 40%;
+        left: 50%;
+        width: 6 * $hd;
+        height: 12 * $hd;
         border-style: solid;
         border-width: 0 1 * $hd 1 * $hd 0;
         border-color: white;
-        transform: rotate(45deg);
+        transform: translate3d(-50%, -50%, 0px) rotate(45deg);
+        z-index: 1;
       }
     }
   }

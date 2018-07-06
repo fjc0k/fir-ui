@@ -11,6 +11,8 @@
       </div>
     </f-nav-bar>
 
+    <f-choose>fff</f-choose><f-choose>fff</f-choose>
+
     <f-white-space />
     <f-list title="标题" tip="hello" borderless>
       <f-list-item icon="voice">方剑成</f-list-item>
@@ -164,7 +166,7 @@ export default {
   data: () => ({
     window: window,
     sheetVisible: false,
-    cs: 1,
+    cs: [],
     cs1: 1,
     cs2: 2,
     cs3: 3,
