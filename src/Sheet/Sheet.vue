@@ -14,18 +14,18 @@
             {{ cancelText }}
           </slot>
         </div>
-        <!-- // 提示 -->
-        <div styleName="tip">
+        <!-- // 信息 -->
+        <div styleName="message">
           <!-- // 标题 -->
           <div styleName="title" v-if="title || $slots.title">
             <slot name="title">
               {{ title }}
             </slot>
           </div>
-          <!-- // 信息 -->
-          <div styleName="message" v-if="message || $slots.message">
-            <slot name="message">
-              {{ message }}
+          <!-- // 简介 -->
+          <div styleName="desc" v-if="desc || $slots.desc">
+            <slot name="desc">
+              {{ desc }}
             </slot>
           </div>
         </div>
@@ -66,14 +66,14 @@ export default {
 
   props: {
     title: String,
-    message: String,
+    desc: String,
     cancelText: {
       type: String,
       default: '取消'
     },
     confirmText: {
       type: String,
-      default: '确认'
+      default: '确定'
     },
     cancelClosable: {
       type: Boolean,

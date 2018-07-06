@@ -9,10 +9,11 @@
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+    min-height: 45 * $hd;
     padding: $v-spacing-md $h-spacing-md;
     hairline(bottom);
     .action {
-      font-size: $font-size-subhead;
+      font-size: $font-size-caption;
       &.cancel {
         color: $color-text-caption;
       }
@@ -20,19 +21,19 @@
         color: $brand-primary;
       }
     }
-    .tip {
+    .message {
       flex: 1;
       text-align: center;
       overflow: hidden;
       margin: 0 $h-spacing-md;
       .title {
-        font-size: $font-size-caption;
+        font-size: $font-size-heading;
         ellipsis: 1;
-        + .message {
+        + .desc {
           margin-top: $v-spacing-sm;
         }
       }
-      .message {
+      .desc {
         font-size: $font-size-base;
         color: $color-text-caption;
         ellipsis: 1;
