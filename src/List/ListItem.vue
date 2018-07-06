@@ -1,5 +1,5 @@
 <template>
-  <div styleName="item feedback=localFeedback">
+  <component :is="tag" styleName="item feedback=localFeedback">
     <div styleName="icon" v-if="icon || $slots.icon">
       <slot name="icon">
         <Icon styleName="iconfont" :name="icon" />
@@ -34,7 +34,7 @@
       </div>
       <Icon styleName="arrow" name="right" v-if="linked" />
     </div>
-  </div>
+  </component>
 </template>
 
 <script>
@@ -64,11 +64,18 @@ export default {
     extra: null,
     borderless: Boolean,
     linked: Boolean,
+    labeled: Boolean,
     feedback: {
       type: Boolean,
       transform(bool) {
         return this.linked ? true : bool
       }
+    }
+  },
+
+  computed: {
+    tag() {
+      return this.labeled ? 'label' : 'div'
     }
   },
 

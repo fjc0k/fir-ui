@@ -16,7 +16,9 @@
       <f-list-item icon="voice">方剑成</f-list-item>
       <f-list-item label="hello" desc="今天">方剑成</f-list-item>
       <f-list-item label="hello">方剑成</f-list-item>
-      <f-list-item label="hello" extra="明天">方剑成</f-list-item>
+      <f-list-item label="hello" extra="明天" labeled>
+        <f-input placeholder="hello"></f-input>
+      </f-list-item>
       <f-list-item icon="voice" label="hello" desc="今天" extra="明天" linked>方剑成</f-list-item>
       <f-list-item label="hello" extra="明天" linked>方剑成</f-list-item>
     </f-list>
