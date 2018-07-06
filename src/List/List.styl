@@ -2,162 +2,77 @@
 
 .list {
   > {
-    .header {
+    .title {
+      width: 100%;
+      box-sizing: border-box;
       padding: $v-spacing-lg $h-spacing-lg $v-spacing-md $h-spacing-lg;
       font-size: $font-size-base;
       color: $color-text-caption;
-      width: 100%;
-      box-sizing: border-box;
     }
-    .footer {
+    .content {
+      position: relative;
+      background-color: $fill-base;
+      &:not(.borderless) {
+        hairline(top bottom);
+      }
+    }
+    .tip {
       padding: $v-spacing-md $h-spacing-lg $v-spacing-lg $h-spacing-lg;
       font-size: $font-size-base;
       color: $color-text-caption;
     }
-    .body {
-      position: relative;
-      background-color: $fill-base;
-      hairline(top bottom);
-    }
   }
 }
 
-.list-item {
-  position: relative;
+.item {
   display: flex;
-  padding-left: $h-spacing-lg;
-  min-height: $list-item-height;
-  background-color: $fill-base;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: background-color 200ms;
   align-items: center;
-
-  > {
-    .thumb {
-      &:first-child {
-        margin-right: $h-spacing-lg;
-      }
-      &:last-child {
-        margin-left: $h-spacing-md;
-      }
-      img, svg {
-        width: $icon-size-md;
-        height: $icon-size-md;
-        vertical-align: middle;
-      }
-    }
-    .line {
-      position: relative;
-      display: flex;
-      flex: 1;
-      align-self: stretch;
-      padding-right: $h-spacing-lg;
-      overflow: hidden;
-      .content {
-        flex: 1;
-        color: $color-text-base;
-        font-size: $font-size-heading;
-        line-height: $line-height-paragraph;
-        text-align: left;
-        ellipsis: 1;
-        padding-top: 7 * $hd;
-        padding-bottom: 7 * $hd;
-      }
-      .extra {
-        text-align: right;
-        color: $color-text-caption;
-        font-size: $font-size-caption;
-        line-height: $line-height-paragraph;
-        padding: (7 * $hd) 0 (7 * $hd) $h-spacing-sm;
-        ellipsis: 1;
-      }
-      .title {
-        ellipsis: 1;
-      }
-      .brief {
-        color: $color-text-caption;
-        font-size: $font-size-subhead;
-        line-height: $line-height-paragraph;
-        margin-top: $v-spacing-sm;
-        ellipsis: 1;
-      }
-      .arrow {
-        display: block;
-        margin-left: $h-spacing-md;
-        visibility: hidden;
-        color: #c7c7c7;
-        &.horizontal {
-          visibility: visible;
-        }
-        &.up {
-          visibility: visible;
-          transform: rotate(270deg);
-        }
-        &.down {
-          visibility: visible;
-          transform: rotate(90deg);
-        }
-      }
-      &.multiple {
-        padding: 12.5 * $hd $h-spacing-lg 12.5 * $hd 0;
-        .content, .extra {
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-      }
-      &.wrap {
-        .content, .extra {
-          white-space: normal;
-        }
-      }
-    }
-  }
-
-  &.top > {
-    .line {
-      align-items: flex-start;
-      .arrow {
-        margin-top: 2 * $hd;
-      }
-    }
-  }
-  &.middle > {
-    .line {
-      align-items: center;
-    }
-  }
-  &.bottom > {
-    .line {
-      align-items: flex-end;
-    }
-  }
-  &.error > {
-    .line {
-      .extra, .extra .brief {
-        color: #f50;
-      }
-    }
-  }
-  &.disabled > {
-    .thumb {
-      svg {
-        color: $color-text-disabled;
-      }
-    }
-    .line {
-      .content, .extra, .extra .brief {
-        color: $color-text-disabled;
-      }
-    }
-  }
-
+  padding-left: $h-spacing-lg;
   &:not(:last-child) > {
-    .line {
+    .content {
       hairline(bottom);
     }
   }
-  &.feedback:not(.disabled):active {
-    background-color: $fill-tap;
+  &.feedback:active {
+    background-color: $fill-tap; 
+  }
+  > {
+    .icon {
+      .iconfont {
+        font-size: $icon-size-md;
+        margin-right: $h-spacing-lg;
+      }  
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: $v-spacing-lg $h-spacing-lg $v-spacing-lg 0;
+      .message {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: $font-size-heading;
+        .line {
+          display: flex;
+          align-items: center;
+          .desc {
+            color: $color-text-caption;
+            font-size: $font-size-subhead;
+            margin-top: $v-spacing-sm;
+            ellipsis: 1;
+          }
+        }
+      }
+      .extra {
+        color: $color-text-caption;
+        font-size: $font-size-caption;
+      }
+      .arrow {
+        color: #c7c7c7;
+        font-size: $icon-size-md;
+      }
+    }
   }
 }

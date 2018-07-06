@@ -1,16 +1,16 @@
 <template>
   <div styleName="@list">
-    <div styleName="header" v-if="header || $slots.header">
-      <slot name="header">
-        {{ header }}
+    <div styleName="title" v-if="title || $slots.title">
+      <slot name="title">
+        {{ title }}
       </slot>
     </div>
-    <div styleName="body" v-if="$slots.default">
+    <div styleName="content :borderless" v-if="$slots.default">
       <slot />
     </div>
-    <div styleName="footer" v-if="footer || $slots.footer">
-      <slot name="footer">
-        {{ footer }}
+    <div styleName="tip" v-if="tip || $slots.tip">
+      <slot name="tip">
+        {{ tip }}
       </slot>
     </div>
   </div>
@@ -38,8 +38,9 @@ export default {
   ],
 
   props: {
-    header: null,
-    footer: null
+    title: null,
+    tip: null,
+    borderless: Boolean
   }
 }
 </script>

@@ -1,24 +1,38 @@
 <template>
-  <div styleName="@list-item $align :feedback :error :disabled">
-    <div styleName="thumb" v-if="thumb || $slots.thumb">
-      <slot name="thumb">
-        <img :src="thumb" />
+  <div styleName="item feedback=localFeedback">
+    <div styleName="icon" v-if="icon || $slots.icon">
+      <slot name="icon">
+        <Icon styleName="iconfont" :name="icon" />
       </slot>
     </div>
-    <div styleName="line multiple=multipleLine :wrap">
-      <slot name="content">
-        <div styleName="content" v-if="$slots.default">
-          <slot />
+    <div styleName="content">
+      <div styleName="message">
+        <div styleName="line">
+          <div styleName="label" v-if="label || $slots.label">
+            <slot name="label">
+              {{ label }}
+            </slot>
+          </div>
+          <div styleName="value" v-if="value || $slots.default">
+            <slot>
+              {{ value }}
+            </slot>
+          </div>
         </div>
-      </slot>
+        <div styleName="line" v-if="desc || $slots.desc">
+          <div styleName="desc">
+            <slot name="desc">
+              {{ desc }}
+            </slot>
+          </div>
+        </div>
+      </div>
       <div styleName="extra" v-if="extra || $slots.extra">
         <slot name="extra">
           {{ extra }}
         </slot>
       </div>
-      <div styleName="arrow $arrow" v-if="arrow">
-        <Icon name="right" />
-      </div>
+      <Icon styleName="arrow" name="right" v-if="linked" />
     </div>
   </div>
 </template>
@@ -27,14 +41,9 @@
 import CSSModules from 'vue-css-modules'
 import Messenger from 'vue-messenger'
 import Icon from '../Icon/Icon.vue'
-import ListItemBrief from './ListItemBrief.vue'
 
 export default {
   name: 'FListItem',
-
-  subComponents: {
-    Brief: ListItemBrief
-  },
 
   inject: {
     ListStyles: {
@@ -48,27 +57,23 @@ export default {
   ],
 
   props: {
-    thumb: String,
+    icon: String,
+    label: null,
+    value: null,
+    desc: null,
     extra: null,
-    arrow: {
-      type: String,
-      enum: ['horizontal', 'up', 'down', 'empty'],
-      default: null
-    },
-    align: {
-      type: String,
-      enum: ['middle', 'top', 'bottom']
-    },
-    error: Boolean,
-    multipleLine: Boolean,
-    wrap: Boolean,
-    disabled: Boolean,
+    borderless: Boolean,
+    linked: Boolean,
     feedback: {
       type: Boolean,
-      default: true
+      transform(bool) {
+        return this.linked ? true : bool
+      }
     }
   },
 
-  components: { Icon }
+  components: {
+    Icon
+  }
 }
 </script>

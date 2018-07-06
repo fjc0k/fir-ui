@@ -11,6 +11,17 @@
       </div>
     </f-nav-bar>
 
+    <f-white-space />
+    <f-list title="标题" tip="hello" borderless>
+      <f-list-item icon="voice">方剑成</f-list-item>
+      <f-list-item label="hello" desc="今天">方剑成</f-list-item>
+      <f-list-item label="hello">方剑成</f-list-item>
+      <f-list-item label="hello" extra="明天">方剑成</f-list-item>
+      <f-list-item icon="voice" label="hello" desc="今天" extra="明天" linked>方剑成</f-list-item>
+      <f-list-item label="hello" extra="明天" linked>方剑成</f-list-item>
+    </f-list>
+    <f-white-space />
+
     <f-sheet
       v-model="sheetVisible"
       title="确认订单信息"
