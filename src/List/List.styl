@@ -38,16 +38,18 @@
   }
   > {
     .icon {
+      margin-right: $h-spacing-lg;
       .iconfont {
         font-size: $icon-size-md;
-        margin-right: $h-spacing-lg;
       }  
     }
     .content {
       flex: 1;
       display: flex;
       align-items: center;
-      padding: $v-spacing-lg $h-spacing-lg $v-spacing-lg 0;
+      box-sizing: border-box;
+      min-height: $list-item-height;
+      padding: $v-spacing-md $h-spacing-lg $v-spacing-md 0;
       .message {
         flex: 1;
         display: flex;

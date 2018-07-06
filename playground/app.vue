@@ -19,8 +19,35 @@
       <f-list-item label="hello" extra="明天" labeled>
         <f-input placeholder="hello"></f-input>
       </f-list-item>
-      <f-list-item icon="voice" label="hello" desc="今天" extra="明天" linked>方剑成</f-list-item>
-      <f-list-item label="hello" extra="明天" linked>方剑成</f-list-item>
+      <f-list-item icon="voice" label="hello" desc="今天" extra="明天" linked>VALUE: {{cs}}</f-list-item>
+
+      <FChooseItem v-model="cs" value="22" extra="￥20" desc="贵州省">
+        贵安新区1
+      </FChooseItem>
+      <FChooseItem v-model="cs" value="2222">
+        贵安新区2
+      </FChooseItem>
+
+      <f-list-item>
+        选择数据1
+        <f-choose v-model="cs" value="1" slot="extra"></f-choose>
+      </f-list-item>
+      <f-list-item desc="地址：景观大道2号路" extra="￥20" labeled>
+        选择数据1.5
+        <f-choose v-model="cs" value="1.5" slot="icon"></f-choose>
+      </f-list-item>
+      <f-list-item desc="地址：景观大道2号路" labeled>
+        选择数据1.6
+        <f-choose v-model="cs" value="1.6" slot="icon"></f-choose>
+      </f-list-item>
+      <f-list-item desc="地址：景观大道2号路" labeled>
+        选择数据2
+        <f-choose v-model="cs" value="2" slot="extra"></f-choose>
+      </f-list-item>
+      <f-list-item>
+        选择数据2
+        <f-choose v-model="cs" value="3" slot="extra"></f-choose>
+      </f-list-item>
     </f-list>
     <f-white-space />
 
@@ -29,14 +56,14 @@
       title="确认订单信息"
       :confirmClosable="false"
       @confirm="done => window.setTimeout(done, 3000)">
-      <f-preview plain>
-        <f-preview-item label="订单状态">已完成</f-preview-item>
-        <f-preview-item label="订单时间">2018-09-02</f-preview-item>
-        <f-preview-item label="订单编号">20180902</f-preview-item>
-        <f-preview-line />
-        <f-preview-item label="快递公司">顺丰</f-preview-item>
-        <f-preview-item label="快递单号">3455466779899434</f-preview-item>
-      </f-preview>
+      <f-list>
+        <FChooseItem v-model="cs" value="22" extra="￥20" desc="贵州省">
+          贵安新区1
+        </FChooseItem>
+        <FChooseItem v-model="cs" value="2222">
+          贵安新区2
+        </FChooseItem>
+      </f-list>
     </f-sheet>
 
     <f-button @click="sheetVisible=true">open sheet</f-button>
