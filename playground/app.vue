@@ -166,7 +166,7 @@ export default {
   data: () => ({
     window: window,
     sheetVisible: false,
-    cs: 1,
+    cs: [],
     cs1: 1,
     cs2: 2,
     cs3: 3,

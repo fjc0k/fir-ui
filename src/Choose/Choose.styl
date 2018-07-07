@@ -32,15 +32,19 @@
   }
   .input:checked + & {
     color: $brand-primary;
+    &.radio:after, &.checkbox:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
     &.radio:after {
       width: 6 * $hd;
       height: 6 * $hd;
       border-radius: 50%;
       background-color: currentColor;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -50%, 0px);
-      z-index: 1;
       .square & {
         border-radius: 0;
       }
@@ -48,14 +52,13 @@
     &.checkbox {
       background-color: currentColor;
       &:after {
-        top: 40%;
-        left: 50%;
+        top: -4 * $hd;
         width: 6 * $hd;
         height: 12 * $hd;
         border-style: solid;
         border-width: 0 1 * $hd 1 * $hd 0;
         border-color: white;
-        transform: translate3d(-50%, -50%, 0px) rotate(45deg);
+        transform: rotate(45deg);
         z-index: 1;
       }
     }
