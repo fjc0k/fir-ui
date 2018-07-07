@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.60.0"></a>
+# [0.60.0](https://github.com/fjc0k/fir-ui/compare/v0.59.0...v0.60.0) (2018-07-07)
+
+
+### Bug Fixes
+
+* **styles:** Choose ([622eeed](https://github.com/fjc0k/fir-ui/commit/622eeed))
+* styles ([a13b7e3](https://github.com/fjc0k/fir-ui/commit/a13b7e3))
+
+
+### Features
+
+* **components:** add ChooseItem ([48db24d](https://github.com/fjc0k/fir-ui/commit/48db24d))
+* **List:** refactor ([62e000d](https://github.com/fjc0k/fir-ui/commit/62e000d))
+* **ListItem:** add labeled prop ([39a13e6](https://github.com/fjc0k/fir-ui/commit/39a13e6))
+
+
+
+
 <a name="0.59.0"></a>
 # [0.59.0](https://github.com/fjc0k/fir-ui/compare/v0.57.0...v0.59.0) (2018-07-05)
 
