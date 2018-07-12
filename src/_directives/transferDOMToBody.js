@@ -7,5 +7,10 @@ export default {
       )
       document.body.appendChild(el)
     }
+  },
+  unbind(el) {
+    if (el) {
+      document.body.removeChild(el)
+    }
   }
 }
