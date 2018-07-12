@@ -19,7 +19,14 @@ export default {
   ],
 
   props: {
-    value: [String, Number],
+    value: {
+      type: null,
+      on: {
+        receive() {
+          this.adjustHeight()
+        }
+      }
+    },
     rows: {
       numeric: true,
       default: 2
@@ -28,9 +35,6 @@ export default {
   },
 
   methods: {
-    onReceiveValue() {
-      this.adjustHeight()
-    },
     adjustHeight() {
       this.$nextTick(() => {
         const el = this.$el
